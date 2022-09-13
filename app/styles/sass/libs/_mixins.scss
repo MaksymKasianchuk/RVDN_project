@@ -1,0 +1,3 @@
+@mixin transitioned($value: all, $time: 250ms, $formula: cubic-bezier(0.4, 0, 0.2, 1)) {
+    transition: $value $time $formula;
+}

@@ -1,0 +1,37 @@
+.footer{
+    background: linear-gradient(89.85deg, #012250 0.13%, #003063 50.55%, #012250 100.98%);
+    padding: 20px 0;
+    &-content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+        &>a{
+            &>img{
+                display: block;
+                width: 80px;
+                display: block;
+                margin-right: 20px;
+            }
+            transition: all 250ms linear;
+            &:hover{
+                opacity: 0.6;
+            }
+        }
+        &>div{
+            font-size: 14px;
+            & .support{
+                font-weight: 600;
+            }
+            & a{
+               color: #fff;
+               transition: all 25ms linear;
+
+                &:hover{
+                    color: yellow;
+                } 
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'; // Bootstrap Breakpoints mixin
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss'; // Optional Bootstrap Grid
+@import 'node_modules/bootstrap/scss/utilities/_sizing.scss'; // Optional Bootstrap Utilites
+@import 'libs/normalize';
+
+$userfont: "Roboto", sans-serif;// User Font Family
+
+
+
+html{
+	outline: 0;
+}
+
+body{
+	font-family: $userfont;
+	background: linear-gradient(89.85deg, #01306F 0.13%, #0362B6 50.32%, #01306F 100.98%);
+	min-height: 100vh;
+	min-width: 320px;
+	position: relative;
+	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+a{
+	text-decoration: none;
+	&:hover{
+		text-decoration: none;
+	}
+}
+section{
+	padding: 20px 0;
+}
+
+h1, h2, h3{
+	text-transform: uppercase;
+	font-weight: 600;
+	color: #fff;
+	margin-bottom: 20px;
+}
+h1{
+	font-size: 26px;
+}
+h2{
+	font-size: 22px;
+}
+.mx-auto{
+	margin: 0 auto;
+}
