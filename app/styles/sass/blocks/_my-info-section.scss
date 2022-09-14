@@ -1,0 +1,106 @@
+.my-info-section{
+    & .my-info-actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .btn{
+        display: block;
+        font-size: 14px;
+        line-height: 1;
+    }
+
+    & .add-new-record{
+        position: relative;
+        margin-right: 20px;
+        & ul{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 10;
+            width: 100%;
+            background-color: #333;
+            border-radius: 5px;
+            padding: 10px;
+            &>li{
+                width: 100%;
+                & a{
+                    display: block;
+                    text-align: center;
+                    width: 100%;
+                    color: #fff;
+                    transition: all 250ms linear;
+                    &:hover{
+                        color: yellow;
+                    }
+
+                }
+                &:not(:last-child) {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+    & .table-wrap{
+        padding-top: 30px;
+        overflow-x: auto;
+    }
+    & table{
+        &>tbody{
+            & td{
+                &:nth-child(2), &:nth-child(3), &:nth-child(7), &:nth-child(9){
+                    text-align: center;
+                }
+                &:nth-child(8){
+                    white-space: nowrap;
+                }
+               
+                & i{
+                    display: inline-block;
+                    margin-left: 3px;
+                }
+                & button{
+                    display: inline-block;
+                    padding: 10px 0;
+                    transition: all 250ms linear;
+                    &:hover{
+                        opacity: 0.6;
+                    }
+                }
+                &:nth-child(10){
+                    white-space: nowrap;
+                    &>button, &>a{
+                        padding: 5px;
+                        transition: all 250ms linear;
+                        &>i{
+                            margin: 0;
+                            font-size: 18px;
+                        }
+                        &:hover{
+                            opacity: 0.6;
+                        }
+                    }
+                    &>button{
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    .my-info-section{
+        & .my-info-actions {
+            flex-direction: column;
+        }
+        & .add-new-record{
+            margin: 0 0 20px 0;
+            width: 100%;
+        }
+        & .btn{
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}

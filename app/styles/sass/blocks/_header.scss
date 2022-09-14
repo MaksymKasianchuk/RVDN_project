@@ -227,6 +227,20 @@
         }
     }
 }
+.all-info-page{
+    & .all-info-page-item{
+        &>a{
+            border-top: 2px solid yellow !important;
+        }
+    }
+}
+.my-info-page{
+    & .my-info-page-item{
+        &>a{
+            border-top: 2px solid yellow !important;
+        }
+    }
+}
 
 @include media-breakpoint-down(md) {
     .header{
@@ -293,4 +307,35 @@
             }
         }
     }
+    .all-info-page{
+        &  .header{
+            &-bottom{
+                & .menu{
+                    &-list.desktop{
+                        &>li{
+                            &:not(.all-info-page-item){
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .my-info-page{  
+        &  .header{
+            &-bottom{
+                & .menu{
+                    &-list.desktop{
+                        &>li{
+                            &:not(.my-info-page-item){
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }   
+    }
+    
 }

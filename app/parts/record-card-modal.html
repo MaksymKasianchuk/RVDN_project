@@ -1,0 +1,101 @@
+<div class="modal-wrap record-card-modal">
+    <form class="modal">
+        <div class="modal-header">
+            <div class="row">
+                <div class="col-12">
+                   <p class="modal-title">Інформаційна картка події</p> 
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-body">
+            <div class="row">
+
+                <div class="col-12 col-md-5">
+                    <div class="row top-line-form-group">
+                        <div class="col-12 col-lg-4">
+                            <div class="form-group">
+                                <label class="form-label">№ реєстрації в органі</label>
+                                <input type="text" name="record-id" id="" value="">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="form-group">
+                                <label class="form-label">Дата реєстрації</label>
+                                <input type="date" name="record-registr-date" id="" value="">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="form-group">
+                                <label class="form-label">Орган (ініціатор)</label>
+                                <input type="text" name="record-init-org" id="" value="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Орган (виконавець)</label>
+                        <input type="text" name="record-execute-org" id="" value="">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Вид події</label>
+                        <select name="record-event-type">
+                            <option value="Особа кривдник">Фізичне насильство</option>
+                            <option value="Постраждала особа">Психологічне насильство</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Кваліфікація</label>
+                        <input type="text" name="record-qualification" id="" value="">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Місце події</label>
+                        <input type="text" name="record-event-place" id="" value="">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Підгрунтя для виникнення конфлікту</label>
+                        <textarea name="record-event-reason" id="" cols="30" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-5">
+                    <div class="form-group top-line-form-group">
+                        <label class="form-label">Постраждала особа</label>
+                        <input type="text" name="record-victim" id="" value="">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Особа кривдник</label>
+                        <input type="text" name="record-agressor" id="" value="">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Короткий виклад матеріалу</label>
+                        <textarea name="record-describe" id="" cols="30" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Вжиті заходи</label>
+                        <textarea name="record-measures" id="" cols="30" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-2">
+                    <div class="form-group">
+                        <label class="form-label">Файли</label>
+                        <div class="modal-files">
+                            <button type="button" class="modal-add-files-btn"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <div class="row">
+                <div class="col-12">
+                    <button class="btn modal-button">Форма оцінки ризиків</button>
+                    <button class="btn modal-button modal-close">ОК</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

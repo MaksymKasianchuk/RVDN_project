@@ -13,20 +13,45 @@ document.addEventListener('DOMContentLoaded', () => {
 		menu: '.mobile-menu', 
 		open: 'show'
 	}
+	const newRecordSelectors= {
+		btn:'.new-record-btn', 
+		menu: '.new-record-menu', 
+		open: 'show'
+	}
 
 	$('.settings-btn').on('click', function(){
 		$(this).siblings('.settings-menu').toggleClass('show');
 	});
-
 	$('.burger-btn').on('click', function(){
 		$('.mobile-menu').toggleClass('show');
 	});
+	$('.new-record-btn').on('click', function(){
+		$('.new-record-menu').toggleClass('show');
+	});
+
 
 	$(document).mouseup(function (e){
         missClickHandler(settingsSelectors, e);
 		missClickHandler(mobileSelectors, e);
+		missClickHandler(newRecordSelectors, e);
     });
 
+	//------------------MODAL--------------------------
+	$('.modal-close').on('click', function(e){
+		$(this).parents('.modal-wrap').removeClass('show-modal');
+	});
+	$('.modal-wrap').on('click', function(e){
+		if(e.target === e.currentTarget){
+			$(this).removeClass('show-modal');
+		}
+	});
+
+	$('.view-person-btn').on('click', function(e){
+		$('.person-card-modal').addClass('show-modal');
+	});
+	$('.record-info-btn').on('click', function(e){
+		$('.record-card-modal').addClass('show-modal');
+	});
 });
 
 function missClickHandler(refs, event){

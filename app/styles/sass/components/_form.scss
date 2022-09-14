@@ -1,0 +1,25 @@
+.form{
+    &-group{
+        width: 100%;
+        margin-bottom: 15px;
+        
+        & label{
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        & .form-label{
+            width: 100%;
+        }
+        & input[type="text"], & input[type="date"], & select, & textarea{
+            display: inline-block;
+            width: 100%;
+            font-size: 14px;
+            padding: 5px;
+        }
+        & textarea{
+            resize: none;
+            margin-bottom: 0;
+        }
+    }
+   
+}   

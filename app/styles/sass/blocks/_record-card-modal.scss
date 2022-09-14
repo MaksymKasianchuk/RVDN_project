@@ -1,0 +1,32 @@
+.record-card-modal{
+    & .modal{
+        max-width: 1000px;
+        & .top-line-form-group{
+            & label{
+                min-height: 30px;
+            }
+        }
+    }
+    & .modal-add-files-btn{
+        margin-left: auto;
+    }
+    & .modal-button{
+        display: block;
+        width: 200px;
+        margin: 0 0 0 auto;
+        &:first-child{
+            margin-bottom: 15px;
+        }
+    }
+}
+@include media-breakpoint-down(md) {
+    .record-card-modal{
+        & .modal{
+            & .top-line-form-group{
+                & label{
+                    min-height: auto;
+                }
+            }
+        }
+    }
+}
