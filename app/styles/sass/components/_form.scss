@@ -1,4 +1,29 @@
 .form{
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 20px;
+
+    &-header{
+        margin-bottom: 15px;
+    }
+
+    &-body{
+        margin-bottom: 15px;
+    }
+
+    &-title{
+        text-align: center;
+        font-size: 22px;
+    }
+    &-img{
+        width: 100%;
+        margin-bottom: 15px;
+        &>img{
+            display: block;
+            width: 170px;
+            margin: 0 auto;
+        }
+    }
     &-group{
         width: 100%;
         margin-bottom: 15px;
@@ -21,5 +46,46 @@
             margin-bottom: 0;
         }
     }
-   
+    & .btn{
+        background-color: $formBtnBgColor;
+        color: #fff;
+        min-width: 180px;
+        padding: 5px 10px;
+        min-height: 30px;
+    }
+    &-add-files-btn{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: $formBtnBgColor;
+        color: #fff;
+        transition: all 250ms linear;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &>i{
+            display: inline-block;
+        }
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+    &-actions{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
 }   
+
+@include media-breakpoint-down(xs) {
+    .form{
+        &-actions{
+            flex-direction: column;
+            justify-content: center;
+        }
+        & .btn{
+            display: block;
+            width: 100%;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 .footer{
-    background: linear-gradient(89.85deg, #012250 0.13%, #003063 50.55%, #012250 100.98%);
+    background: $mainGradientDarker;
     padding: 20px 0;
     &-content{
         display: flex;
@@ -29,7 +29,7 @@
                transition: all 25ms linear;
 
                 &:hover{
-                    color: yellow;
+                    color: $mainAccentColor;
                 } 
             }
         }

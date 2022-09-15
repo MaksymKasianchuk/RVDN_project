@@ -1,0 +1,113 @@
+<section class="add-record-section section">
+    <div class="container">
+		<div class="row">
+            <div class="col-12">
+
+                <form class="form add-record-form">
+                    <div class="form-header">
+                        <div class="row">
+                            <div class="col-12">
+                               <p class="form-title">Інформаційна картка події</p> 
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="form-body">
+                        <div class="row">
+            
+                            <div class="col-12 col-md-5">
+                                <div class="row top-line-form-group">
+                                    <div class="col-12 col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-label">№ реєстрації в органі</label>
+                                            <input type="text" name="newrecord-id" id="" value="">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-label">Дата реєстрації</label>
+                                            <input type="date" name="newrecord-registr-date" id="" value="">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-label">Орган (ініціатор)</label>
+                                            <input type="text" name="newrecord-init-org" id="" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Орган (виконавець)</label>
+                                    <input type="text" name="newrecord-execute-org" id="" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Вид події</label>
+                                    <select name="newrecord-event-type">
+                                        <option value="Особа кривдник">Фізичне насильство</option>
+                                        <option value="Постраждала особа">Психологічне насильство</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Кваліфікація</label>
+                                    <input type="text" name="newrecord-qualification" id="" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Місце події</label>
+                                    <input type="text" name="newrecord-event-place" id="" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Підгрунтя для виникнення конфлікту</label>
+                                    <textarea name="newrecord-event-reason" id="" cols="30" rows="3"></textarea>
+                                </div>
+                            </div>
+            
+                            <div class="col-12 col-md-5">
+                                <div class="form-group top-line-form-group">
+                                    <label class="form-label">Постраждала особа</label>
+                                    <input type="text" name="newrecord-victim" id="" value="">
+                                </div>
+                                <button class="btn add-victim-btn" type="button">Додати постраждалу особу</button>
+                                <div class="form-group">
+                                    <label class="form-label">Особа кривдник</label>
+                                    <input type="text" name="newrecord-agressor" id="" value="">
+                                </div>
+                                <button class="btn add-agressor-btn" type="button">Додати особу кривдника</button>
+                                <div class="form-group">
+                                    <label class="form-label">Короткий виклад матеріалу</label>
+                                    <textarea name="newrecord-describe" id="" cols="30" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Вжиті заходи</label>
+                                    <textarea name="newrecord-measures" id="" cols="30" rows="3"></textarea>
+                                </div>
+                            </div>
+            
+                            <div class="col-12 col-md-2">
+                                <div class="form-group">
+                                    <label class="form-label">Файли</label>
+                                    <div class="form-files">
+                                        <button type="button" class="form-add-files-btn"><i class="fa-solid fa-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+            
+                        </div>
+                    </div>
+            
+                    <div class="form-footer">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-actions">
+                                    <button class="btn form-button open-risk-section-btn" type="button">Форма оцінки ризиків</button>
+                                    <button class="btn form-button add-new-record-btn">Зберегти</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>

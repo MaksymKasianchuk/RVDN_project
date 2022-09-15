@@ -33,7 +33,7 @@
             &:hover{
                 background-color: rgba(0, 0, 0, 0.6);
                 &>p{
-                    color: yellow;
+                    color: $mainAccentColor;
                 }
             }
         }
@@ -55,7 +55,7 @@
     }
 }
 @include media-breakpoint-down(md) {
-    .idx-page{
+    .idx-section{
         & .section-title{
             text-align: center;
         }

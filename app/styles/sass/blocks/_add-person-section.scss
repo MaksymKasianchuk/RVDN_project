@@ -1,0 +1,22 @@
+.add-person-section{
+    padding: 40px 0 80px 0;
+    & .add-relative-btn{
+        margin-top: 25px;
+    }
+    & .add-new-newperson-btn{
+        display: block;
+        width: 180px;
+        margin-left: auto;
+    }
+    & .form-label{
+        color: $grayLighterColor;
+    }
+}
+@include media-breakpoint-down(xs) {
+    .add-person-section{
+        & .btn{
+            display: block;
+            width: 100%;
+        }
+    }
+}

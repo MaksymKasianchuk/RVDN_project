@@ -5,8 +5,12 @@
 @import 'libs/normalize';
 
 $userfont: "Roboto", sans-serif;// User Font Family
-
-
+$mainGradient: linear-gradient(89.85deg, #01306F 0.13%, #0362B6 50.32%, #01306F 100.98%);
+$mainGradientDarker: linear-gradient(89.85deg, #012250 0.13%, #003063 50.55%, #012250 100.98%);
+$mainAccentColor: #ffd500;
+$formBtnBgColor: #002b6a;
+$grayColor: #333333;
+$grayLighterColor: #555555;
 
 html{
 	outline: 0;
@@ -14,7 +18,7 @@ html{
 
 body{
 	font-family: $userfont;
-	background: linear-gradient(89.85deg, #01306F 0.13%, #0362B6 50.32%, #01306F 100.98%);
+	background: $mainGradient;
 	min-height: 100vh;
 	min-width: 320px;
 	position: relative;
@@ -47,4 +51,25 @@ h2{
 }
 .mx-auto{
 	margin: 0 auto;
+}
+input[type="text"], input[type="date"], textarea, select{
+	border-radius: 3px;
+	border: 1px solid $formBtnBgColor;
+	transition: border-color 250ms linear;
+	outline: none;
+	&:hover, &:focus, &:active, &:focus-visible{
+		border: 1px solid $mainAccentColor;
+	}
+}
+label:not(.form-label){
+	margin-right: 25px;
+	transition: all 250ms linear;
+	cursor: pointer;
+	&>input[type="radio"]{
+		transition: all 250ms linear;
+		cursor: pointer;
+	}
+	&:hover{
+		opacity: 0.6;
+	}
 }

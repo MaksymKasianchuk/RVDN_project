@@ -2,9 +2,9 @@
     display: inline-block;
     padding: 10px 15px;
     font-weight: 400;
-    background-color: #ffd500;
+    background-color: $mainAccentColor;
     text-align: center;
-    color: #002b54;
+    color: $formBtnBgColor;
     border-radius: 3px;
     transition: all 250ms linear;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);

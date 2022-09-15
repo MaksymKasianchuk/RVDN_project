@@ -30,7 +30,7 @@
         }
     }
     &-bottom{
-        background: linear-gradient(89.85deg, #012250 0.13%, #003063 50.55%, #012250 100.98%);
+        background: $mainGradientDarker;
         & .menu{
             width: 100%;
             & .burger-btn {
@@ -42,7 +42,7 @@
                     pointer-events: none;
                 }
                 &:hover{
-                    color: yellow;
+                    color: $mainAccentColor;
                 }
             }
             &-wrap{
@@ -63,6 +63,7 @@
                     height: 100%;
                     &>a{
                         display: flex;
+                        align-items: center;
                         font-size: 14px;
                         height: 100%;
                         border-top: 2px solid transparent;
@@ -71,7 +72,7 @@
                         font-weight: 600;
                         padding: 10px 0;
                         &:hover{
-                            border-top: 2px solid yellow;
+                            border-top: 2px solid $mainAccentColor;
                         }
                         & img{
                             display: block;
@@ -101,7 +102,7 @@
             transition: all 250ms linear;
             padding: 10px 0;
             &:hover{
-                color: yellow;
+                color: $mainAccentColor;
             }
         }
         & .settings{
@@ -116,7 +117,7 @@
                     pointer-events: none;
                 }
                 &:hover{
-                    color: yellow;
+                    color: $mainAccentColor;
                 }
             }
             &-menu{
@@ -124,7 +125,7 @@
                 z-index: 2000;
                 top: 100%;
                 right: 0;
-                background-color: #333;
+                background-color: $grayColor;
                 border-radius: 5px;
                 padding: 10px;
                 &>ul{
@@ -140,7 +141,7 @@
                             font-size: 14px;
                             transition: all 250ms linear;
                             &>div{
-                                background-color: #002b54;
+                                background-color: $formBtnBgColor;
                                 width: 30px;
                                 height: 30px;
                                 margin-right: 10px;
@@ -155,7 +156,7 @@
                                 white-space: nowrap;
                             }
                             &:hover{
-                                color: yellow;
+                                color: $mainAccentColor;
                             }
                         }
                     }
@@ -185,10 +186,10 @@
                     align-items: center;
                     &:hover{
                         border-top: none;
-                        color: yellow;
+                        color: $mainAccentColor;
                     }
                     &>div{
-                        background-color: #002b54;
+                        background-color: $formBtnBgColor;
                         width: 30px;
                         height: 30px;
                         margin-right: 10px;
@@ -215,7 +216,7 @@
 .index-page{
     & .index-page-item{
         &>a{
-            border-top: 2px solid yellow !important;
+            border-top: 2px solid $mainAccentColor !important;
         }
     }
 }
@@ -223,21 +224,21 @@
 .regional-sites-page{
     & .regional-sites-page-item{
         &>a{
-            border-top: 2px solid yellow !important;
+            border-top: 2px solid $mainAccentColor !important;
         }
     }
 }
 .all-info-page{
     & .all-info-page-item{
         &>a{
-            border-top: 2px solid yellow !important;
+            border-top: 2px solid $mainAccentColor !important;
         }
     }
 }
 .my-info-page{
     & .my-info-page-item{
         &>a{
-            border-top: 2px solid yellow !important;
+            border-top: 2px solid $mainAccentColor !important;
         }
     }
 }
@@ -245,7 +246,10 @@
 @include media-breakpoint-down(md) {
     .header{
         &-bottom{
+            min-height: 50px;
             position: relative;
+            display: flex;
+            align-items: center;
             & .menu{
                 display: flex;
                 & .burger-btn {
@@ -337,5 +341,32 @@
             }
         }   
     }
+
+    .add-person-page{  
+        &  .header{
+            &-bottom{
+                & .menu{
+                    &-list.desktop{
+                        &>li{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }   
+    }
     
+    .add-record-page{  
+        &  .header{
+            &-bottom{
+                & .menu{
+                    &-list.desktop{
+                        &>li{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }   
+    }
 }

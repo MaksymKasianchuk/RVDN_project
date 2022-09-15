@@ -19,7 +19,7 @@
             left: 0;
             z-index: 10;
             width: 100%;
-            background-color: #333;
+            background-color: $grayColor;
             border-radius: 5px;
             padding: 10px;
             &>li{
@@ -31,7 +31,7 @@
                     color: #fff;
                     transition: all 250ms linear;
                     &:hover{
-                        color: yellow;
+                        color: $mainAccentColor;
                     }
 
                 }

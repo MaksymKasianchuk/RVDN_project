@@ -8,9 +8,9 @@ table{
         & th{
             font-weight: 400;
             padding: 10px 5px;
-            border-left: 1px solid #333;
-            border-right: 1px solid #333;
-            border-bottom: 1px solid #333;
+            border-left: 1px solid $grayColor;
+            border-right: 1px solid $grayColor;
+            border-bottom: 1px solid $grayColor;
             &:first-child{
                 border-left: none;
             }
@@ -23,8 +23,8 @@ table{
         & td{
             font-weight: 400;
             padding: 10px 5px;
-            border-left: 1px solid #333;
-            border-right: 1px solid #333;
+            border-left: 1px solid $grayColor;
+            border-right: 1px solid $grayColor;
             &:first-child{
                 border-left: none;
                 text-align: center;
@@ -37,7 +37,6 @@ table{
             }
             & button{
                 padding: 0;
-                // white-space: nowrap;
                 text-align: left;
             }
         }

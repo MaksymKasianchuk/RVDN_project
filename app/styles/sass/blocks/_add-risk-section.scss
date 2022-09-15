@@ -1,0 +1,41 @@
+.add-risk-section{
+    padding: 0 0 80px 0;
+    display: none;
+    &.show-section{
+        display: block;
+    }
+    & .form-label{
+        color: #747272;
+        font-size: 16px;
+        line-height: 1.2;
+    }
+    & input[type="text"], & textarea, & select{
+        width: 100%;
+        padding: 5px 10px;
+    }
+    & textarea{
+        resize: none;
+    }
+    & label:not(.form-label){
+        color: #747272;
+    }
+
+    & .form-body{
+        & .row{
+            margin-bottom: 20px;
+        }
+    }
+    & .add-risk-termin-label{
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        &>input{
+            max-width: 300px;
+            margin-left: 10px;
+        }
+    }
+    & .risk-levels{
+        font-weight: 600;
+    }
+}

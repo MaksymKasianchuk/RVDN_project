@@ -1,0 +1,151 @@
+<section class="add-person-section section">
+    <div class="container">
+		<div class="row">
+            <div class="col-12">
+
+                <form class="form add-person-form">
+                    <div class="form-header">
+                        <div class="row">
+                            <div class="col-12">
+                               <p class="form-title">Інформаційна картка особи</p> 
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="form-body">
+                        <div class="row">
+                            <div class="col-12 col-md-4 mx-auto">
+                                <div class="form-group">
+                                    <select name="newperson-role" id="newperson-role">
+                                        <option value="Особа кривдник">Особа кривдник</option>
+                                        <option value="Постраждала особа">Постраждала особа</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-4 mx-auto">
+                                <div class="form-group">
+                                    <label class="form-label">ПІБ</label>
+                                    <input type="text" name="newperson-name" id="newperson-name" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label">Документ що посвідчує особу</label>
+                                    <label><input type="radio" name="pasport-type" checked> Паспорт</label>
+                                    <label><input type="radio" name="pasport-type"> ID-картка</label>
+                                    <label><input type="radio" name="pasport-type"> Посвідчення водія</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-label">Серія</label>
+                                            <input type="text" name="pasport-ser" id="" value="">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-8">
+                                        <div class="form-group">
+                                            <label class="form-label">Номер / номер запису документа</label>
+                                            <input type="text" name="pasport-number" id="" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Дата видачі</label>
+                                    <input type="date" name="pasport-date" id="" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Рівень забезпечення</label>
+                                    <select name="newperson-money" id="">
+                                        <option value="Високий">Високий</option>
+                                        <option value="Середній">Середній</option>
+                                        <option value="Низький">Низький</option>
+                                    </select>
+                                </div>
+                            </div>
+                
+                            <div class="col-12 col-md-4">
+                                <div class="form-img">
+                                    <img src="./images/dist/usrempty.png" alt="" id="newperson-photo">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Номер телефону</label>
+                                    <input type="text" name="newperson-phone" id="" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Дата народження</label>
+                                    <input type="date" name="newperson-birthday" id="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Наявність дітей</label>
+                                    <label><input type="radio" name="newperson-children" value="Так"> Так</label>
+                                    <label><input type="radio" name="newperson-children" value="Ні"checked> Ні</label>
+                                </div>
+                            </div>
+                
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label">Місце реєстрації</label>
+                                    <textarea name="newperson-reg-address" id="" cols="30" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Місце проживання</label>
+                                    <textarea name="newperson-home-address" id="" cols="30" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Місце роботи</label>
+                                    <textarea name="newperson-work" id="" cols="30" rows="1"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Файли</label>
+                                    <div class="form-files">
+                                        <button type="button" class="form-add-files-btn"><i class="fa-solid fa-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="form-text">Зв'язки особи</p>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <label class="form-label">ПІБ</label>
+                                    <input type="text" name="newperson-relationship" id="" value="">
+                                </div>
+                                <div class="form-group newperson-relationship-level">
+                                    <label class="form-label">Рівень зв'язку</label>
+                                    <select name="newperson-relationship-level" id="">
+                                        <option value="Чоловік">Чоловік</option>
+                                        <option value="Дружина">Дружина</option>
+                                        <option value="Брат">Брат</option>
+                                        <option value="Сестра">Сестра</option>
+                                        <option value="Інше..." selected>Інше...</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 add-relateve-col">
+                                <button class="btn add-relative-btn" type="button">Додати особу</button>
+                            </div>
+                        </div>
+
+                    </div>
+            
+                    <div class="form-footer">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-actions">
+                                    <button class="btn form-button add-new-person-btn">Зберегти</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
