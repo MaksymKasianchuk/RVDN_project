@@ -342,21 +342,7 @@
         }   
     }
 
-    .add-person-page{  
-        &  .header{
-            &-bottom{
-                & .menu{
-                    &-list.desktop{
-                        &>li{
-                            display: none;
-                        }
-                    }
-                }
-            }
-        }   
-    }
-    
-    .add-record-page{  
+    .add-person-page, .add-record-page, .personal-office-page{  
         &  .header{
             &-bottom{
                 & .menu{

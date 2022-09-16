@@ -1,5 +1,5 @@
 .form{
-    background-color: #f8f8f8;
+    background-color: $formsBgColor;
     border-radius: 10px;
     padding: 20px;
 
@@ -22,6 +22,7 @@
             display: block;
             width: 170px;
             margin: 0 auto;
+            background-color: $formBtnBgColor;
         }
     }
     &-group{
