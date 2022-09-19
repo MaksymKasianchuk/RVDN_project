@@ -1,0 +1,113 @@
+.login{
+    &-form{
+        color: #fff;
+    }
+    &-wrap{
+        background: $mainGradientDarker;
+        padding: 40px 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+    }
+    &-header{
+        margin-bottom: 20px;
+    }
+    &-body{
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &-title{
+        font-size: 22px;
+        text-transform: none;
+        text-align: center;
+    }
+    &-left-side{
+        margin-right: 20px;
+        &>img{
+            display: block;
+            max-width: 200px;
+        }
+    }
+    &-right-side{
+        &>p{
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+    }
+    &-row{
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        &>i{
+            display: block;
+            margin-right: 10px;
+        }
+        &-action{
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            margin-top: 10px;
+            &>div{
+                margin-right: 20px;
+                &>a{
+                    display: block;
+                    color: #fff;
+                    transition: color 250ms linear;
+                    font-size: 14px;
+                    &:not(:last-child){
+                        margin-bottom: 5px;
+                    }
+                    &:hover{
+                        color: $mainAccentColor;
+                    }
+                }
+            }
+        }
+    }
+    &-btn{
+        display: block;
+        min-width: 140px;
+        font-weight: 600;
+    }
+}
+
+
+@include media-breakpoint-down(sm) {
+    .login{
+        &-wrap{
+            padding: 20px 30px;
+            min-width: 320px;
+        }
+        &-body{
+            display: block;
+        }
+        &-left-side{
+            display: none;
+        }
+        &-row{
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            &>i{
+                display: none;
+            }
+            &-action{
+                flex-direction: column-reverse;                
+                &>div{
+                    margin: 15px 0 0 0;
+                    text-align: center;
+                }
+            }
+        }
+        &-btn{
+            width: 100%;
+        }
+    }
+    
+}
