@@ -1,8 +1,6 @@
 .login{
     &-form{
         color: #fff;
-    }
-    &-wrap{
         background: $mainGradientDarker;
         padding: 40px 50px;
         position: absolute;
@@ -10,6 +8,14 @@
         left: 50%;
         transform: translate(-50%, -50%);
         border-radius: 10px;
+    }
+    &-wrap{
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100%;
+        transition: all 250ms linear 250ms;
     }
     &-header{
         margin-bottom: 20px;
@@ -80,7 +86,7 @@
 
 @include media-breakpoint-down(sm) {
     .login{
-        &-wrap{
+        &-form{
             padding: 20px 30px;
             min-width: 320px;
         }

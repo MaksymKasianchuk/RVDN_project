@@ -1,152 +1,154 @@
-<div class="modal-wrap person-card-modal">
-    <form class="modal">
-        <div class="modal-header">
-            <div class="row">
-                <div class="col-12">
-                   <p class="modal-title">Інформаційна картка особи</p> 
+<div class="backdrop person-card-modal">
+    <div class="modal-wrap">
+        <form class="modal">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-12">
+                    <p class="modal-title">Інформаційна картка особи</p> 
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="modal-body">
-            <div class="row">
-                <div class="col-12 col-md-4 mx-auto">
-                    <div class="form-group">
-                        <select name="person-role" id="person-role">
-                            <option value="Особа кривдник">Особа кривдник</option>
-                            <option value="Постраждала особа">Постраждала особа</option>
-                        </select>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12 col-md-4 mx-auto">
+                        <div class="form-group">
+                            <select name="person-role" id="person-role">
+                                <option value="Особа кривдник">Особа кривдник</option>
+                                <option value="Постраждала особа">Постраждала особа</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-4 mx-auto">
-                    <div class="form-group">
-                        <input type="text" name="person-name" id="person-name" value="Іванов Сергій Володимирович">
+                <div class="row">
+                    <div class="col-12 col-md-4 mx-auto">
+                        <div class="form-group">
+                            <input type="text" name="person-name" id="person-name" value="Іванов Сергій Володимирович">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <div class="form-group">
-                        <label class="form-label">Документ що посвідчує особу</label>
-                        <label><input type="radio" name="pasport-type" checked> Паспорт</label>
-                        <label><input type="radio" name="pasport-type"> ID-картка</label>
-                        <label><input type="radio" name="pasport-type"> Посвідчення водія</label>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group">
+                            <label class="form-label">Документ що посвідчує особу</label>
+                            <label><input type="radio" name="pasport-type" checked> Паспорт</label>
+                            <label><input type="radio" name="pasport-type"> ID-картка</label>
+                            <label><input type="radio" name="pasport-type"> Посвідчення водія</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Серія</label>
+                            <input type="text" name="pasport-ser" id="" value="">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Номер / номер запису документа</label>
+                            <input type="text" name="pasport-number" id="" value="">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Дата видачі</label>
+                            <input type="date" name="pasport-date" id="" value="">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Рівень забезпечення</label>
+                            <select name="person-money" id="">
+                                <option value="Високий">Високий</option>
+                                <option value="Середній">Середній</option>
+                                <option value="Низький">Низький</option>
+                            </select>
+                        </div>
+                        <p class="modal-text">Зв'язки особи</p>
+                        <div class="form-group">
+                            <label class="form-label">ПІБ</label>
+                            <input type="text" name="person-relationship" id="" value="Іванова Ірина Вікторівна">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label">Серія</label>
-                        <input type="text" name="pasport-ser" id="" value="">
+        
+                    <div class="col-12 col-md-4">
+                        <div class="modal-img">
+                            <img src="./images/dist/userempty.png" alt="" id="person-photo">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Дата народження</label>
+                            <input type="date" name="person-birthday" id="">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Номер телефону</label>
+                            <input type="text" name="person-phone" id="" value="+380985545234">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Наявність дітей</label>
+                            <label><input type="radio" name="person-children" value="Так"> Так</label>
+                            <label><input type="radio" name="person-children" value="Ні"checked> Ні</label>
+                        </div>
+                        <div class="form-group person-relationship-level">
+                            <label class="form-label">Рівень зв'язку</label>
+                            <select name="person-relationship-level" id="">
+                                <option value="Чоловік">Чоловік</option>
+                                <option value="Дружина">Дружина</option>
+                                <option value="Брат">Брат</option>
+                                <option value="Сестра">Сестра</option>
+                                <option value="Інше...">Інше...</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label">Номер / номер запису документа</label>
-                        <input type="text" name="pasport-number" id="" value="">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Дата видачі</label>
-                        <input type="date" name="pasport-date" id="" value="">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Рівень забезпечення</label>
-                        <select name="person-money" id="">
-                            <option value="Високий">Високий</option>
-                            <option value="Середній">Середній</option>
-                            <option value="Низький">Низький</option>
-                        </select>
-                    </div>
-                    <p class="modal-text">Зв'язки особи</p>
-                    <div class="form-group">
-                        <label class="form-label">ПІБ</label>
-                        <input type="text" name="person-relationship" id="" value="Іванова Ірина Вікторівна">
+        
+                    <div class="col-12 col-md-4">
+                        <div class="form-group">
+                            <label class="form-label">Місце реєстрації</label>
+                            <textarea name="person-reg-address" id="" cols="30" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Місце проживання</label>
+                            <textarea name="person-home-address" id="" cols="30" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Місце роботи</label>
+                            <textarea name="person-work" id="" cols="30" rows="1"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Файли</label>
+                            <div class="modal-files">
+                                <button type="button" class="modal-add-files-btn"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-    
-                <div class="col-12 col-md-4">
-                    <div class="modal-img">
-                        <img src="./images/dist/userempty.png" alt="" id="person-photo">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Дата народження</label>
-                        <input type="date" name="person-birthday" id="">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Номер телефону</label>
-                        <input type="text" name="person-phone" id="" value="+380985545234">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Наявність дітей</label>
-                        <label><input type="radio" name="person-children" value="Так"> Так</label>
-                        <label><input type="radio" name="person-children" value="Ні"checked> Ні</label>
-                    </div>
-                    <div class="form-group person-relationship-level">
-                        <label class="form-label">Рівень зв'язку</label>
-                        <select name="person-relationship-level" id="">
-                            <option value="Чоловік">Чоловік</option>
-                            <option value="Дружина">Дружина</option>
-                            <option value="Брат">Брат</option>
-                            <option value="Сестра">Сестра</option>
-                            <option value="Інше...">Інше...</option>
-                        </select>
-                    </div>
-                </div>
-    
-                <div class="col-12 col-md-4">
-                    <div class="form-group">
-                        <label class="form-label">Місце реєстрації</label>
-                        <textarea name="person-reg-address" id="" cols="30" rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Місце проживання</label>
-                        <textarea name="person-home-address" id="" cols="30" rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Місце роботи</label>
-                        <textarea name="person-work" id="" cols="30" rows="1"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Файли</label>
-                        <div class="modal-files">
-                            <button type="button" class="modal-add-files-btn"><i class="fa-solid fa-plus"></i></button>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="case-row">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>№ запису</th>
+                                        <th>Дата реєстрації</th>
+                                        <th>Орган</th>
+                                        <th>Виконавець</th>
+                                        <th>Статус</th>
+                                        <th>Дата виконання</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>14/09/2022</td>
+                                        <td>Вінницький ВП ГУНП</td>
+                                        <td>Вінницький ВП ГУНП</td>
+                                        <td>виконано</td>
+                                        <td>15/09/2022</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="case-row">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>№ запису</th>
-                                    <th>Дата реєстрації</th>
-                                    <th>Орган</th>
-                                    <th>Виконавець</th>
-                                    <th>Статус</th>
-                                    <th>Дата виконання</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>14/09/2022</td>
-                                    <td>Вінницький ВП ГУНП</td>
-                                    <td>Вінницький ВП ГУНП</td>
-                                    <td>виконано</td>
-                                    <td>15/09/2022</td>
-                                </tr>
-                            </tbody>
-                        </table>
+
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-12">
+                        <button class="btn modal-button modal-close">ОК</button>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="modal-footer">
-            <div class="row">
-                <div class="col-12">
-                    <button class="btn modal-button modal-close">ОК</button>
-                </div>
-            </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>

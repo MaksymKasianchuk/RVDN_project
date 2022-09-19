@@ -1,4 +1,16 @@
 .record-card-modal{
+    background-color: rgba(0, 0, 0, 0.6);
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-16px);
+    transition: all 400ms linear;
+    &.show-modal{
+        pointer-events: all;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
     & .modal{
         max-width: 1000px;
         & .top-line-form-group{
@@ -27,6 +39,14 @@
                     min-height: auto;
                 }
             }
+        }
+    }
+}
+@include media-breakpoint-down(xs) {
+    .record-card-modal{
+        & .modal-button{
+            width: 100%;
+            margin: 0;
         }
     }
 }

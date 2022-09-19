@@ -1,4 +1,16 @@
 .person-card-modal{
+    background-color: rgba(0, 0, 0, 0.6);
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-16px);
+    transition: all 400ms linear;
+    &.show-modal{
+        pointer-events: all;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
     & .modal-add-files-btn{
         margin-left: auto;
     }

@@ -38,11 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	//------------------MODAL--------------------------
 	$('.modal-close').on('click', function(e){
-		$(this).parents('.modal-wrap').removeClass('show-modal');
+		// e.preventDefault();
+		$(this).parents('.backdrop').removeClass('show-modal');
 	});
 	$('.modal-wrap').on('click', function(e){
+		console.log(e.target === e.currentTarget);
 		if(e.target === e.currentTarget){
-			$(this).removeClass('show-modal');
+			$(this).parent().removeClass('show-modal');
 		}
 	});
 

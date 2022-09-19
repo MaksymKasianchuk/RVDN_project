@@ -55,7 +55,7 @@ h2{
 .mx-auto{
 	margin: 0 auto;
 }
-input[type="text"], input[type="date"], textarea, select{
+input[type="text"], input[type="date"], input[type="email"], input[type="tel"], textarea, select{
 	border-radius: 3px;
 	border: 1px solid $formBtnBgColor;
 	transition: border-color 250ms linear;
