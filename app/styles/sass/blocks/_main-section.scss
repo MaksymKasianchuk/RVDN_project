@@ -1,4 +1,4 @@
-.idx-section{
+.main-section{
     padding-top: 40px;
     padding-bottom: 80px;
     color: #fff;
@@ -55,7 +55,7 @@
     }
 }
 @include media-breakpoint-down(md) {
-    .idx-section{
+    .main-section{
         & .section-title{
             text-align: center;
         }

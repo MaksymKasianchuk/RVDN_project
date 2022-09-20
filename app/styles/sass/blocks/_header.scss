@@ -213,8 +213,8 @@
     }
 }
 
-.index-page{
-    & .index-page-item{
+.main-page{
+    & .main-page-item{
         &>a{
             border-top: 2px solid $mainAccentColor !important;
         }
@@ -279,13 +279,13 @@
         }
     }
 
-    .index-page{
+    .main-page{
         &  .header{
             &-bottom{
                 & .menu{
                     &-list.desktop{
                         &>li{
-                            &:not(.index-page-item){
+                            &:not(.main-page-item){
                                 display: none;
                             }
 

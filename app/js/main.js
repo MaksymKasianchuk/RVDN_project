@@ -4,7 +4,7 @@ window.$ = $
 
 document.addEventListener('DOMContentLoaded', () => {
 	// redirect to login page
-	
+
 	const settingsSelectors= {
 		btn:'.settings-btn', 
 		menu: '.settings-menu', 
@@ -113,8 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	//-------------------------------LOGIN-------------------------------------------
 	$('#login-btn').on('click', function(e){
 		e.preventDefault();
-		// window.location.href
-		window.location.replace('/');
+		window.location.replace('main.html');
 	});
 
 
