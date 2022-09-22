@@ -246,11 +246,13 @@
 @include media-breakpoint-down(md) {
     .header{
         position: sticky;
-        top: 0;
+        top: -90px;
         left: 0;
         z-index: 100;
         &-top{
             background: $mainGradient;
+            height: 90px;
+            overflow: hidden;
         }
         &-bottom{
             min-height: 50px;
@@ -366,7 +368,9 @@
 
 @include media-breakpoint-down(xs) {
     .header{
+        top: -80px;
         &-top{
+            height: 80px;
             &-wrap{
                 & .logo{
                     display: none;
@@ -375,6 +379,15 @@
                     font-size: 21px;
                 }
             }
+        }
+    }
+}
+
+@media (max-width: 384px){
+    .header{
+        top: -110px;
+        &-top{
+            height: 110px;
         }
     }
 }

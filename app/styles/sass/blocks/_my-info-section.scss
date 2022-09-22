@@ -1,4 +1,5 @@
 .my-info-section{
+    padding: 40px 0 80px 0;
     & .my-info-actions {
         display: flex;
         align-items: center;
@@ -12,7 +13,7 @@
 
     & .add-new-record{
         position: relative;
-        margin-right: 20px;
+        // margin-right: 20px;
         & ul{
             position: absolute;
             top: 100%;
@@ -42,7 +43,8 @@
         }
     }
     & .table-wrap{
-        padding-top: 30px;
+        // padding-top: 30px;
+        border-radius: 10px;
         overflow-x: auto;
     }
     & table{
