@@ -11,23 +11,29 @@ import addNewPerson from './add-new-person';
 import modals from './modals';
 import riskSection from './risk-section';
 import myInfo from './my-info-section';
+import search from './search';
 
 document.addEventListener('DOMContentLoaded', () => {
 	// redirect to login page
 	
-	const settingsSelectors= {
+	const settingsSelectors = {
 		btn:'.settings-btn', 
 		menu: '.settings-menu', 
 		open: 'show'
 	}
-	const mobileSelectors= {
+	const mobileSelectors = {
 		btn:'.burger-btn', 
 		menu: '.mobile-menu', 
 		open: 'show'
 	}
-	const newRecordSelectors= {
+	const newRecordSelectors = {
 		btn:'.new-record-btn', 
 		menu: '.new-record-menu', 
+		open: 'show'
+	}
+	const searchSelectors = {
+		btn:'.search-btn', 
+		menu: '.search-modal-wrap', 
 		open: 'show'
 	}
 
@@ -46,10 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
         missClickHandler(settingsSelectors, e);
 		missClickHandler(mobileSelectors, e);
 		missClickHandler(newRecordSelectors, e);
+		missClickHandler(searchSelectors, e);
     });
-
-	//------------------MODAL--------------------------
-	modals();
 
 	//---------ADD-NEW-PERSON---------------
 	addNewPerson();
@@ -68,4 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	//--------------------MY-INFO-------------
 	myInfo();
+
+	//------------------MODAL--------------------------
+	modals();
+	
+	//---------------------SEARCH------------------------
+	search();
 });

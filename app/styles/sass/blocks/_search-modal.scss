@@ -1,0 +1,44 @@
+.search-modal{
+    &-wrap{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 100;
+        background-color: $grayColor;
+        width: 100%;
+        color: #fff;
+        padding: 40px 60px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    &-block{
+        margin-bottom: 20px;
+        & p{
+            text-align: center;
+            font-weight: 600;
+        }
+    }
+    &-action{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & .btn{
+            background-color: $formBtnBgColor;
+            color: #fff;
+            min-width: 150px;
+        }
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    .search-modal{
+        &-wrap{          
+            padding: 20px;
+        }
+        &-action{
+            & .btn{
+               width: 100%;
+            }
+        }
+    }
+}

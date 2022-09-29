@@ -31,6 +31,9 @@
     }
     &-bottom{
         background: $mainGradientDarker;
+        & .container{
+            position: relative;
+        }
         & .menu{
             width: 100%;
             & .burger-btn {
