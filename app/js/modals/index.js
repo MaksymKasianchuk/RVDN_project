@@ -12,8 +12,25 @@ function modals(){
 	$('.view-person-btn').on('click', function(e){
 		$('.person-card-modal').addClass('show-modal');
 	});
-	$('.record-info-btn').on('click', function(e){
+	$('.edit-record-btn').on('click', function(e){
 		$('.record-card-modal').addClass('show-modal');
 	});
+
+	//--------------------RECORD-MODAL-FILES--------------------
+	let fileInput = document.getElementById('record-file');
+	const reader = new FileReader();
+	fileInput.addEventListener('change', (event) => {
+		let filesArr = fileInput.files;
+		let markup = '';
+		Array.from(filesArr).forEach(file => { 
+			
+			let fileName = `<p>${file.name}</p>`;
+			markup = markup + fileName;
+		});
+		$('.modal-add-files-btn').siblings('div').append(markup);
+
+	});
+
+    
 }
 export default modals;

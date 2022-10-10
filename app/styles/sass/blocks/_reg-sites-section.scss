@@ -1,6 +1,8 @@
 .reg-sites-section{
-    padding-top: 40px;
-    padding-bottom: 80px;
+    & .white-wrap{
+        padding-top: 40px;
+        padding-bottom: 80px;
+    }
     & .department{
         &-header{
             margin-bottom: 20px;
@@ -17,7 +19,7 @@
                 text-align: center;
                 line-height: 1.2;
                 min-height: 80px;
-                color: #f3f3f3;
+                color: $grayLighterColor;
                 display: flex;
                 flex-direction: column;
                 align-items: center; 
@@ -56,7 +58,7 @@
 }
 
 @include media-breakpoint-down(md) {
-    .reg-sites-page{
+    .reg-sites-section{
         padding-top: 0;
         & .department{
             padding-top: 40px;

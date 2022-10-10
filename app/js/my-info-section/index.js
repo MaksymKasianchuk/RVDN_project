@@ -36,7 +36,7 @@ function myInfo(){
             <td>14/09/2022</td>
             <td>виконано <i class="fa-solid fa-angle-down"></i></td>
             <td>15/09/2022</td>
-            <td><button type="button" class="record-info-btn"><i class="fa-solid fa-download"></i></button> <a href="#" class="edit-record-link"><i class="fa-solid fa-pencil"></i></a></td>
+            <td><button type="button" class="edit-record-btn"><i class="fa-solid fa-pencil"></i></button></td>
         </tr>
         `;
         $('.my-info-table').append(tplStr);

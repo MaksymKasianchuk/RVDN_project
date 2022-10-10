@@ -13,14 +13,13 @@
 
     & .add-new-record{
         position: relative;
-        // margin-right: 20px;
         & ul{
             position: absolute;
             top: 100%;
             left: 0;
             z-index: 10;
             width: 100%;
-            background-color: $grayColor;
+            background-color: $dropdownColor;
             border-radius: 5px;
             padding: 10px;
             &>li{

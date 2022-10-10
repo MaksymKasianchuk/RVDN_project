@@ -43,6 +43,15 @@
         }
     }
     &-files{
+        &>div{
+            &>p{
+                font-size: 12px;
+                word-break: break-all;
+                &:not(:last-child){
+                    margin-bottom: 10px;
+                }
+            }
+        }
         & .modal-add-files-btn{
             width: 50px;
             height: 50px;
