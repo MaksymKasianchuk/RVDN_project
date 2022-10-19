@@ -17,19 +17,19 @@ function modals(){
 	});
 
 	//--------------------RECORD-MODAL-FILES--------------------
-	let fileInput = document.getElementById('record-file');
-	const reader = new FileReader();
-	fileInput.addEventListener('change', (event) => {
-		let filesArr = fileInput.files;
-		let markup = '';
-		Array.from(filesArr).forEach(file => { 
+	// let fileInput = document.getElementById('record-file');
+	// const reader = new FileReader();
+	// fileInput.addEventListener('change', (event) => {
+	// 	let filesArr = fileInput.files;
+	// 	let markup = '';
+	// 	Array.from(filesArr).forEach(file => { 
 			
-			let fileName = `<p>${file.name}</p>`;
-			markup = markup + fileName;
-		});
-		$('.modal-add-files-btn').siblings('div').append(markup);
+	// 		let fileName = `<p>${file.name}</p>`;
+	// 		markup = markup + fileName;
+	// 	});
+	// 	$('.modal-add-files-btn').siblings('div').append(markup);
 
-	});
+	// });
 
     
 }

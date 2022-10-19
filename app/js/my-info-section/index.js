@@ -41,5 +41,8 @@ function myInfo(){
         `;
         $('.my-info-table').append(tplStr);
     });
+
+    let token = sessionStorage.getItem('token');
+    // console.log(token);
 }
 export default myInfo;

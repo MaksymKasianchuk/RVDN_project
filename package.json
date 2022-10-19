@@ -35,6 +35,7 @@
 		"webpack-stream": "^6.1.2"
 	},
 	"dependencies": {
+		"cors": "^2.8.5",
 		"debounce": "^1.2.1",
 		"jquery": "^3.6.0",
 		"lodash.throttle": "^4.1.1",

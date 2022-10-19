@@ -4,6 +4,7 @@ window.jQuery = $
 window.$ = $
 import missClickHandler from './missclick';
 //--------Pages---------
+import header from './header';
 import login from './login';
 import passwordRenew from './password-renew';
 import addNewRecord from './add-new-record';
@@ -54,6 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		missClickHandler(newRecordSelectors, e);
 		missClickHandler(searchSelectors, e);
     });
+
+	//-----------HEADER------------------
+	header();
 
 	//---------ADD-NEW-PERSON---------------
 	addNewPerson();
