@@ -6,6 +6,7 @@ import missClickHandler from './missclick';
 //--------Pages---------
 import header from './header';
 import login from './login';
+import register from './register';
 import passwordRenew from './password-renew';
 import addNewRecord from './add-new-record';
 import addNewPerson from './add-new-person';
@@ -70,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	//-------------------------------LOGIN-------------------------------------------
 	login();
+	register();
 
 	//-------------------------------PASSWORD-RENEW-------------------------------------------
 	passwordRenew();
