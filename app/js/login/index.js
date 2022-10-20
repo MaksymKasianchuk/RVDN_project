@@ -24,8 +24,12 @@ function login(){
                 },
                 data: JSON.stringify(data),
                 success: function(data){
-                    window.location.replace('/');
+                    // console.log(data);
+                    sessionStorage.setItem("userId", data.userId);
                     sessionStorage.setItem("token", data.token);
+                    $('#login-user-login').val('');
+                    $('#login-user-password').val('');
+                    window.location.replace('/');
                 },
                 error: function (data) {
                    console.log(data);

@@ -4,6 +4,7 @@ function header() {
         $(this).on('click', function(e){
             e.preventDefault();
             sessionStorage.removeItem("token");
+            sessionStorage.removeItem("userId");
             window.location.replace('/login.html');
         });
     });
