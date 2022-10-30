@@ -8,11 +8,13 @@ import header from './header';
 import login from './login';
 import register from './register';
 import passwordRenew from './password-renew';
+import profile from './perofile';
 import addNewRecord from './add-new-record';
 import addNewPerson from './add-new-person';
 import modals from './modals';
 import riskSection from './risk-section';
 import myInfo from './my-info-section';
+import allInfo from './all-info-section';
 import search from './search';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -75,6 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	//-------------------------------PASSWORD-RENEW-------------------------------------------
 	passwordRenew();
+	
+	//--------------------MY-INFO-------------
+	allInfo();
 
 	//--------------------MY-INFO-------------
 	myInfo();
@@ -84,5 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	
 	//---------------------SEARCH------------------------
 	search();
+
+	//---------------------PROFILE------------------------
+	profile();
 	
 });

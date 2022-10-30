@@ -1,4 +1,5 @@
 import { data } from "jquery";
+import API_URL from "../api";
 
 function register(){
     $("#register-btn").on("click", function(e){
@@ -29,7 +30,7 @@ function register(){
 
         let registerRequest = $.ajax({
             type: "POST",
-            url: "https://df6e-195-114-147-16.eu.ngrok.io/users/register",
+            url: `${API_URL}users/register`,
             crossDomain: true,
             headers: {
                 'Access-Control-Allow-Origin': '*',
@@ -38,7 +39,7 @@ function register(){
             data: JSON.stringify(data),
             success: function(data){
                 console.log(data);
-                sessionStorage.setItem("userId", data.id);
+                sessionStorage.setItem("userId", data.user.id);
                 sessionStorage.setItem("token", data.token);
 
                 $('#register-lastname').val('');

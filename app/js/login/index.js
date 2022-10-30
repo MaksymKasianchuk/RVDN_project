@@ -1,10 +1,8 @@
 import { data } from "jquery";
-
+import API_URL from '../api'
 function login(){
     $('#login-btn').on('click', function(e){
         e.preventDefault();
-        // window.location.href
-        // window.location.replace('/');
         let login = $('#login-user-login').val();
         let password = $('#login-user-password').val();
 
@@ -16,7 +14,7 @@ function login(){
 
             let loginRequest = $.ajax({
                 type: "POST",
-                url: "https://df6e-195-114-147-16.eu.ngrok.io/users/login",
+                url: `${API_URL}users/login`,
                 crossDomain: true,
                 headers: {
                     'Access-Control-Allow-Origin': '*',
