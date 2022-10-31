@@ -1,6 +1,6 @@
 <div class="backdrop person-card-modal">
     <div class="modal-wrap">
-        <form class="modal">
+        <form class="modal" id="person-card-modal">
             <div class="modal-header">
                 <div class="row">
                     <div class="col-12">
@@ -31,25 +31,25 @@
                     <div class="col-12 col-md-4">
                         <div class="form-group">
                             <label class="form-label">Документ що посвідчує особу</label>
-                            <label><input type="radio" name="pasport-type" checked> Паспорт</label>
-                            <label><input type="radio" name="pasport-type"> ID-картка</label>
-                            <label><input type="radio" name="pasport-type"> Посвідчення водія</label>
+                            <label><input type="radio" name="person-pasport-type" id="person-pasport-type-pasport" checked> Паспорт</label>
+                            <label><input type="radio" name="person-pasport-type" id="person-pasport-type-card"> ID-картка</label>
+                            <label><input type="radio" name="person-pasport-type" id="person-pasport-type-drive"> Посвідчення водія</label>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Серія</label>
-                            <input type="text" name="pasport-ser" id="" value="">
+                            <input type="text" name="person-pasport-ser" id="person-pasport-ser" value="">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Номер / номер запису документа</label>
-                            <input type="text" name="pasport-number" id="" value="">
+                            <input type="text" name="person-pasport-number" id="person-pasport-number" value="">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Дата видачі</label>
-                            <input type="date" name="pasport-date" id="" value="">
+                            <input type="date" name="person-pasport-date" id="person-pasport-date" value="">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Рівень забезпечення</label>
-                            <select name="person-money" id="">
+                            <select name="person-money" id="person-money">
                                 <option value="Високий">Високий</option>
                                 <option value="Середній">Середній</option>
                                 <option value="Низький">Низький</option>
@@ -58,7 +58,7 @@
                         <p class="modal-text">Зв'язки особи</p>
                         <div class="form-group">
                             <label class="form-label">ПІБ</label>
-                            <input type="text" name="person-relationship" id="" value="">
+                            <input type="text" name="person-relationship" id="person-relationship" value="">
                         </div>
                     </div>
         
@@ -68,20 +68,20 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">Дата народження</label>
-                            <input type="date" name="person-birthday" id="">
+                            <input type="text" name="person-birthday" id="person-birthday">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Номер телефону</label>
-                            <input type="text" name="person-phone" id="" value="">
+                            <input type="text" name="person-phone" id="person-phone" value="">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Наявність дітей</label>
-                            <label><input type="radio" name="person-children" value="Так"> Так</label>
-                            <label><input type="radio" name="person-children" value="Ні"checked> Ні</label>
+                            <label><input type="radio" name="person-children"  id="person-children-yes" value="Так"> Так</label>
+                            <label><input type="radio" name="person-children" id="person-children-no" value="Ні"> Ні</label>
                         </div>
                         <div class="form-group person-relationship-level">
                             <label class="form-label">Рівень зв'язку</label>
-                            <select name="person-relationship-level" id="">
+                            <select name="person-relationship-level" id="person-relationship-level">
                                 <option value="Чоловік">Чоловік</option>
                                 <option value="Дружина">Дружина</option>
                                 <option value="Брат">Брат</option>
@@ -94,15 +94,15 @@
                     <div class="col-12 col-md-4">
                         <div class="form-group">
                             <label class="form-label">Місце реєстрації</label>
-                            <textarea name="person-reg-address" id="" cols="30" rows="3"></textarea>
+                            <textarea name="person-reg-address" id="person-reg-address" cols="30" rows="3"></textarea>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Місце проживання</label>
-                            <textarea name="person-home-address" id="" cols="30" rows="3"></textarea>
+                            <textarea name="person-home-address" id="person-home-address" cols="30" rows="3"></textarea>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Місце роботи</label>
-                            <textarea name="person-work" id="" cols="30" rows="1"></textarea>
+                            <textarea name="person-work" id="person-work" cols="30" rows="1"></textarea>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Файли</label>
@@ -112,7 +112,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-12">
                         <div class="case-row">
                             <table>
@@ -140,7 +140,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="modal-footer">
                 <div class="row">

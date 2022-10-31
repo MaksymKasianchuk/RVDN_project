@@ -1,6 +1,6 @@
 function modals(){
     $('.modal-close').on('click', function(e){
-		// e.preventDefault();
+		e.preventDefault();
 		$(this).parents('.backdrop').removeClass('show-modal');
 	});
 	$('.modal-wrap').on('click', function(e){
@@ -9,9 +9,9 @@ function modals(){
 		}
 	});
 
-	$('.view-person-btn').on('click', function(e){
-		$('.person-card-modal').addClass('show-modal');
-	});
+	// $('.view-person-btn').on('click', function(e){
+	// 	$('.person-card-modal').addClass('show-modal');
+	// });
 	$('.edit-record-btn').on('click', function(e){
 		$('.record-card-modal').addClass('show-modal');
 	});
