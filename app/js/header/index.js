@@ -9,5 +9,16 @@ function header() {
             window.location.replace('/login.html');
         });
     });
+    
+    let userToken = sessionStorage.getItem('token');
+    let userId = sessionStorage.getItem('userId');
+
+    if(userToken && userId) {
+        $('.user-header-logined').show();
+        $('.user-header-unlogined').hide();
+    } else {
+        $('.user-header-unlogined').show();
+        $('.user-header-logined').hide();
+    }
 }
 export default header;
