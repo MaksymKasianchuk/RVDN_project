@@ -1,5 +1,6 @@
 import { data } from "jquery";
 function header() {
+    
     $('.user-header-logout').each(function() {
         $(this).on('click', function(e){
             e.preventDefault();
