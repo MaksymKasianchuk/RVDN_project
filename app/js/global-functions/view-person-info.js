@@ -55,7 +55,6 @@ function getPersonInfo(readonly = false){
                     let bdDateday = ("0" + bdDate.getDate()).slice(-2);
                     let bdDatemonth = ("0" + (bdDate.getMonth() + 1)).slice(-2);
                     let birthDateStr = bdDate.getFullYear()+"-"+(bdDatemonth)+"-"+(bdDateday) ;
-    // console.log(birthDateStr);
 
                     if(personRole === 'victim') { $('#person-role').val('Постраждала особа'); }
                     else if(personRole === 'agressor') { $('#person-role').val('Особа кривдник'); }

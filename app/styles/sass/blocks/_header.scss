@@ -133,6 +133,7 @@
                 background-color: $dropdownColor;
                 border-radius: 5px;
                 padding: 10px;
+                width: 150px;
                 &>ul{
                     &>li{
                         &:not(:last-child){
