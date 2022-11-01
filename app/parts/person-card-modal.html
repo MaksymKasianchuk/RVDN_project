@@ -31,9 +31,9 @@
                     <div class="col-12 col-md-4">
                         <div class="form-group">
                             <label class="form-label">Документ що посвідчує особу</label>
-                            <label><input type="radio" name="person-pasport-type" id="person-pasport-type-pasport" checked> Паспорт</label>
-                            <label><input type="radio" name="person-pasport-type" id="person-pasport-type-card"> ID-картка</label>
-                            <label><input type="radio" name="person-pasport-type" id="person-pasport-type-drive"> Посвідчення водія</label>
+                            <label><input type="radio" name="person-pasport-type" value="0" id="person-pasport-type-pasport" checked> Паспорт</label>
+                            <label><input type="radio" name="person-pasport-type" value="1" id="person-pasport-type-card"> ID-картка</label>
+                            <label><input type="radio" name="person-pasport-type" value="2" id="person-pasport-type-drive"> Посвідчення водія</label>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Серія</label>
@@ -50,9 +50,9 @@
                         <div class="form-group">
                             <label class="form-label">Рівень забезпечення</label>
                             <select name="person-money" id="person-money">
-                                <option value="Високий">Високий</option>
-                                <option value="Середній">Середній</option>
-                                <option value="Низький">Низький</option>
+                                <option value="0">Високий</option>
+                                <option value="1">Середній</option>
+                                <option value="2">Низький</option>
                             </select>
                         </div>
                         <p class="modal-text">Зв'язки особи</p>
@@ -68,7 +68,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">Дата народження</label>
-                            <input type="text" name="person-birthday" id="person-birthday">
+                            <input type="date" name="person-birthday" id="person-birthday">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Номер телефону</label>
@@ -145,7 +145,7 @@
             <div class="modal-footer">
                 <div class="row">
                     <div class="col-12">
-                        <button class="btn modal-button modal-close">ОК</button>
+                        <button class="btn person-card-modal-btn modal-button">ОК</button>
                     </div>
                 </div>
             </div>
