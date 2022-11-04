@@ -17,10 +17,11 @@ function profile(){
                 'Authorization': `Bearer ${userToken}`,
             },
             success: function(data){
-                // console.log(data);
+                console.log(data);
                 const { 
                     authorityName,
                     birthDate,
+                    address,
                     email,
                     firstName,
                     id,
@@ -37,6 +38,7 @@ function profile(){
                 $('#user-firstname').val(firstName);
                 $('#user-surname').val(middleName);
                 $('#user-birthday').val(birthDateStr);
+                $('#user-address').val(address);
                 $('#user-phone').val(phoneNumber);
                 $('#user-mail').val(email);
                 $('#user-address').val();

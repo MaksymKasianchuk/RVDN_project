@@ -7,19 +7,21 @@ function register(){
         let lastname    = $('#register-lastname').val();
         let firstname   = $('#register-firstname').val();
         let surname     = $('#register-surname').val();
-        let birthday    = new Date($('#register-birthday').val()); //.split('-').reverse().join('/')
+        let birthday    = new Date($('#register-birthday').val());
+        let address     = $('#register-address').val();
         let workplace   = $('#register-workplace').val();
         let position    = $('#register-rank').val();
         let mail        = $('#register-mail').val();
         let phone       = $('#register-phone').val();
         let password    = $('#register-password').val();
         let confirm     = $('#register-password-confirm').val();
-        // console.log(birthday);
+        console.log(address);
         let data =  {
             "firstName": firstname,
             "middleName": surname, //?
             "lastName": lastname,
             "birthDate": birthday.toISOString(), //?
+            "address" : address,
             "authorityName": workplace, 
             "positionName": position, //?
             "email": mail,
@@ -46,6 +48,7 @@ function register(){
                 $('#register-firstname').val('');
                 $('#register-surname').val('');
                 $('#register-birthday').val('');
+                $('#register-address').val('');
                 $('#register-workplace').val('');
                 $('#register-rank').val('');
                 $('#register-mail').val('');

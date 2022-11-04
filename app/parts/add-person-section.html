@@ -40,13 +40,13 @@
                                     <label><input type="radio" value="3" name="newperson-pasport-type"> Посвідчення водія</label>
                                 </div>
                                 <div class="row">
-                                    <div class="col-12 col-lg-4">
+                                    <div class="col-12">
                                         <div class="form-group">
                                             <label class="form-label">Серія</label>
                                             <input type="text" name="newperson-pasport-ser" id="newperson-pasport-ser" value="">
                                         </div>
                                     </div>
-                                    <div class="col-12 col-lg-8">
+                                    <div class="col-12">
                                         <div class="form-group">
                                             <label class="form-label">Номер / номер запису документа</label>
                                             <input type="text" name="newperson-pasport-number" id="newperson-pasport-number" value="">
@@ -55,14 +55,14 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Дата видачі</label>
-                                    <input type="date" name="pasport-date" id="" value="">
+                                    <input type="date" name="pasport-date" id="newperson-pasport-date" value="">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Рівень забезпечення</label>
                                     <select name="newperson-money" id="newperson-money">
-                                        <option value="1">Високий</option>
-                                        <option value="2">Середній</option>
-                                        <option value="3">Низький</option>
+                                        <option value="Високий">Високий</option>
+                                        <option value="Середній">Середній</option>
+                                        <option value="Низький">Низький</option>
                                     </select>
                                 </div>
                             </div>
@@ -82,7 +82,7 @@
                                 <div class="form-group">
                                     <label class="form-label">Наявність дітей</label>
                                     <label><input type="radio" name="newperson-children" id="newperson-children-yes" value="true"> Так</label>
-                                    <label><input type="radio" name="newperson-children" id="newperson-children-no" value="false" > Ні</label>
+                                    <label><input type="radio" name="newperson-children" id="newperson-children-no" value="false" checked> Ні</label>
                                 </div>
                             </div>
                 
@@ -99,38 +99,40 @@
                                     <label class="form-label">Місце роботи</label>
                                     <textarea name="newperson-work" id="newperson-work" cols="30" rows="1"></textarea>
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label class="form-label">Файли</label>
                                     <div class="form-files">
                                         <button type="button" class="form-add-files-btn"><i class="fa-solid fa-plus"></i></button>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-12">
                                 <p class="form-text">Зв'язки особи</p>
                             </div>
-                            <div class="col-12 col-md-6 col-lg-4">
+                            <div class="col-12 col-md-6 col-lg-4 newperson-relationship-wrapper">
                                 <div class="form-group">
                                     <label class="form-label">ПІБ</label>
                                     <input type="text" name="newperson-relationship" id="" value="">
                                 </div>
+                                <div class="relationship-search"></div>
                                 <div class="form-group newperson-relationship-level">
                                     <label class="form-label">Рівень зв'язку</label>
                                     <select name="newperson-relationship-level" id="">
-                                        <option value="Чоловік">Чоловік</option>
-                                        <option value="Дружина">Дружина</option>
-                                        <option value="Брат">Брат</option>
-                                        <option value="Сестра">Сестра</option>
-                                        <option value="Інше..." selected>Інше...</option>
+                                        <option value="5">Чоловік</option>
+                                        <option value="4">Дружина</option>
+                                        <option value="3">Брат</option>
+                                        <option value="2">Сестра</option>
+                                        <option value="1">Друг</option>
+                                        <option value="0" selected>Інше...</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6 col-lg-4 add-relateve-col">
                                 <button class="btn add-relative-btn" type="button">Додати особу</button>
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
             

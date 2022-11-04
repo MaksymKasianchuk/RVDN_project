@@ -2,10 +2,54 @@ import { data } from "jquery";
 import API_URL from "../api";
 
 function addNewPerson(){
+    const personsArr  = [];
+    let userToken = sessionStorage.getItem('token');
+    let getAllPersonsRequest = $.ajax({
+        type: "GET",
+        url: `${API_URL}persons`,
+        crossDomain: true,
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${userToken}`,
+        },
+        success: function(data){
+            personsArr.push(...data);
+            // console.log(personsArr);
+        },
+        error: function (data) {
+           console.log(data);
+        }
+    });
+
+    // getAllPersonsRequest.done(function(){
+    //     $('input[name=newperson-relationship]').each(function(){
+    //         $(this).on('input', function(){
+    //             if($(this).val().length > 3){
+    //                 personsArr.map(item=>{
+    //                     let fullname = item.fullName;
+    //                     if (fullname.includes($(this).val())){
+    //                         $('.relationship-search').append(`
+    //                             <p calss="maby-rel-pers">${fullname}</p>
+    //                         `);
+    //                     }
+    //                     if (fullname === $(this).val()){
+    //                         $(this).parents('.newperson-relationship-wrapper').attr('data-pers-rel-id', item.id);
+    //                     }
+    //                 });
+    //             } else {
+    //                 $('.relationship-search').html('');
+    //             }
+    //         });
+          
+    //     });
+
+    // })
+
     //-----------add-relative-btn-in-fom
     $('.add-relative-btn').on('click', function(e){
         const strTpl = `
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4 newperson-relationship-wrapper">
                 <div class="form-group">
                     <label class="form-label">ПІБ</label>
                     <input type="text" name="newperson-relationship" id="" value="">
@@ -13,11 +57,12 @@ function addNewPerson(){
                 <div class="form-group newperson-relationship-level">
                     <label class="form-label">Рівень зв'язку</label>
                     <select name="newperson-relationship-level" id="">
-                        <option value="Чоловік">Чоловік</option>
-                        <option value="Дружина">Дружина</option>
-                        <option value="Брат">Брат</option>
-                        <option value="Сестра">Сестра</option>
-                        <option value="Інше..." selected>Інше...</option>
+                        <option value="5">Чоловік</option>
+                        <option value="4">Дружина</option>
+                        <option value="3">Брат</option>
+                        <option value="2">Сестра</option>
+                        <option value="1">Друг</option>
+                        <option value="0" selected>Інше...</option>
                     </select>
                 </div>
             </div>
@@ -31,20 +76,30 @@ function addNewPerson(){
             let fullName =  $('#newperson-name').val(); 
             let documentTypeId = Number($('input[name="newperson-pasport-type"]:checked').val());
             let documentSeries = $('#newperson-pasport-ser').val();
-            let documentNumber =   Number($('#person-pasport-number').val());
+            let documentNumber =   Number($('#newperson-pasport-number').val());
+            let documentIssueDate =  new Date($('#newperson-pasport-date').val());
             let issuingAuthority = 0; //???
-            let birthDate;
+            let birthDate = new Date($('#newperson-birthday').val());
             let phoneNumber =  $('#newperson-phone').val();
             let hasChildren = false;
             let registrationAddress = $('#newperson-reg-address').val();
             let livingAddress =  $('#newperson-home-address').val();
             let workingPlace = $('#newperson-work').val();
-            let socialSecurityId =  Number($('#newperson-money').val());
+            let socialSecurityId = 1; 
 
             if($('#newperson-children-yes').is(':checked')) { hasChildren = true; } 
             else { hasChildren = false; }
-            let bd =  new Date($('#newperson-birthday').val());
-            birthDate =  bd.toISOString();
+            switch($('#person-money').val()){
+                case 'Низький':
+                    socialSecurityId = 1;
+                    break;
+                case 'Середній':
+                    socialSecurityId = 2;
+                    break;
+                case 'Високий':
+                    socialSecurityId = 3;
+                    break;
+            }
 
             const data = {
                 "fullName": fullName,
@@ -52,7 +107,8 @@ function addNewPerson(){
                 "documentSeries": documentSeries,
                 "documentNumber": documentNumber,
                 "issuingAuthority": issuingAuthority,
-                "birthDate": birthDate,
+                "documentIssueDate" : documentIssueDate.toISOString(),
+                "birthDate": birthDate.toISOString(),
                 "phoneNumber": phoneNumber,
                 "hasChildren": hasChildren,
                 "registrationAddress": registrationAddress,
@@ -60,7 +116,7 @@ function addNewPerson(){
                 "workingPlace": workingPlace,
                 "socialSecurityId": socialSecurityId
             };
-            // console.log(data);
+            console.log(data);
             if(userToken){
                 let createPersonRequest = $.ajax({
                     type: "POST",
@@ -76,7 +132,8 @@ function addNewPerson(){
                         console.log(data);
                         $('#newperson-name').val('');
                         $('#newperson-pasport-ser').val('');   
-                        $('#person-pasport-number').val('');
+                        $('#newperson-pasport-number').val('');
+                        $('#newperson-pasport-date').val('');
                         $('#newperson-birthday').val('');
                         $('#newperson-phone').val('');
                         $('#newperson-reg-address').val('');
