@@ -22,53 +22,53 @@ function addNewPerson(){
         }
     });
 
-    // getAllPersonsRequest.done(function(){
-    //     $('input[name=newperson-relationship]').each(function(){
-    //         $(this).on('input', function(){
-    //             if($(this).val().length > 3){
-    //                 personsArr.map(item=>{
-    //                     let fullname = item.fullName;
-    //                     if (fullname.includes($(this).val())){
-    //                         $('.relationship-search').append(`
-    //                             <p calss="maby-rel-pers">${fullname}</p>
-    //                         `);
-    //                     }
-    //                     if (fullname === $(this).val()){
-    //                         $(this).parents('.newperson-relationship-wrapper').attr('data-pers-rel-id', item.id);
-    //                     }
-    //                 });
-    //             } else {
-    //                 $('.relationship-search').html('');
-    //             }
-    //         });
+    getAllPersonsRequest.done(function(){
+        $('input[name=newperson-relationship]').each(function(){
+            $(this).on('input', function(){
+                if($(this).val().length > 3){
+                    personsArr.map(item=>{
+                        let fullname = item.fullName;
+                        if (fullname.includes($(this).val())){
+                            $('.relationship-search').html(`
+                                <p calss="maby-rel-pers">${fullname}</p>
+                            `);
+                        }
+                        if (fullname === $(this).val()){
+                            $(this).parents('.newperson-relationship-wrapper').attr('data-pers-rel-id', item.id);
+                        }
+                    });
+                } else {
+                    $('.relationship-search').html('');
+                }
+            });
           
-    //     });
+        });
 
-    // })
+    })
 
     //-----------add-relative-btn-in-fom
-    $('.add-relative-btn').on('click', function(e){
-        const strTpl = `
-            <div class="col-12 col-md-6 col-lg-4 newperson-relationship-wrapper">
-                <div class="form-group">
-                    <label class="form-label">ПІБ</label>
-                    <input type="text" name="newperson-relationship" id="" value="">
-                </div>
-                <div class="form-group newperson-relationship-level">
-                    <label class="form-label">Рівень зв'язку</label>
-                    <select name="newperson-relationship-level" id="">
-                        <option value="5">Чоловік</option>
-                        <option value="4">Дружина</option>
-                        <option value="3">Брат</option>
-                        <option value="2">Сестра</option>
-                        <option value="1">Друг</option>
-                        <option value="0" selected>Інше...</option>
-                    </select>
-                </div>
-            </div>
-        `;
-        $(this).parents('.add-relateve-col').before(strTpl);
-    });
+    // $('.add-relative-btn').on('click', function(e){
+    //     const strTpl = `
+    //         <div class="col-12 col-md-6 col-lg-4 newperson-relationship-wrapper">
+    //             <div class="form-group">
+    //                 <label class="form-label">ПІБ</label>
+    //                 <input type="text" name="newperson-relationship" id="" value="">
+    //             </div>
+    //             <div class="form-group newperson-relationship-level">
+    //                 <label class="form-label">Рівень зв'язку</label>
+    //                 <select name="newperson-relationship-level" id="">
+    //                     <option value="5">Чоловік</option>
+    //                     <option value="4">Дружина</option>
+    //                     <option value="3">Брат</option>
+    //                     <option value="2">Сестра</option>
+    //                     <option value="1">Друг</option>
+    //                     <option value="0" selected>Інше...</option>
+    //                 </select>
+    //             </div>
+    //         </div>
+    //     `;
+    //     $(this).parents('.add-relateve-col').before(strTpl);
+    // });
 
     $('.add-new-person-btn').on('click', function(e){
         e.preventDefault();
@@ -118,6 +118,8 @@ function addNewPerson(){
             };
             console.log(data);
             if(userToken){
+                let newpersonId;
+                // let relId = $('.newperson-relationship-wrapper').attr('data-pers-rel-id');
                 let createPersonRequest = $.ajax({
                     type: "POST",
                     url: `${API_URL}persons`,
@@ -129,7 +131,9 @@ function addNewPerson(){
                     },
                     data: JSON.stringify(data),
                     success: function(data){
-                        console.log(data);
+                        // console.log(data);
+                        newpersonId = data;
+
                         $('#newperson-name').val('');
                         $('#newperson-pasport-ser').val('');   
                         $('#newperson-pasport-number').val('');
@@ -144,9 +148,47 @@ function addNewPerson(){
                        console.log(data);
                     }
                 });
+
+                // if(relId && newpersonId){
+                //     // createPersonRequest.done( function(){
+                //         let data = {              
+                //             "personRelationships": [
+                //                 {
+                //                 "relationshipPersonId": Number(relId),
+                //                 "relationshipTypeId": Number($('.newperson-relationship-level').val())
+                //                 }
+                //             ]
+                //         }
+                //         let createRelRequest = $.ajax({
+                //             type: "POST",
+                //             url: `${API_URL}persons/${newpersonId}/relationships`,
+                //             crossDomain: true,
+                //             headers: {
+                //                 'Access-Control-Allow-Origin': '*',
+                //                 'Content-Type': 'application/json',
+                //                 'Authorization': `Bearer ${userToken}`,
+                //             },
+                //             data: JSON.stringify(data),
+                //             success: function(data){
+                //                 console.log('relship');
+                //                 $('#newperson-name').val('');
+                //                 $('#newperson-pasport-ser').val('');   
+                //                 $('#newperson-pasport-number').val('');
+                //                 $('#newperson-pasport-date').val('');
+                //                 $('#newperson-birthday').val('');
+                //                 $('#newperson-phone').val('');
+                //                 $('#newperson-reg-address').val('');
+                //                 $('#newperson-home-address').val('');
+                //                 $('#newperson-work').val('');
+                //             },
+                //             error: function (data) {
+                //                console.log(data);
+                //             }
+                //         });
+                //     // }
+                //     // );
+                // }
             }
-           
-        // }
 
     });
 }

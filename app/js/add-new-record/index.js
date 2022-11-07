@@ -1,4 +1,5 @@
 import recordsArr from '../data.json';
+import API_URL from "../api";
 
 function addNewRecord(){
     //add one more victim to form
@@ -10,6 +11,7 @@ function addNewRecord(){
         </div>
         `;
         $(this).before(strTpl);
+        icidentPersonsListener();
     });
     //add one more agressor to form
     $('.add-agressor-btn').on('click', function(e){
@@ -20,51 +22,135 @@ function addNewRecord(){
         </div>
         `;
         $(this).before(strTpl);
+        icidentPersonsListener();
     });
+
+    let victim_arr = [];
+    let agressor_arr = [];
+
+    const personsArr  = [];
+    let userToken = sessionStorage.getItem('token');
+    let getAllPersonsRequest = $.ajax({
+        type: "GET",
+        url: `${API_URL}persons`,
+        crossDomain: true,
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${userToken}`,
+        },
+        success: function(data){
+            personsArr.push(...data);
+            // console.log(personsArr);
+          
+        },
+        error: function (data) {
+           console.log(data);
+        }
+    });
+    icidentPersonsListener();
+    function icidentPersonsListener(){
+        getAllPersonsRequest.done(function(){
+            $('input[name="newrecord-victim"]').each(function(){
+                $(this).on('input', function(){
+                    if($(this).val().length > 3){
+                        personsArr.map(elem=>{
+                            let name = elem.fullName;
+                            if (name.includes($(this).val())){
+                                $('.persons').html(`<p>${name}</p>`);
+                            }
+                            if($(this).val() === name && victim_arr.indexOf(elem.id) === -1){
+                                victim_arr.push(elem.id);
+                                console.log(victim_arr);
+                            }
+                        });
+                    }
+                });
+            });
+            $('input[name="newrecord-agressor"]').each(function(){
+                $(this).on('input', function(){
+                    if($(this).val().length > 3){
+                        personsArr.map(elem=>{
+                            let name = elem.fullName;
+                            if (name.includes($(this).val())){
+                                $('.persons').html(`<p>${name}</p>`);
+                            }
+                            if($(this).val() === name && agressor_arr.indexOf(elem.id) === -1){
+                                agressor_arr.push(elem.id);
+                                console.log(agressor_arr);
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    };
+
 
     //------------------------CREATION OF  NEW RECORD
     $('#add-new-record-btn').on('click', function(e){
         e.preventDefault();
-        let id = $('#newrecord-id').val();
-        let register_date = $("#newrecord-register-date").val();
-        let init_org = $("#newrecord-init-org").val();
-        let execute_org = $("#newrecord-execute-org").val();
-        let event_type = $("#newrecord-event-type").val();
-        let qualification = $("#newrecord-qualification").val();
-        let event_place = $("#newrecord-event-place").val();
-        let event_reason = $("#newrecord-event-reason").val();
-        let describe = $("#newrecord-describe").val();
-        let measures = $("#newrecord-measures").val();
-        let files = '';
-        let victim_arr = [];
-        let agressor_arr = [];
-       
-        $('input[name="newrecord-victim"]').each(function(){
-            victim_arr.push($(this).val());
-        });
-        $('input[name="newrecord-agressor"]').each(function(){
-            agressor_arr.push($(this).val());
-        });
+        let registryNumber = Number($('#newrecord-registryNumber').val());
+        let registrationDate = new Date($("#newrecord-register-date").val());
+        let initiatorAuthority = $("#newrecord-init-org").val();
+        let executorAuthority = $("#newrecord-execute-org").val();
+        let incidentTypeId = Number($('#newrecord-event-type').val());
+        let qualificationId = Number($("#newrecord-qualification").val());
+        let address = $("#newrecord-event-place").val();
+        let reason = $("#newrecord-event-reason").val();
+        let description = $("#newrecord-describe").val();
+        let takenActions = $("#newrecord-measures").val();
+        let incidentPersons = {};
 
-        const newRecord = {
-            'id' : id,
-            'register_date' : register_date,
-            'init_org' : init_org,
-            'execute_org' : execute_org,
-            'event_type' : event_type,
-            'qualification' : qualification,
-            'event_place' : event_place,
-            'event_reason' : event_reason,
-            'describe' : describe,
-            'measures' : measures,
-            'files' : files,
-            'victim_arr' : victim_arr,
-            'agressor_arr' : agressor_arr,
+        incidentPersons = {
+            "1": agressor_arr,
+            "2": victim_arr
         }
 
-        recordsArr.push(newRecord);
+        const data = {
+            "registryNumber": registryNumber,
+            "registrationDate": registrationDate.toISOString(),
+            "initiatorAuthority": initiatorAuthority,
+            "executorAuthority": executorAuthority,
+            "incidentTypeId": incidentTypeId,
+            "qualificationId": qualificationId,
+            "address": address,
+            "reason": reason,
+            "description": description,
+            "takenActions": takenActions,
+            "incidentPersons": incidentPersons     
+        }; 
+        // console.log(data);
+        if(userToken){
+            let createIncidentRequest = $.ajax({
+                type: "POST",
+                url: `${API_URL}incidents`,
+                crossDomain: true,
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${userToken}`,
+                },
+                data: JSON.stringify(data),
+                success: function(data){
+                    console.log(data);
+                    $('#newrecord-registryNumber').val('');
+                    $("#newrecord-register-date").val('');
+                    $("#newrecord-init-org").val('');
+                    $("#newrecord-execute-org").val('');
+                    $('#newrecord-event-type').val('');
+                    $("#newrecord-qualification").val('');
+                    $("#newrecord-event-place").val('');
+                    $("#newrecord-event-reason").val('');
+                    $("#newrecord-describe").val('');
+                    $("#newrecord-measures").val('');
+                },
+                error: function (data) {
+                   console.log(data);
+                }
+            });
+        }
 
-        console.log(recordsArr);
     });
 
 }

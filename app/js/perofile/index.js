@@ -17,7 +17,7 @@ function profile(){
                 'Authorization': `Bearer ${userToken}`,
             },
             success: function(data){
-                console.log(data);
+                // console.log(data);
                 const { 
                     authorityName,
                     birthDate,
@@ -67,7 +67,7 @@ function profile(){
                 },
                 data: JSON.stringify(data),
                 success: function(data){
-                    console.log(data);
+                    // console.log(data);
                 },
                 error: function (data) {
                    console.log(data);
@@ -93,7 +93,7 @@ function profile(){
                 },
                 data: JSON.stringify(data),
                 success: function(data){
-                    console.log(data);
+                    // console.log(data);
                 },
                 error: function (data) {
                    console.log(data);

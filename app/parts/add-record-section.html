@@ -20,7 +20,7 @@
                                     <div class="col-12 col-lg-4">
                                         <div class="form-group">
                                             <label class="form-label">№ реєстрації в органі</label>
-                                            <input type="text" name="newrecord-id" id="newrecord-id" value="">
+                                            <input type="text" name="newrecord-registryNumber" id="newrecord-registryNumber" value="">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-4">
@@ -44,13 +44,15 @@
                                 <div class="form-group">
                                     <label class="form-label">Вид події</label>
                                     <select name="newrecord-event-type" id="newrecord-event-type">
-                                        <option value="Фізичне насильство">Фізичне насильство</option>
-                                        <option value="Психологічне насильство">Психологічне насильство</option>
+                                        <option value="1">Фізичне насилля</option>
+                                        <option value="2">Психологічне насилля</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Кваліфікація</label>
-                                    <input type="text" name="newrecord-qualification" id="newrecord-qualification" value="">
+                                    <select name="newrecord-qualification" id="newrecord-qualification">
+                                        <option value="1">Важкі тілесні</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Місце події</label>
@@ -84,11 +86,14 @@
                             </div>
             
                             <div class="col-12 col-md-2">
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label class="form-label">Файли</label>
                                     <div class="form-files">
                                         <button type="button" class="form-add-files-btn"><i class="fa-solid fa-plus"></i></button>
                                     </div>
+                                </div> -->
+                                <div class="persons">
+                                    
                                 </div>
                             </div>
             

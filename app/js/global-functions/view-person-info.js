@@ -3,7 +3,7 @@ import API_URL from "../api";
 
 function getPersonInfo(readonly = false){
     $('.view-person-btn').on('click', function(e){
-        let personId = Number($(this).attr('data-person-id'));
+        let personId = Number($(this).attr('data-person-id')); 
         let personRole = $(this).attr('data-person-role');
         const userToken = sessionStorage.getItem('token');
     
@@ -64,21 +64,24 @@ function getPersonInfo(readonly = false){
                     }
 
                     let relationshipsMarkup = '';
-                    relationships.map(element => {
-                        relationshipsMarkup += `
-                        <div class="col-md-4 col-12">
-                            <div class="form-group">
-                                <label class="form-label">ПІБ</label>
-                                <input type="text" name="person-relationship" readonly data-person-id="${element.person.id}" value="${element.person.fullName}">
+                    // console.log(relationships);
+                    if(relationships){
+                        relationships.map(element => {
+                            relationshipsMarkup += `
+                            <div class="col-md-4 col-12">
+                                <div class="form-group">
+                                    <label class="form-label">ПІБ</label>
+                                    <input type="text" name="person-relationship" readonly data-person-id="${element.person.id}" value="${element.person.fullName}">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Рівень зв'язку</label>
+                                    <input type="text" name="person-relationship-level" readonly data-person-id="${element.person.id}" value="${element.type}">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label class="form-label">Рівень зв'язку</label>
-                                <input type="text" name="person-relationship-level" readonly data-person-id="${element.person.id}" value="${element.type}">
-                            </div>
-                        </div>
-                        `; 
-                    });
-    
+                            `; 
+                        });
+                    }
+
                     $('#person-name').val(fullName);
                     $('#person-pasport-ser').val(documentSeries);
                     $('#person-pasport-number').val(documentNumber);
