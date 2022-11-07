@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+
+	<title></title>
+	<meta name="description" content="Startup HTML template OptimizedHTML 5">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="icon" href="images/favicon.png">
+	<meta property="og:image" content="images/dist/preview.jpg">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css?ver=6.2.0">
+	<link rel="stylesheet" href="css/main.min.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="add-person-page">
+    <div class="page-content">
+        <!------------------HEADER------------------>
+        <header class="header">
+	<div class="header-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="header-top-wrap">
+						<a href="/" class="logo">
+							<img src="./images/dist/gerb.png" alt="">
+						</a>
+						<p>регіональний реєстр випадків домашнього насильства</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="menu-wrap">
+						<nav class="menu">
+							<button class="burger-btn" type="button"><i class="fa-solid fa-bars"></i></button>
+							<ul class="menu-list desktop">
+								<li class="regional-sites-page-item"><a href="regional-sites.html" class="menu-list-item"><img src="./images/dist/flag.png" alt=""><p>Вінницька область <span>Регіональні сайти</span></p></a></li>
+								<li class="index-page-item"><a href="/" class="menu-list-item">Головна</a></li>
+								<li class="all-info-page-item"><a href="all-info.html" class="menu-list-item">Загальна інформація</a></li>
+								<li class="my-info-page-item"><a href="my-info.html" class="menu-list-item">Індивідуальна сторінка</a></li>
+							  </ul>
+						</nav>
+						<button class="search-btn" type="button"><i class="fas fa-search"></i></button>
+						<div class="settings">
+							<button class="settings-btn" type="button"><i class="fas fa-ellipsis-v"></i></button>
+							<div class="settings-menu dropdown-menu">
+								<ul>
+									<!-- <li> 
+										<a href="personal-office.html">
+											<div><img src="./images/dist/userempty.png" alt=""></div> <p>Іван Іванов</p>
+										</a>
+									</li>
+									<li><a href="personal-office.html">Налаштування</a></li>-->
+									
+									<li class="user-header-logined"><a href="personal-office.html">Особистий кабінет</a></li> 
+									<li class="user-header-logined"><a href="login.html" class="user-header-logout">Вихід</a></li>
+									<li class="user-header-unlogined"><a href="login.html" class="user-header-login">Вхід</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!------------------SEARCH-MODAL-MODAL------------------>
+			<div class="search-modal-wrap dropdown-menu">
+    <form class="search-modal">
+        <div class="search-modal-record search-modal-block">
+            <div class="row mb-2">
+                <div class="col-12">
+                    <p>Пошук за матеріалами</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-3">
+                    <div class="form-group">
+                        <label class="form-label">№ запису</label>
+                        <input type="text" name="search-record-id" id="" value="">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <div class="form-group">
+                        <label class="form-label">Дата реєстрації:</label>
+                        <input type="date" name="search-record-reg-date" id="" value="">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="form-group">
+                        <label class="form-label">Ключові слова</label>
+                        <input type="text" name="search-record-keywords" id="" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search-modal-person search-modal-block">
+            <div class="row mb-2">
+                <div class="col-12">
+                    <p>Пошук особи</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-3">
+                    <div class="form-group">
+                        <label class="form-label">Серія та номер документа:</label>
+                        <input type="text" name="search-person-document" id="" value="">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <div class="form-group">
+                        <label class="form-label">Дата народження:</label>
+                        <input type="date" name="search-person-birthday" id="" value="">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="form-group">
+                        <label class="form-label">ПІБ особи:</label>
+                        <input type="text" name="search-person-name" id="" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search-modal-action">
+            <button class="btn">Пошук</button>
+        </div>
+    </form>
+</div>
+			<!--------------END-SEARCH-MODAL-MODAL------------------>
+		</div>
+
+		<div class="mobile-menu dropdown-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<ul class="menu-list mobile">
+							<li><a href="/" class="menu-list-item">Головна</a></li>
+							<li><a href="all-info.html" class="menu-list-item">Загальна інформація</a></li>
+							<li><a href="my-info.html" class="menu-list-item">Індивідуальна сторінка</a></li>
+							<li><a href="regional-sites.html" class="menu-list-item"><img src="./images/dist/flag.png" alt=""><p>Вінницька область <span>Регіональні сайти</span></p></a></li>
+							<!-- <li> 
+								<a href="personal-office.html">
+									<div><i class="fas fa-user"></i></div> <p>User</p>
+								</a>
+							</li> -->
+							<li class="user-header-logined"><a href="personal-office.html">Особистий кабінет</a></li> 
+							<li class="user-header-logined"><a href="login.html" class="user-header-logout">Вихід</a></li>
+							<li class="user-header-unlogined"><a href="login.html" class="user-header-login">Вхід</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+        <!--------------END-HEADER------------------>
+
+        <main class="main">
+            <!------------------ADD-PERSON-SECTION------------------>
+            <section class="add-person-section section">
+    <div class="container">
+		<div class="row">
+            <div class="col-12">
+
+                <form class="form add-person-form">
+                    <div class="form-header">
+                        <div class="row">
+                            <div class="col-12">
+                               <p class="form-title">Інформаційна картка особи</p> 
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="form-body">
+                        <!-- <div class="row">
+                            <div class="col-12 col-md-4 mx-auto">
+                                <div class="form-group">
+                                    <select name="newperson-role" id="newperson-role">
+                                        <option value="Особа кривдник">Особа кривдник</option>
+                                        <option value="Постраждала особа">Постраждала особа</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="row">
+                            <div class="col-12 col-md-4 mx-auto">
+                                <div class="form-group">
+                                    <label class="form-label">ПІБ</label>
+                                    <input type="text" name="newperson-name" id="newperson-name" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label">Документ що посвідчує особу</label>
+                                    <label><input type="radio" value="1" name="newperson-pasport-type" checked> Паспорт</label>
+                                    <label><input type="radio" value="2" name="newperson-pasport-type"> ID-картка</label>
+                                    <label><input type="radio" value="3" name="newperson-pasport-type"> Посвідчення водія</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label">Серія</label>
+                                            <input type="text" name="newperson-pasport-ser" id="newperson-pasport-ser" value="">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label">Номер / номер запису документа</label>
+                                            <input type="text" name="newperson-pasport-number" id="newperson-pasport-number" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Дата видачі</label>
+                                    <input type="date" name="pasport-date" id="newperson-pasport-date" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Рівень забезпечення</label>
+                                    <select name="newperson-money" id="newperson-money">
+                                        <option value="Високий">Високий</option>
+                                        <option value="Середній">Середній</option>
+                                        <option value="Низький">Низький</option>
+                                    </select>
+                                </div>
+                            </div>
+                
+                            <div class="col-12 col-md-4">
+                                <div class="form-img">
+                                    <img src="./images/dist/userempty.png" alt="" id="newperson-photo">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Номер телефону</label>
+                                    <input type="text" name="newperson-phone" id="newperson-phone" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Дата народження</label>
+                                    <input type="date" name="newperson-birthday" id="newperson-birthday">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Наявність дітей</label>
+                                    <label><input type="radio" name="newperson-children" id="newperson-children-yes" value="true"> Так</label>
+                                    <label><input type="radio" name="newperson-children" id="newperson-children-no" value="false" checked> Ні</label>
+                                </div>
+                            </div>
+                
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label">Місце реєстрації</label>
+                                    <textarea name="newperson-reg-address" id="newperson-reg-address" cols="30" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Місце проживання</label>
+                                    <textarea name="newperson-home-address" id="newperson-home-address" cols="30" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Місце роботи</label>
+                                    <textarea name="newperson-work" id="newperson-work" cols="30" rows="1"></textarea>
+                                </div>
+                                <!-- <div class="form-group">
+                                    <label class="form-label">Файли</label>
+                                    <div class="form-files">
+                                        <button type="button" class="form-add-files-btn"><i class="fa-solid fa-plus"></i></button>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <!-- <div class="row">
+                            <div class="col-12">
+                                <p class="form-text">Зв'язки особи</p>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 newperson-relationship-wrapper">
+                                <div class="form-group">
+                                    <label class="form-label">ПІБ</label>
+                                    <input type="text" name="newperson-relationship" id="" value="">
+                                </div>
+                                <div class="relationship-search"></div>
+                                <div class="form-group newperson-relationship-level">
+                                    <label class="form-label">Рівень зв'язку</label>
+                                    <select name="newperson-relationship-level" id="">
+                                        <option value="1">Друг</option>
+                                    </select>
+                                </div>
+                            </div>
+                           <div class="col-12 col-md-6 col-lg-4 add-relateve-col">
+                                <button class="btn add-relative-btn" type="button">Додати особу</button>
+                            </div> 
+                        </div> -->
+
+                    </div>
+            
+                    <div class="form-footer">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-actions">
+                                    <button class="btn form-button add-new-person-btn">Зберегти</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+            <!--------------END-ADD-PERSON-SECTION------------------>
+        </main>
+    </div>
+        
+    <!------------------FOOTER------------------>
+    <footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="footer-content">
+					<a href="/" class="logo">
+						<img src="./images/dist/gerb_white.png" alt="">
+					</a>
+					<div>
+						<p>Підтримка</p>
+						<p class="support">Email: <a href="mailto:servicedomesticabuse@mail.gov.ua">servicedomesticabuse@mail.gov.ua</a></p>
+						<p>Terms of use</p>
+						<p>© All rights reserved</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+    <!--------------END-FOOTER------------------>
+
+    <!------------------SCRIPTS------------------>
+    <script src="js/main.min.js"></script>
+    <!--------------END-SCRIPTS------------------>
+</body>
+</html>

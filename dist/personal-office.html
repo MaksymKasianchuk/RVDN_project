@@ -17,10 +17,10 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 
-<body class="index-page">
-	<div class="page-content">
-		<!------------------HEADER------------------>
-		<header class="header">
+<body class="personal-office-page">
+    <div class="page-content">
+        <!------------------HEADER------------------>
+        <header class="header">
 	<div class="header-top">
 		<div class="container">
 			<div class="row">
@@ -159,59 +159,104 @@
 		</div>
 	</div>
 </header>
-		<!--------------END-HEADER------------------>
+        <!--------------END-HEADER------------------>
 
-		<main class="main">
-			<!------------------IDX-SECTION------------------>
-			<section class="idx-section section">
+        <main class="main">
+            <!------------------MY-INFO-SECTION------------------>
+            <section class="personal-office-section section">
     <div class="container">
-        <div class="white-wrap">
-            <div class="row">
-                <div class="col-12 col-lg-7">
-                    <div class="instructions">
-                        <h2 class="section-title">Інструкції щодо користування порталом</h2>
-                        <a href="#">
-                            <img src="./images/dist/pdf-icon.png" alt="">
-                            <p>Завантажити інструкцію у форматі PDF</p>
-                        </a>
-                        <a href="#">
-                            <img src="./images/dist/doc-icon.png" alt="">
-                            <p>Завантажити інструкцію у форматі DOC</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-5">
-                    <div class="changes law">
-                        <h2 class="section-title">Зміни в законодавстві</h2>
-                        <ul>
-                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, nemo cupiditate vitae eos voluptatum dolorum commodi facere labore consequatur ipsam sequi molestias, rerum distinctio beatae quo dolores qui non repudiandae.</li>
-                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita recusandae molestiae voluptatum repellendus ullam dolorum pariatur vitae officiis, quaerat accusantium nisi earum, voluptates consequatur nobis maiores voluptas perspiciatis quisquam autem.</li>
-                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, nemo cupiditate vitae eos voluptatum dolorum commodi facere labore consequatur ipsam sequi molestias, rerum distinctio beatae quo dolores qui non repudiandae.</li>
-                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita recusandae molestiae voluptatum repellendus ullam dolorum pariatur vitae officiis, quaerat accusantium nisi earum, voluptates consequatur nobis maiores voluptas perspiciatis quisquam autem.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-lg-9 mx-auto">
-                    <div class="changes reg">
-                        <h1 class="section-title">Зміни реєстра</h1>
-                        <ul>
-                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, nemo cupiditate vitae eos voluptatum dolorum commodi facere labore consequatur ipsam sequi molestias, rerum distinctio beatae quo dolores qui non repudiandae.</li>
-                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita recusandae molestiae voluptatum repellendus ullam dolorum pariatur vitae officiis, quaerat accusantium nisi earum, voluptates consequatur nobis maiores voluptas perspiciatis quisquam autem.</li>
-                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, nemo cupiditate vitae eos voluptatum dolorum commodi facere labore consequatur ipsam sequi molestias, rerum distinctio beatae quo dolores qui non repudiandae.</li>
-                        </ul>
+
+		<div class="row">
+            <div class="col-12">
+                <div class="card-wrap">
+                    <div class="card general-info">
+                        <div class="card-header">
+                            <h1>Кабінет користувача</h1>
+                            <p class="card-title">Загальна інформація</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="user-img-wrap">
+                                <img src="./images/dist/userempty.png" alt="" class="user-img">
+                            </div>
+                            <div class="user-info">
+                                <div class="card-line"><p>Прізвище: </p><input type="text" readonly class="card-line-inp" id="user-lastname" value=""></div>
+                                <div class="card-line"><p>Ім'я: </p><input type="text" readonly class="card-line-inp" id="user-firstname" value=""></div>
+                                <div class="card-line"><p>По батькові: </p><input type="text" readonly class="card-line-inp" id="user-surname" value=""></div>
+                                <div class="card-line"><p>Дата народження: </p><input type="date" readonly class="card-line-inp" id="user-birthday" value=""></div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
-	</div>
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card-wrap">
+                    <form class="card contact-info">
+                        <div class="card-header">
+                            <p class="card-title">Контактні дані</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-line"><p>Номер телефону: </p><input type="text" class="card-line-inp" id="user-phone" value=""></div>
+                            <div class="card-line"><p>Електронна адреса: </p><input type="text" class="card-line-inp" id="user-mail" value=""></div>
+                            <div class="card-line"><p>Адреса проживання: </p><input type="text" class="card-line-inp" id="user-address" value=""></div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn contact-info-change-btn">Змінити інформацію</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="row mt-4">
+            <div class="col-12">
+                <div class="card-wrap">
+                    <form class="card security-info">
+                        <div class="card-header">
+                            <p class="card-title">Безпека</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-line"><p>Логін: </p><input type="text" class="card-line-inp" id="user-login" value=""></div>
+                            <div class="card-line"><p>Пароль: </p><input type="text" class="card-line-inp" id="user-password" value=""></div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn security-info-change-btn">Змінити пароль</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card-wrap">
+                    <form class="card workplace-info">
+                        <div class="card-header">
+                            <p class="card-title">Місце працевлаштування/служби</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-line"><p>Місце роботи: </p><input type="text" class="card-line-inp" id="user-workplace" value=""></div>
+                            <div class="card-line"><p>Посада: </p><input type="text" class="card-line-inp" id="user-position" value=""></div>
+                            <!-- <div class="card-line"><p>Ранг/звання: </p><input type="text" class="card-line-inp" id="user-rank" value=""></div> -->
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn workplace-info-change-btn">Змінити інформацію</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-			<!--------------END-IDX-SECTION------------------>
-		</main>
-	</div>
-	<!------------------FOOTER------------------>
-	<footer class="footer">
+            <!--------------END-MY-INFO-SECTION------------------>
+        </main>
+    </div>
+        
+    <!------------------FOOTER------------------>
+    <footer class="footer">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
@@ -230,11 +275,10 @@
 		</div>
 	</div>
 </footer>
-	<!--------------END-FOOTER------------------>
+    <!--------------END-FOOTER------------------>
 
-	<!------------------SCRIPTS------------------>
-	<script src="js/main.min.js"></script>
-
-	<!--------------END-SCRIPTS------------------>
+    <!------------------SCRIPTS------------------>
+    <script src="js/main.min.js"></script>
+    <!--------------END-SCRIPTS------------------>
 </body>
 </html>
