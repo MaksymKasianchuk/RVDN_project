@@ -27,7 +27,7 @@ function login(){
                     sessionStorage.setItem("token", data.token);
                     $('#login-user-login').val('');
                     $('#login-user-password').val('');
-                    window.location.replace('/');
+                    window.location.replace('/index.html');
                 },
                 error: function (data) {
                    console.log(data);

@@ -56,7 +56,7 @@ function register(){
                 $('#register-password').val('');
                 $('#register-password-confirm').val('');
 
-                window.location.replace('/');
+                window.location.replace('/index.html');
             },
             error: function (data) {
                console.log(data);
