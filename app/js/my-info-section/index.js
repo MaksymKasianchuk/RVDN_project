@@ -1,6 +1,7 @@
 import { data } from "jquery";
 import API_URL from "../api";
 import getPersonInfo from "../global-functions/view-person-info";
+import getRecordInfo from "../global-functions/view-record-info";
 
 function myInfo(){
     const userToken = sessionStorage.getItem('token');
@@ -67,6 +68,7 @@ function myInfo(){
                     $('.my-info-table').append(tplStr);
     
                     getPersonInfo();
+                    getRecordInfo();
                 });
             },
             error: function (data) {
@@ -74,6 +76,5 @@ function myInfo(){
             }
         });
     }
-  
 }
 export default myInfo;

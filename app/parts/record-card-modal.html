@@ -12,73 +12,81 @@
             <div class="modal-body">
                 <div class="row">
 
-                    <div class="col-12 col-md-5">
+                    <div class="col-12 col-md-6">
                         <div class="row top-line-form-group">
                             <div class="col-12 col-lg-4">
                                 <div class="form-group">
                                     <label class="form-label">№ реєстрації в органі</label>
-                                    <input type="text" name="record-id" id="" value="">
+                                    <input type="text" name="record-id" id="record-number" value="">
                                 </div>
                             </div>
                             <div class="col-12 col-lg-4">
                                 <div class="form-group">
                                     <label class="form-label">Дата реєстрації</label>
-                                    <input type="date" name="record-registr-date" id="" value="">
+                                    <input type="date" name="record-registr-date" id="record-registr-date" value="">
                                 </div>
                             </div>
                             <div class="col-12 col-lg-4">
                                 <div class="form-group">
                                     <label class="form-label">Орган (ініціатор)</label>
-                                    <input type="text" name="record-init-org" id="" value="">
+                                    <input type="text" name="record-init-org" id="record-init-org" value="">
                                 </div>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label class="form-label">Орган (виконавець)</label>
-                            <input type="text" name="record-execute-org" id="" value="">
+                            <input type="text" name="record-execute-org" id="record-execute-org" value="">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Вид події</label>
-                            <select name="record-event-type">
-                                <option value="Особа кривдник">Фізичне насильство</option>
-                                <option value="Постраждала особа">Психологічне насильство</option>
+                            <select name="record-event-type" id="record-event-type">
+                                <option value="Фізичне насилля">Фізичне насилля</option>
+                                <option value="Психологічне насилля">Психологічне насилля</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Кваліфікація</label>
-                            <input type="text" name="record-qualification" id="" value="">
+                            <select name="record-qualification" id="record-qualification">
+                                <option value="Serious-injuries">Важкі тілесні </option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Місце події</label>
-                            <input type="text" name="record-event-place" id="" value="">
+                            <input type="text" name="record-event-place" id="record-event-place" value="">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Підгрунтя для виникнення конфлікту</label>
-                            <textarea name="record-event-reason" id="" cols="30" rows="3"></textarea>
+                            <textarea name="record-event-reason" id="record-event-reason" cols="30" rows="3"></textarea>
                         </div>
                     </div>
 
-                    <div class="col-12 col-md-5">
-                        <div class="form-group top-line-form-group">
+                    <div class="col-12 col-md-6">
+                        <div id="record-victim">
+
+                        </div>
+                        <div id="record-agressor">
+
+                        </div>
+                        <!-- <div class="form-group top-line-form-group">
                             <label class="form-label">Постраждала особа</label>
                             <input type="text" name="record-victim" id="" value="">
-                        </div>
-                        <div class="form-group">
+                        </div> -->
+                        <!-- <div class="form-group">
                             <label class="form-label">Особа кривдник</label>
                             <input type="text" name="record-agressor" id="" value="">
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label class="form-label">Короткий виклад матеріалу</label>
-                            <textarea name="record-describe" id="" cols="30" rows="3"></textarea>
+                            <textarea name="record-describe" id="record-describe" cols="30" rows="3"></textarea>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Вжиті заходи</label>
-                            <textarea name="record-measures" id="" cols="30" rows="3"></textarea>
+                            <textarea name="record-measures" id="record-measures" cols="30" rows="3"></textarea>
                         </div>
                     </div>
 
-                    <div class="col-12 col-md-2">
+                    <!-- <div class="col-12 col-md-2">
                         <div class="form-group">
                             <label class="form-label">Файли:</label>
                             <div class="modal-files">
@@ -86,7 +94,7 @@
                                 <label class="modal-add-files-btn"><i class="fa-solid fa-plus"></i> <input type="file" name="record-files" id="record-file" multiple="multiple"/></label>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
