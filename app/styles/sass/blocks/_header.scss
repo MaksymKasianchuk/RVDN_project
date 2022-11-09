@@ -32,7 +32,7 @@
         }
     }
     &-bottom{
-       
+        background: rgba(0,0,0,0.2);
         & .container{
             position: relative;
         }
@@ -79,12 +79,12 @@
                         &:hover{
                             border-top: 2px solid $mainAccentColor;
                         }
-                        & img{
-                            display: block;
-                            width: 10px;
-                            height: 30px;
-                            margin-right: 5px;
-                        }
+                        // & img{
+                        //     display: block;
+                        //     width: 10px;
+                        //     height: 30px;
+                        //     margin-right: 5px;
+                        // }
                         & p{
                             display: flex;
                             flex-direction: column;
@@ -97,6 +97,22 @@
                             }
                         }
                     } 
+                    &:nth-child(1){
+                        &>a{
+                            position: relative;
+                            &::before{
+                                content: '';
+                                position: absolute;
+                                top: 50%;
+                                left: -10px;
+                                width: 3px;
+                                border: 1px solid #2a8bfb;
+                                border-width: 15px 0 15px 0;
+                                border-color: #2a8bfb transparent #f6d106 transparent;
+                                transform: translateY(-50%);
+                            }
+                        }
+                    }
                 }
             }
         }
