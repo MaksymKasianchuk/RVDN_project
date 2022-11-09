@@ -1,4 +1,5 @@
 import editPersonModal from "../global-functions/edit-person-modal";
+import editRecordModal from "../global-functions/edit-record-modal";
 
 function modals(){
     $('.modal-close').on('click', function(e){
@@ -12,7 +13,7 @@ function modals(){
 	});
 
 	editPersonModal();
-
+	editRecordModal();
 	$('.edit-record-btn').on('click', function(e){
 		$('.record-card-modal').addClass('show-modal');
 	});

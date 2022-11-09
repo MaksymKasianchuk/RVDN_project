@@ -1,35 +1,37 @@
 import API_URL from "../api";
 
 function addNewRecord(){
-    //add one more victim to form
-    $('.add-victim-btn').on('click', function(e){
-        const strTpl = `
-        <div class="form-group top-line-form-group">
-            <label class="form-label">Постраждала особа</label>
-            <input type="text" name="newrecord-victim" id="" value="">
-        </div>
-        `;
-        $(this).before(strTpl);
-        icidentPersonsListener();
-    });
-    //add one more agressor to form
-    $('.add-agressor-btn').on('click', function(e){
-        const strTpl = `
-        <div class="form-group">
-            <label class="form-label">Особа кривдник</label>
-            <input type="text" name="newrecord-agressor" id="" value="">
-        </div>
-        `;
-        $(this).before(strTpl);
-        icidentPersonsListener();
-    });
-
+    let userToken = sessionStorage.getItem('token');
     let victim_arr = [];
     let agressor_arr = [];
-
     const personsArr  = [];
-    let userToken = sessionStorage.getItem('token');
+
     if (userToken){
+        //add one more victim to form
+        $('.add-victim-btn').on('click', function(e){
+            const strTpl = `
+            <div class="form-group top-line-form-group">
+                <label class="form-label">Постраждала особа</label>
+                <input type="text" name="newrecord-victim" id="" value="">
+            </div>
+            `;
+            $(this).before(strTpl);
+            incidentPersonsListener();
+        });
+        //add one more agressor to form
+        $('.add-agressor-btn').on('click', function(e){
+            const strTpl = `
+            <div class="form-group">
+                <label class="form-label">Особа кривдник</label>
+                <input type="text" name="newrecord-agressor" id="" value="">
+            </div>
+            `;
+            $(this).before(strTpl);
+            incidentPersonsListener();
+        });
+
+      
+   
         let getAllPersonsRequest = $.ajax({
             type: "GET",
             url: `${API_URL}persons`,
@@ -48,46 +50,46 @@ function addNewRecord(){
             console.log(data);
             }
         });
-        icidentPersonsListener(getAllPersonsRequest);
+        incidentPersonsListener();
+    
+    
+        function incidentPersonsListener(){
+            getAllPersonsRequest.done(function(){
+                $('input[name="newrecord-victim"]').each(function(){
+                    $(this).on('input', function(){
+                        if($(this).val().length > 3){
+                            personsArr.map(elem=>{
+                                let name = elem.fullName;
+                                if (name.includes($(this).val())){
+                                    $('.persons').html(`<p>${name}</p>`);
+                                }
+                                if($(this).val() === name && victim_arr.indexOf(elem.id) === -1){
+                                    victim_arr.push(elem.id);
+                                    console.log(victim_arr);
+                                }
+                            });
+                        }
+                    });
+                });
+                $('input[name="newrecord-agressor"]').each(function(){
+                    $(this).on('input', function(){
+                        if($(this).val().length > 3){
+                            personsArr.map(elem=>{
+                                let name = elem.fullName;
+                                if (name.includes($(this).val())){
+                                    $('.persons').html(`<p>${name}</p>`);
+                                }
+                                if($(this).val() === name && agressor_arr.indexOf(elem.id) === -1){
+                                    agressor_arr.push(elem.id);
+                                    console.log(agressor_arr);
+                                }
+                            });
+                        }
+                    });
+                });
+            });
+        };
     }
-   
-    function icidentPersonsListener(getAllPersonsRequest){
-        getAllPersonsRequest.done(function(){
-            $('input[name="newrecord-victim"]').each(function(){
-                $(this).on('input', function(){
-                    if($(this).val().length > 3){
-                        personsArr.map(elem=>{
-                            let name = elem.fullName;
-                            if (name.includes($(this).val())){
-                                $('.persons').html(`<p>${name}</p>`);
-                            }
-                            if($(this).val() === name && victim_arr.indexOf(elem.id) === -1){
-                                victim_arr.push(elem.id);
-                                console.log(victim_arr);
-                            }
-                        });
-                    }
-                });
-            });
-            $('input[name="newrecord-agressor"]').each(function(){
-                $(this).on('input', function(){
-                    if($(this).val().length > 3){
-                        personsArr.map(elem=>{
-                            let name = elem.fullName;
-                            if (name.includes($(this).val())){
-                                $('.persons').html(`<p>${name}</p>`);
-                            }
-                            if($(this).val() === name && agressor_arr.indexOf(elem.id) === -1){
-                                agressor_arr.push(elem.id);
-                                console.log(agressor_arr);
-                            }
-                        });
-                    }
-                });
-            });
-        });
-    };
-
 
     //------------------------CREATION OF  NEW RECORD
     $('#add-new-record-btn').on('click', function(e){

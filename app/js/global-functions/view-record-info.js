@@ -25,7 +25,7 @@ function getRecordInfo(){
                         'Authorization': `Bearer ${userToken}`,
                     },
                     success: function(data){
-                        console.log(data);
+                        // console.log(data);
                         let {
                             incidentType,
                             qualification,
@@ -48,17 +48,17 @@ function getRecordInfo(){
                         let regDatemonth = ("0" + (regDate.getMonth() + 1)).slice(-2);
                         let regDateStr = regDate.getFullYear()+"-"+(regDatemonth)+"-"+(regDateday);
 
-                        let recDate = receiptDate ? new Date(receiptDate) : new Date();
-                        let recDateday = ("0" + recDate.getDate()).slice(-2);
-                        let recDatemonth = ("0" + (recDate.getMonth() + 1)).slice(-2);
-                        let recDateStr = recDate.getFullYear()+"-"+(recDatemonth)+"-"+(recDateday);
+                        // let recDate = receiptDate ? new Date(receiptDate) : new Date();
+                        // let recDateday = ("0" + recDate.getDate()).slice(-2);
+                        // let recDatemonth = ("0" + (recDate.getMonth() + 1)).slice(-2);
+                        // let recDateStr = recDate.getFullYear()+"-"+(recDatemonth)+"-"+(recDateday);
 
-                        let execDate = executionDate ? new Date(executionDate) : new Date();
-                        let execDateday = ("0" + execDate.getDate()).slice(-2);
-                        let execDatemonth = ("0" + (execDate.getMonth() + 1)).slice(-2);
-                        let execDateStr = execDate.getFullYear()+"-"+(execDatemonth)+"-"+(execDateday);
+                        // let execDate = executionDate ? new Date(executionDate) : new Date();
+                        // let execDateday = ("0" + execDate.getDate()).slice(-2);
+                        // let execDatemonth = ("0" + (execDate.getMonth() + 1)).slice(-2);
+                        // let execDateStr = execDate.getFullYear()+"-"+(execDatemonth)+"-"+(execDateday);
 
-                        $('#record-number').val(registryNumber);
+                        $('#record-registryNumber').val(registryNumber);
                         $('#record-registr-date').val(regDateStr);
                         $('#record-init-org').val(initiatorAuthority);
                         $('#record-execute-org').val(executorAuthority);
