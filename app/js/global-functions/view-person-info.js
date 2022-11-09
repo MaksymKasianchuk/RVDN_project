@@ -2,7 +2,7 @@ import { data } from "jquery";
 import API_URL from "../api";
 
 function getPersonInfo(){
-     $('.view-person-btn').each(function(){
+    $('.view-person-btn').each(function(){
         if($(this).attr('data-listener') === 'true'){
             return ;
         } else{

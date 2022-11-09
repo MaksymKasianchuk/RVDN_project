@@ -1,14 +1,13 @@
 .search-modal{
+    background-color: $dropdownColor;
+    padding: 40px 60px;
     &-wrap{
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 100;
-        background-color: $dropdownColor;
+        display: none;
+        &.show{
+            display: block;
+        }
         width: 100%;
         color: #fff;
-        padding: 40px 60px;
-        border-radius: 10px;
         overflow: hidden;
     }
     &-block{
@@ -26,6 +25,16 @@
             background-color: $formBtnBgColor;
             color: #fff;
             min-width: 150px;
+        }
+    }
+    & .search-res{
+        &>li{
+            margin-top: 5px;
+            transition: all 250ms linear;
+            cursor: pointer;
+            &:hover{
+                opacity: 0.6;
+            }
         }
     }
 }
