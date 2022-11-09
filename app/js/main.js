@@ -19,7 +19,8 @@ import search from './search';
 
 document.addEventListener('DOMContentLoaded', () => {
 	// redirect to login page
-	
+	const userToken = sessionStorage.getItem('token');
+
 	const settingsSelectors = {
 		btn:'.settings-btn', 
 		menu: '.settings-menu', 
@@ -47,6 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	$('.burger-btn').on('click', function(){
 		$('.mobile-menu').toggleClass('show');
 	});
+	if(userToken){
+		$('.new-record-btn').show();
+	} else {
+		$('.new-record-btn').hide();
+	}
 	$('.new-record-btn').on('click', function(){
 		$('.new-record-menu').toggleClass('show');
 	});

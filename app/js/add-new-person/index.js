@@ -4,47 +4,49 @@ import API_URL from "../api";
 function addNewPerson(){
     const personsArr  = [];
     let userToken = sessionStorage.getItem('token');
-    let getAllPersonsRequest = $.ajax({
-        type: "GET",
-        url: `${API_URL}persons`,
-        crossDomain: true,
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${userToken}`,
-        },
-        success: function(data){
-            personsArr.push(...data);
-            // console.log(personsArr);
-        },
-        error: function (data) {
-           console.log(data);
-        }
-    });
-
-    getAllPersonsRequest.done(function(){
-        $('input[name=newperson-relationship]').each(function(){
-            $(this).on('input', function(){
-                if($(this).val().length > 3){
-                    personsArr.map(item=>{
-                        let fullname = item.fullName;
-                        if (fullname.includes($(this).val())){
-                            $('.relationship-search').html(`
-                                <p calss="maby-rel-pers">${fullname}</p>
-                            `);
-                        }
-                        if (fullname === $(this).val()){
-                            $(this).parents('.newperson-relationship-wrapper').attr('data-pers-rel-id', item.id);
-                        }
-                    });
-                } else {
-                    $('.relationship-search').html('');
-                }
-            });
-          
+    if (userToken){
+        let getAllPersonsRequest = $.ajax({
+            type: "GET",
+            url: `${API_URL}persons`,
+            crossDomain: true,
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${userToken}`,
+            },
+            success: function(data){
+                personsArr.push(...data);
+                // console.log(personsArr);
+            },
+            error: function (data) {
+               console.log(data);
+            }
         });
-
-    })
+    
+        getAllPersonsRequest.done(function(){
+            $('input[name=newperson-relationship]').each(function(){
+                $(this).on('input', function(){
+                    if($(this).val().length > 3){
+                        personsArr.map(item=>{
+                            let fullname = item.fullName;
+                            if (fullname.includes($(this).val())){
+                                $('.relationship-search').html(`
+                                    <p calss="maby-rel-pers">${fullname}</p>
+                                `);
+                            }
+                            if (fullname === $(this).val()){
+                                $(this).parents('.newperson-relationship-wrapper').attr('data-pers-rel-id', item.id);
+                            }
+                        });
+                    } else {
+                        $('.relationship-search').html('');
+                    }
+                });
+              
+            });
+    
+        })
+    }
 
     //-----------add-relative-btn-in-fom
     // $('.add-relative-btn').on('click', function(e){

@@ -2,9 +2,11 @@ import { data } from "jquery";
 import API_URL from "../api";
 import getPersonInfo from "../global-functions/view-person-info";
 import getRecordInfo from "../global-functions/view-record-info";
+import isTableEmpty from "../global-functions/isTableEmpty";
 
 function myInfo(){
     const userToken = sessionStorage.getItem('token');
+    isTableEmpty('.my-info-table');
     if(userToken){
         let allIcidentsRequest = $.ajax({
             type: "GET",
@@ -15,7 +17,6 @@ function myInfo(){
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${userToken}`,
             },
-            // data: JSON.stringify(data),
             success: function(data){
                 // console.log(data);
                 data.map((item) => {
@@ -66,7 +67,8 @@ function myInfo(){
                     </tr>
                     `;
                     $('.my-info-table').append(tplStr);
-    
+                    isTableEmpty('.my-info-table');
+
                     getPersonInfo();
                     getRecordInfo();
                 });
@@ -77,4 +79,5 @@ function myInfo(){
         });
     }
 }
+
 export default myInfo;

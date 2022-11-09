@@ -1,9 +1,11 @@
 import { data } from "jquery";
 import API_URL from "../api";
 import getPersonInfo from "../global-functions/view-person-info";
+import isTableEmpty from "../global-functions/isTableEmpty";
 
 function allInfo(){
     const userToken = sessionStorage.getItem('token');
+    isTableEmpty('#all-info-table');
     if(userToken){
         let allIcidentsRequest = $.ajax({
             type: "GET",
@@ -14,7 +16,6 @@ function allInfo(){
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${userToken}`,
             },
-            // data: JSON.stringify(data),
             success: function(data){
                 // console.log(data);
                 data.map((item) => {
@@ -64,7 +65,8 @@ function allInfo(){
                     </tr>
                     `;
                     $('#all-info-table').append(tplStr);
-    
+                    isTableEmpty('#all-info-table');
+                    
                     getPersonInfo(true);
                 });
             },

@@ -1,4 +1,3 @@
-import recordsArr from '../data.json';
 import API_URL from "../api";
 
 function addNewRecord(){
@@ -30,26 +29,29 @@ function addNewRecord(){
 
     const personsArr  = [];
     let userToken = sessionStorage.getItem('token');
-    let getAllPersonsRequest = $.ajax({
-        type: "GET",
-        url: `${API_URL}persons`,
-        crossDomain: true,
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${userToken}`,
-        },
-        success: function(data){
-            personsArr.push(...data);
-            // console.log(personsArr);
-          
-        },
-        error: function (data) {
-           console.log(data);
-        }
-    });
-    icidentPersonsListener();
-    function icidentPersonsListener(){
+    if (userToken){
+        let getAllPersonsRequest = $.ajax({
+            type: "GET",
+            url: `${API_URL}persons`,
+            crossDomain: true,
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${userToken}`,
+            },
+            success: function(data){
+                personsArr.push(...data);
+                // console.log(personsArr);
+            
+            },
+            error: function (data) {
+            console.log(data);
+            }
+        });
+        icidentPersonsListener(getAllPersonsRequest);
+    }
+   
+    function icidentPersonsListener(getAllPersonsRequest){
         getAllPersonsRequest.done(function(){
             $('input[name="newrecord-victim"]').each(function(){
                 $(this).on('input', function(){

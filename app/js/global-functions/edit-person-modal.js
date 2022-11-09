@@ -53,7 +53,7 @@ function editPersonModal(){
             "workingPlace": workingPlace,
             "socialSecurityId": socialSecurityId
         };
-        console.log(data);
+        // console.log(data);
         if(userToken && id){
             let editPersonRequest = $.ajax({
                 type: "PUT",
