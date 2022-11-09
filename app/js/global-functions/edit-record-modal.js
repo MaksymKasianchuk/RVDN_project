@@ -68,24 +68,25 @@ function editRecordModal(){
                 },
                 data: JSON.stringify(data),
                 success: function(data){
-                    console.log(data);
-                    // $('#newrecord-registryNumber').val('');
-                    // $("#newrecord-register-date").val('');
-                    // $("#newrecord-init-org").val('');
-                    // $("#newrecord-execute-org").val('');
-                    // $('#newrecord-event-type').val('');
-                    // $("#newrecord-qualification").val('');
-                    // $("#newrecord-event-place").val('');
-                    // $("#newrecord-event-reason").val('');
-                    // $("#newrecord-describe").val('');
-                    // $("#newrecord-measures").val('');
+                    // console.log(data);
+                    $('#record-registryNumber').val('');
+                    $("#record-register-date").val('');
+                    $("#record-init-org").val('');
+                    $("#record-execute-org").val('');
+                    $("#record-event-place").val('');
+                    $("#record-event-reason").val('');
+                    $("#record-describe").val('');
+                    $("#record-measures").val('');
+
+                    $('.record-card-modal').attr('data-record-id', '');
+                    $('.record-card-modal').removeClass('show-modal');
                 },
                 error: function (data) {
                    console.log(data);
                 }
             });
         }
-        console.log(data);
+        // console.log(data);
 
     });
 }

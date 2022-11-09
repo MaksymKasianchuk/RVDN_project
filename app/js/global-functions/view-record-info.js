@@ -59,7 +59,7 @@ function getRecordInfo(){
                         // let execDateStr = execDate.getFullYear()+"-"+(execDatemonth)+"-"+(execDateday);
 
                         $('#record-registryNumber').val(registryNumber);
-                        $('#record-registr-date').val(regDateStr);
+                        $('#record-register-date').val(regDateStr);
                         $('#record-init-org').val(initiatorAuthority);
                         $('#record-execute-org').val(executorAuthority);
                         $('#record-event-type').val(incidentType);
