@@ -39,7 +39,7 @@ function myInfo(){
                     let receipDate = receiptDate ? new Date(receiptDate) : 0;
                     let receipDateStr = receipDate !== 0 ? `${receipDate.getDay()}/${receipDate.getMonth()}/${receipDate.getFullYear()}` : '-';
     
-                    const victimArr = incidentPersons.Жертва;
+                    const victimArr = incidentPersons.Постраждалий;
                     const agressorArr = incidentPersons.Кривдник;
                     let victimBtns =``;
                     let agressorBtns =``;
