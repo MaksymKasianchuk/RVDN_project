@@ -43,7 +43,7 @@
 						<nav class="menu">
 							<button class="burger-btn" type="button"><i class="fa-solid fa-bars"></i></button>
 							<ul class="menu-list desktop">
-								<li class="regional-sites-page-item"><a href="regional-sites.html" class="menu-list-item"><img src="./images/dist/flag.png" alt=""><p>Вінницька область <span>Регіональні сайти</span></p></a></li>
+								<li class="regional-sites-page-item"><a href="regional-sites.html" class="menu-list-item"><p>Вінницька область <span>Регіональні сайти</span></p></a></li>
 								<li class="index-page-item"><a href="index.html" class="menu-list-item">Головна</a></li>
 								<li class="all-info-page-item"><a href="all-info.html" class="menu-list-item">Загальна інформація</a></li>
 								<li class="my-info-page-item"><a href="my-info.html" class="menu-list-item">Індивідуальна сторінка</a></li>
@@ -64,75 +64,14 @@
 									<li class="user-header-logined"><a href="personal-office.html">Особистий кабінет</a></li> 
 									<li class="user-header-logined"><a href="login.html" class="user-header-logout">Вихід</a></li>
 									<li class="user-header-unlogined"><a href="login.html" class="user-header-login">Вхід</a></li>
+									<li class="user-header-risk-man"><a href="risk-management.html" class="user-header-risk-man">Оцінювання ризиків ІБ</a></li>
 								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!------------------SEARCH-MODAL-MODAL------------------>
-			<div class="search-modal-wrap dropdown-menu">
-    <form class="search-modal">
-        <div class="search-modal-record search-modal-block">
-            <div class="row mb-2">
-                <div class="col-12">
-                    <p>Пошук за матеріалами</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-lg-3">
-                    <div class="form-group">
-                        <label class="form-label">№ запису</label>
-                        <input type="text" name="search-record-id" id="" value="">
-                    </div>
-                </div>
-                <div class="col-12 col-lg-3">
-                    <div class="form-group">
-                        <label class="form-label">Дата реєстрації:</label>
-                        <input type="date" name="search-record-reg-date" id="" value="">
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="form-group">
-                        <label class="form-label">Ключові слова</label>
-                        <input type="text" name="search-record-keywords" id="" value="">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="search-modal-person search-modal-block">
-            <div class="row mb-2">
-                <div class="col-12">
-                    <p>Пошук особи</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-lg-3">
-                    <div class="form-group">
-                        <label class="form-label">Серія та номер документа:</label>
-                        <input type="text" name="search-person-document" id="" value="">
-                    </div>
-                </div>
-                <div class="col-12 col-lg-3">
-                    <div class="form-group">
-                        <label class="form-label">Дата народження:</label>
-                        <input type="date" name="search-person-birthday" id="" value="">
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="form-group">
-                        <label class="form-label">ПІБ особи:</label>
-                        <input type="text" name="search-person-name" id="" value="">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="search-modal-action">
-            <button class="btn">Пошук</button>
-        </div>
-    </form>
-</div>
-			<!--------------END-SEARCH-MODAL-MODAL------------------>
+			<!--                 HERE WAS SEARCH-MODAL                 -->
 		</div>
 
 		<div class="mobile-menu dropdown-menu">
@@ -143,7 +82,7 @@
 							<li><a href="index.html" class="menu-list-item">Головна</a></li>
 							<li><a href="all-info.html" class="menu-list-item">Загальна інформація</a></li>
 							<li><a href="my-info.html" class="menu-list-item">Індивідуальна сторінка</a></li>
-							<li><a href="regional-sites.html" class="menu-list-item"><img src="./images/dist/flag.png" alt=""><p>Вінницька область <span>Регіональні сайти</span></p></a></li>
+							<li><a href="regional-sites.html" class="menu-list-item"><p>Вінницька область <span>Регіональні сайти</span></p></a></li>
 							<!-- <li> 
 								<a href="personal-office.html">
 									<div><i class="fas fa-user"></i></div> <p>User</p>
@@ -162,6 +101,78 @@
         <!--------------END-HEADER------------------>
 
         <main class="main">
+            <!------------------SEARCH-MODAL-MODAL------------------>
+			<div class="search-modal-wrap">
+    <div class="container">
+        <form class="search-modal">
+            <!-- <div class="search-modal-record search-modal-block">
+                <div class="row mb-2">
+                    <div class="col-12">
+                        <p>Пошук за матеріалами</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-3">
+                        <div class="form-group">
+                            <label class="form-label">№ запису</label>
+                            <input type="text" name="search-record-id" id="" value="">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="form-group">
+                            <label class="form-label">Дата реєстрації:</label>
+                            <input type="date" name="search-record-reg-date" id="" value="">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="form-group">
+                            <label class="form-label">Ключові слова</label>
+                            <input type="text" name="search-record-keywords" id="" value="">
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="search-modal-person search-modal-block">
+                <div class="row mb-2">
+                    <div class="col-12">
+                        <p>Пошук особи</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- <div class="col-12 col-lg-3">
+                        <div class="form-group">
+                            <label class="form-label">Серія та номер документа:</label>
+                            <input type="text" name="search-person-document" id="" value="">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="form-group">
+                            <label class="form-label">Дата народження:</label>
+                            <input type="date" name="search-person-birthday" id="" value="">
+                        </div>
+                    </div> -->
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="form-label">ПІБ особи:</label>
+                            <input type="text" name="search-person-name" id="search-person-name" value="">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="search-res-wrap">
+                            <ul class="search-res">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="search-modal-action">
+                <button class="btn submit-search-btn">Переглянути інформацію особи</button>
+            </div>
+        </form>
+    </div>
+</div>
+			<!--------------END-SEARCH-MODAL-MODAL------------------>
+            
             <!------------------ALL-INFO-SECTION------------------>
             <section class="all-info-section section">
     <div class="container">
@@ -190,53 +201,11 @@
                             </tr>
                         </thead>
                         <tbody id="all-info-table">
-                            <!-- <tr>
-                                <td>1</td>
-                                <td>14/09/2022</td>
-                                <td><button type="button" class="view-person-btn">Іванова Ірина Вікторівна <i class="fa-solid fa-users"></i></button></td>
-                                <td><button type="button" class="view-person-btn">Іванов Сергій Володимирович <i class="fa-solid fa-users"></i></button></td>
-                                <td>Вінницький ВП ГУНП у Вінницькій обл. <i class="fa-solid fa-angle-down"></i></td>
-                                <td>Вінницький ВП ГУНП <i class="fa-solid fa-angle-down"></i></td>
-                                <td>14/09/2022</td>
-                                <td>виконано <i class="fa-solid fa-angle-down"></i></td>
-                                <td>15/09/2022</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>14/09/2022</td>
-                                <td><button type="button" class="view-person-btn">Іванова Ірина Вікторівна <i class="fa-solid fa-users"></i></button></td>
-                                <td><button type="button" class="view-person-btn">Іванов Сергій Володимирович <i class="fa-solid fa-users"></i></button></td>
-                                <td>Вінницький ВП ГУНП у Вінницькій обл. <i class="fa-solid fa-angle-down"></i></td>
-                                <td>Вінницький ВП ГУНП <i class="fa-solid fa-angle-down"></i></td>
-                                <td>14/09/2022</td>
-                                <td>в обробці <i class="fa-solid fa-angle-down"></i></td>
-                                <td>15/09/2022</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>14/09/2022</td>
-                                <td><button type="button" class="view-person-btn">Іванова Ірина Вікторівна <i class="fa-solid fa-users"></i></button></td>
-                                <td><button type="button" class="view-person-btn">Іванов Сергій Володимирович <i class="fa-solid fa-users"></i></button></td>
-                                <td>Вінницький ВП ГУНП у Вінницькій обл. <i class="fa-solid fa-angle-down"></i></td>
-                                <td>Вінницький ВП ГУНП <i class="fa-solid fa-angle-down"></i></td>
-                                <td>14/09/2022</td>
-                                <td>виконано <i class="fa-solid fa-angle-down"></i></td>
-                                <td>15/09/2022</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>14/09/2022</td>
-                                <td><button type="button" class="view-person-btn">Іванова Ірина Вікторівна <i class="fa-solid fa-users"></i></button></td>
-                                <td><button type="button" class="view-person-btn">Іванов Сергій Володимирович <i class="fa-solid fa-users"></i></button></td>
-                                <td>Вінницький ВП ГУНП у Вінницькій обл. <i class="fa-solid fa-angle-down"></i></td>
-                                <td>Вінницький ВП ГУНП <i class="fa-solid fa-angle-down"></i></td>
-                                <td>14/09/2022</td>
-                                <td>не оброблено <i class="fa-solid fa-angle-down"></i></td>
-                                <td>15/09/2022</td>
-                            </tr> -->
                         </tbody>
                     </table>
                 </div>
+                <div class="no-auth">Будь ласка увійдіть в <a href="login.html">обліковий запис</a></div>
+                <div class="no-records">Немає записів</div>
             </div>
         </div>
     </div>
@@ -284,17 +253,18 @@
                 <div class="row">
                     <div class="col-12 col-md-4 mx-auto">
                         <div class="form-group">
-                            <select name="person-role" id="person-role">
+                            <input type="text" name="person-role" id="person-role" readonly value="">
+                            <!-- <select name="person-role" id="person-role" readonly>
                                 <option value="Особа кривдник">Особа кривдник</option>
                                 <option value="Постраждала особа">Постраждала особа</option>
-                            </select>
+                            </select> -->
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-4 mx-auto">
                         <div class="form-group">
-                            <input type="text" name="person-name" id="person-name" value="">
+                            <input type="text" name="person-name" id="person-name" readonly value="">
                         </div>
                     </div>
                 </div>
@@ -415,8 +385,8 @@
                             </table>
                         </div>
                     </div>
-                </div>
-            </div> -->
+                </div>-->
+            </div> 
 
             <div class="modal-footer">
                 <div class="row">
