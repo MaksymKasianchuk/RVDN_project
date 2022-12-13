@@ -1,30 +1,6 @@
 import notifications from '../notifications';
 
 function riskMan() {
-    // let factorsArr = [];
-    // $('#risk-factor').each(function (){
-    //     factorsArr.push($(this).val());
-    // });
-
-    // let numberOfValues = factorsArr.length;
-
-    // let maxEntVal = 1/ numberOfValues;
-
-    // const MFactorArr = [0.2, 0.16, 0.84, 1];
-    // let lambdaFactVal = [];
-    // for(let i = 0; i < numberOfValues; i++){
-    //     if(factorsArr[i] < MFactorArr[1]) {lambdaFactVal.push(1);} else lambdaFactVal.push(0);
-    // }
-
-
-    // let sum1;
-    // for(let i = 0; i < numberOfValues; i++){
-    //     sum1 = maxEntVal * lambdaFactVal[i];
-    // }
-    // let sum2 = bFactVal.reduce( (curBFactVal, acc) => { acc+= curBFactVal});
-   
-    // let BRiskLevel = sum1 * sum2
-
     $('.add-risk-management-btn').on('click', function(e){
         e.preventDefault();
         const strTpl = `
@@ -106,9 +82,6 @@ function riskMan() {
         if(finishBRisk > 0.8 && finishBRisk <= 1){
             finishBRiskText = 'граничний ризик загрози';
         }
-        // console.log(finishBRisk);
-        // console.log(finishBRiskText);
-
 
         $('.finish-fact-val').val(finishBRisk);
         $('.finish-fact-text').val(finishBRiskText);
