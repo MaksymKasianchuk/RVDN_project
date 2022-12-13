@@ -64,6 +64,7 @@
 									<li class="user-header-logined"><a href="personal-office.html">Особистий кабінет</a></li> 
 									<li class="user-header-logined"><a href="login.html" class="user-header-logout">Вихід</a></li>
 									<li class="user-header-unlogined"><a href="login.html" class="user-header-login">Вхід</a></li>
+									<li class="user-header-risk-man"><a href="risk-management.html" class="user-header-risk-man">Оцінювання ризиків ІБ</a></li>
 								</ul>
 							</div>
 						</div>
@@ -182,23 +183,25 @@
                     <div class="form-header">
                         <div class="row">
                             <div class="col-12">
-                               <p class="form-title">Оцінка ступеня загрози ризиків</p> 
+                               <p class="form-title">Оцінювання ступеня загрози ризиків</p> 
                             </div>
                         </div>
                     </div>
             
                     <div class="form-body">
-                        <div class="row risk-man-table">
-                            <div class="col-12 col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label">Назва фактору Fi</label>
-                                    <input type="text" name="" id="" value="">
+                        <div class="risk-man-table">
+                            <div class="row factor">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Назва фактору Fi</label>
+                                        <input type="text" name="" class="fac-name" value="">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label">Значення фактору Fi</label>
-                                    <input type="text" name="" id="" value="">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Значення фактору Fi</label>
+                                        <input type="text" name="" class="fac-val" value="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -267,13 +270,13 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label class="form-label">Математичне обчислення оцінки ступеня загрози ризику B</label>
-                            <input type="text" name="" id="" value="0.5" readonly>
+                            <input type="text" class="finish-fact-val" id="" value="" readonly>
                         </div>
                     </div>
                     <div class="col-12 ">
                         <div class="form-group">
                             <label class="form-label">За класифікацією значень b</label>
-                            <input type="text" name="" id="" value="Середній рівень ризику" readonly>
+                            <input type="text" class="finish-fact-text" id="" value="" readonly>
                         </div>
                     </div>
                 </div>
