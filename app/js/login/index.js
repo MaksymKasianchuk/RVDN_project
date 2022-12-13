@@ -1,5 +1,7 @@
 import { data } from "jquery";
-import API_URL from '../api'
+import API_URL from '../api';
+import notifications from "../notifications";
+
 function login(){
     $('#login-btn').on('click', function(e){
         e.preventDefault();
@@ -30,7 +32,8 @@ function login(){
                     window.location.replace('/index.html');
                 },
                 error: function (data) {
-                   console.log(data);
+                    notifications.errorNotif(data.responseJSON);
+                    // console.log(data.responseJSON);
                 }
                 
             });

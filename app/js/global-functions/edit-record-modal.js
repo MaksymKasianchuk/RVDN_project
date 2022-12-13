@@ -1,5 +1,6 @@
 import { data } from "jquery";
 import API_URL from "../api";
+import notifications from "../notifications";
 
 function editRecordModal(){
     $('.record-card-modal-btn').on('click', function(e){
@@ -79,10 +80,12 @@ function editRecordModal(){
                     $("#record-measures").val('');
 
                     $('.record-card-modal').attr('data-record-id', '');
+                    notifications.succsessNotif('Інформацію про подію успішно оновлено');
                     $('.record-card-modal').removeClass('show-modal');
                 },
                 error: function (data) {
-                   console.log(data);
+                    notifications.errorNotif();
+                //    console.log(data);
                 }
             });
         }

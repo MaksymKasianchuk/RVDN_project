@@ -1,5 +1,6 @@
 import { data } from "jquery";
 import API_URL from "../api";
+import notifications from "../notifications";
 
 function getRecordInfo(){
     $('.edit-record-btn').each(function(){
@@ -80,7 +81,7 @@ function getRecordInfo(){
                         $('#record-agressor').html(agressorsMarkup);
 
                         let victimsMarkup = '';
-                        incidentPersons.Жертва.map(victim=>{
+                        incidentPersons.Постраждалий.map(victim=>{
                             victimsMarkup +=`
                             <div class="form-group">
                                 <label class="form-label">Постраждала особа</label>
@@ -93,7 +94,8 @@ function getRecordInfo(){
                         $('.record-card-modal').addClass('show-modal');
                     },
                     error: function (data) {
-                        console.log(data);
+                        notifications.errorNotif();
+                        // console.log(data);
                     }
                 });
             }

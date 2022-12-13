@@ -1,5 +1,6 @@
 import { data } from "jquery";
 import API_URL from "../api";
+import notifications from "../notifications";
 
 function getPersonInfo(){
     $('.view-person-btn').each(function(){
@@ -103,12 +104,13 @@ function getPersonInfo(){
                         $('#person-work').val(workingPlace);
                         $('#person-relationship').html(relationshipsMarkup);
                         $('#person-card-modal').attr('data-person-id', id);
-        
+
                         $('.person-card-modal').addClass('show-modal');
                     
                     },
                     error: function (data) {
-                    console.log(data);
+                        notifications.errorNotif();
+                        console.log(data);
                     }
                 });
             }

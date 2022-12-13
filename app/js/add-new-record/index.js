@@ -1,4 +1,5 @@
 import API_URL from "../api";
+import notifications from "../notifications";
 
 function addNewRecord(){
     let userToken = sessionStorage.getItem('token');
@@ -47,7 +48,7 @@ function addNewRecord(){
             
             },
             error: function (data) {
-            console.log(data);
+                // console.log(data);
             }
         });
         incidentPersonsListener();
@@ -65,7 +66,7 @@ function addNewRecord(){
                                 }
                                 if($(this).val() === name && victim_arr.indexOf(elem.id) === -1){
                                     victim_arr.push(elem.id);
-                                    console.log(victim_arr);
+                                    // console.log(victim_arr);
                                 }
                             });
                         }
@@ -81,7 +82,7 @@ function addNewRecord(){
                                 }
                                 if($(this).val() === name && agressor_arr.indexOf(elem.id) === -1){
                                     agressor_arr.push(elem.id);
-                                    console.log(agressor_arr);
+                                    // console.log(agressor_arr);
                                 }
                             });
                         }
@@ -94,6 +95,10 @@ function addNewRecord(){
     //------------------------CREATION OF  NEW RECORD
     $('#add-new-record-btn').on('click', function(e){
         e.preventDefault();
+        if(!$("#newrecord-register-date").val()){
+            notifications.errorNotif('Некоректно введена дата реєстрації!');
+            return;
+        }
         let registryNumber = Number($('#newrecord-registryNumber').val());
         let registrationDate = new Date($("#newrecord-register-date").val());
         let initiatorAuthority = $("#newrecord-init-org").val();
@@ -109,6 +114,11 @@ function addNewRecord(){
         incidentPersons = {
             "1": agressor_arr,
             "2": victim_arr
+        }
+
+        if(!registryNumber || !registrationDate || !initiatorAuthority || !executorAuthority || !incidentTypeId || !qualificationId || !address || !reason || !description || !incidentPersons){
+            notifications.errorNotif('Не заповнені всі поля форми!');
+            return;
         }
 
         const data = {
@@ -137,7 +147,7 @@ function addNewRecord(){
                 },
                 data: JSON.stringify(data),
                 success: function(data){
-                    console.log(data);
+                    // console.log(data);
                     $('#newrecord-registryNumber').val('');
                     $("#newrecord-register-date").val('');
                     $("#newrecord-init-org").val('');
@@ -148,9 +158,11 @@ function addNewRecord(){
                     $("#newrecord-event-reason").val('');
                     $("#newrecord-describe").val('');
                     $("#newrecord-measures").val('');
+                    notifications.succsessNotif("Запис про подію успішно створено");
                 },
                 error: function (data) {
-                   console.log(data);
+                    notifications.emptyNotif(data.responseJSON)
+                    //console.log(data);
                 }
             });
         }

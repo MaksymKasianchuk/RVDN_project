@@ -25,7 +25,7 @@ function search(){
                 });
             },
             error: function (data) {
-                console.log(data);
+                // console.log(data);
             }
         });
         getAllPersonsRequest.done(function(){
@@ -53,7 +53,7 @@ function search(){
                     });
                 }
             });
-            console.log(personsArr);    
+            // console.log(personsArr);    
         });
         
     }

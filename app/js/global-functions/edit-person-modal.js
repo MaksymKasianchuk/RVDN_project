@@ -1,5 +1,6 @@
 import { data } from "jquery";
 import API_URL from "../api";
+import notifications from "../notifications";
 
 function editPersonModal(){
     $('.person-card-modal-btn').on('click', function(e){
@@ -66,11 +67,13 @@ function editPersonModal(){
                 },
                 data: JSON.stringify(data),
                 success: function(data){
-                    console.log(data);
+                    // console.log(data);
+                    notifications.succsessNotif('Інформацію про особу оновлено');
                     $('.person-card-modal').removeClass('show-modal');                      
                 },
                 error: function (data) {
-                   console.log(data);
+                    notifications.errorNotif(data.responseJSON);
+                    // console.log(data);
                 }
             });
         }

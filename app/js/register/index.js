@@ -1,9 +1,15 @@
 import { data } from "jquery";
 import API_URL from "../api";
+import notifications from "../notifications";
 
 function register(){
     $("#register-btn").on("click", function(e){
         e.preventDefault();
+       
+        if(!$('#register-birthday').val()){
+            notifications.errorNotif('Некоректно введена дата народження!');
+            return;
+        }
         let lastname    = $('#register-lastname').val();
         let firstname   = $('#register-firstname').val();
         let surname     = $('#register-surname').val();
@@ -15,7 +21,24 @@ function register(){
         let phone       = $('#register-phone').val();
         let password    = $('#register-password').val();
         let confirm     = $('#register-password-confirm').val();
-        console.log(address);
+        if(!lastname || !firstname || !surname || !birthday || !address || !workplace || !position || !mail || !phone || !password || !confirm){
+            notifications.errorNotif('Не заповнені всі поля форми!');
+            return;
+        }
+        if(password !== confirm){
+            notifications.errorNotif('Пароль та підтвердження паролю не збігаються!');
+            return;
+        }
+        if(!isEmail(mail)){
+            notifications.errorNotif('Email введено не коректно!');
+            return;
+        }
+        if(!isPhone(phone)){
+            notifications.errorNotif('Телефонний номер введено не коректно!');
+            return;
+        }
+        
+        // console.log(address);
         let data =  {
             "firstName": firstname,
             "middleName": surname, //?
@@ -40,7 +63,7 @@ function register(){
             },
             data: JSON.stringify(data),
             success: function(data){
-                console.log(data);
+                // console.log(data);
                 sessionStorage.setItem("userId", data.user.id);
                 sessionStorage.setItem("token", data.token);
 
@@ -59,11 +82,21 @@ function register(){
                 window.location.replace('/index.html');
             },
             error: function (data) {
-               console.log(data);
+                notifications.errorNotif();
+                console.log(data);
             }
             
         });
 
     });
+}
+
+function isEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
+function isPhone(phone) {
+    var regex = /\+38[0-9]{10}/;
+    return regex.test(phone);
 }
 export default register;

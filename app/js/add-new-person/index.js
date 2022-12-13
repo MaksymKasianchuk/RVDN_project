@@ -1,5 +1,6 @@
 import { data } from "jquery";
 import API_URL from "../api";
+import notifications from "../notifications";
 
 function addNewPerson(){
     const personsArr  = [];
@@ -19,7 +20,7 @@ function addNewPerson(){
                 // console.log(personsArr);
             },
             error: function (data) {
-               console.log(data);
+            //    console.log(data);
             }
         });
     
@@ -74,6 +75,14 @@ function addNewPerson(){
 
     $('.add-new-person-btn').on('click', function(e){
         e.preventDefault();
+            if(!$('#newperson-pasport-date').val()){
+                notifications.errorNotif('Некоректно введена дата видачі!');
+                return;
+            }
+            if(!$('#newperson-birthday').val()){
+                notifications.errorNotif('Некоректно введена дата народження!');
+                return;
+            }
             let userToken = sessionStorage.getItem('token');
             let fullName =  $('#newperson-name').val(); 
             let documentTypeId = Number($('input[name="newperson-pasport-type"]:checked').val());
@@ -88,10 +97,17 @@ function addNewPerson(){
             let livingAddress =  $('#newperson-home-address').val();
             let workingPlace = $('#newperson-work').val();
             let socialSecurityId = 1; 
-
+            if(!fullName || !documentTypeId || !documentSeries || !documentNumber || !documentIssueDate || !birthDate || !phoneNumber || !registrationAddress || !livingAddress || !workingPlace){
+                notifications.errorNotif('Не заповнені всі поля форми!');
+                return;
+            }
+            if(!isPhone(phoneNumber)){
+                notifications.errorNotif('Телефонний номер введено не коректно!');
+                return;
+            }
             if($('#newperson-children-yes').is(':checked')) { hasChildren = true; } 
             else { hasChildren = false; }
-            switch($('#person-money').val()){
+            switch($('#newperson-money').val()){
                 case 'Низький':
                     socialSecurityId = 1;
                     break;
@@ -102,6 +118,7 @@ function addNewPerson(){
                     socialSecurityId = 3;
                     break;
             }
+            console.log(socialSecurityId);
 
             const data = {
                 "fullName": fullName,
@@ -145,9 +162,11 @@ function addNewPerson(){
                         $('#newperson-reg-address').val('');
                         $('#newperson-home-address').val('');
                         $('#newperson-work').val('');
+                        notifications.succsessNotif('Запис про особу успішно створено');
                     },
                     error: function (data) {
-                       console.log(data);
+                        notifications.errorNotif(data.responseJSON);
+                        //console.log(data);
                     }
                 });
 
@@ -193,5 +212,9 @@ function addNewPerson(){
             }
 
     });
+}
+function isPhone(phone) {
+    var regex = /\+38[0-9]{10}/;
+    return regex.test(phone);
 }
 export default addNewPerson;

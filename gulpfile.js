@@ -48,7 +48,15 @@ function scripts() {
 							presets: ['@babel/env'],
 							plugins: ['babel-plugin-root-import']
 						}
-					}
+					},
+					{
+						test: /\.css$/,
+						use: ['style-loader', 'css-loader'],
+					},
+					{
+						test: /\.scss$/,
+						use: ['style-loader', 'css-loader', 'sass-loader'],
+					},
 				]
 			}
 		})).on('error', function handleError() {

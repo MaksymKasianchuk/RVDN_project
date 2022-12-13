@@ -1,6 +1,7 @@
 import e from "cors";
 import { data } from "jquery";
 import API_URL from "../api";
+import notifications from "../notifications";
 
 function profile(){
     let userToken = sessionStorage.getItem('token');
@@ -17,7 +18,6 @@ function profile(){
                 'Authorization': `Bearer ${userToken}`,
             },
             success: function(data){
-                // console.log(data);
                 const { 
                     authorityName,
                     birthDate,
@@ -46,15 +46,21 @@ function profile(){
                 $('#user-position').val(positionName);
             },
             error: function (data) {
-               console.log(data);
+            //    console.log(data);
             }
         });
 
         $('.workplace-info-change-btn').on('click', function(e){
             e.preventDefault();
+            let authorityName =  $('#user-workplace').val();
+            let positionName = $('#user-position').val();
+            if(!authorityName || !positionName){
+                notifications.emptyNotif('Заповніть необхідні поля');
+                return;
+            }
             let data = {
-                'authorityName' : $('#user-workplace').val(),
-                'positionName' : $('#user-position').val(),
+                'authorityName' : authorityName,
+                'positionName' : positionName,
             };
             let updateUserWorkInfoRequest = $.ajax({
                 type: "PUT",
@@ -67,21 +73,39 @@ function profile(){
                 },
                 data: JSON.stringify(data),
                 success: function(data){
-                    // console.log(data);
+                    notifications.succsessNotif('Дані про місце працевлаштування успішно оновлено!');
                 },
                 error: function (data) {
-                   console.log(data);
+                    notifications.emptyNotif();
                 }
             });
         });
 
         $('.contact-info-change-btn').on('click', function(e){
             e.preventDefault();
+            let email =  $('#user-mail').val();
+            let phoneNumber = $('#user-phone').val();
+            let address = $('#user-address').val();
+
+            if(!email || !phoneNumber || !address){
+                notifications.emptyNotif('Заповніть необхідні поля');
+                return;
+            }
+            if(!isEmail(email)){
+                notifications.emptyNotif('Email введено не коректно!');
+                return;
+            }
+            if(!isPhone(phoneNumber)){
+                notifications.emptyNotif('Телефонний номер введено не коректно!');
+                return;
+            }
+
             let data = {
-                'email' : $('#user-mail').val(),
-                'phoneNumber' : $('#user-phone').val(),
-                'address' : $('#user-address').val(),
+                'email' : email,
+                'phoneNumber' : phoneNumber,
+                'address' : address,
             };
+
             let updateUserWorkInfoRequest = $.ajax({
                 type: "PUT",
                 url: `${API_URL}users/update/${id}/contact_info`,
@@ -93,14 +117,24 @@ function profile(){
                 },
                 data: JSON.stringify(data),
                 success: function(data){
-                    // console.log(data);
+                    notifications.succsessNotif('Контактні дані успішно оновлено!');
                 },
                 error: function (data) {
-                   console.log(data);
+                    notifications.emptyNotif();
+                    console.log(data);
                 }
             });
         });
 
     }
+}
+
+function isEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+}
+function isPhone(phone) {
+    var regex = /\+38[0-9]{10}/;
+    return regex.test(phone);
 }
 export default profile;
