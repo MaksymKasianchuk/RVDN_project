@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+
+	<title></title>
+	<meta name="description" content="Startup HTML template OptimizedHTML 5">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="icon" href="images/favicon.png">
+	<meta property="og:image" content="images/dist/preview.jpg">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css?ver=6.2.0">
+	<link rel="stylesheet" href="css/main.min.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="risk-management-page">
+	<div class="page-content">
+		<!------------------HEADER------------------>
+		<header class="header">
+	<div class="header-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="header-top-wrap">
+						<a href="/RVDN_project/" class="logo">
+							<img src="./images/dist/gerb.png" alt="">
+						</a>
+						<p>регіональний реєстр випадків домашнього насильства</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="menu-wrap">
+						<nav class="menu">
+							<button class="burger-btn" type="button"><i class="fa-solid fa-bars"></i></button>
+							<ul class="menu-list desktop">
+								<li class="regional-sites-page-item"><a href="regional-sites.html" class="menu-list-item"><p>Вінницька область <span>Регіональні сайти</span></p></a></li>
+								<li class="index-page-item"><a href="/RVDN_project/" class="menu-list-item">Головна</a></li>
+								<li class="all-info-page-item"><a href="all-info.html" class="menu-list-item">Загальна інформація</a></li>
+								<li class="my-info-page-item"><a href="my-info.html" class="menu-list-item">Індивідуальна сторінка</a></li>
+							  </ul>
+						</nav>
+						<button class="search-btn" type="button"><i class="fas fa-search"></i></button>
+						<div class="settings">
+							<button class="settings-btn" type="button"><i class="fas fa-ellipsis-v"></i></button>
+							<div class="settings-menu dropdown-menu">
+								<ul>
+									<!-- <li> 
+										<a href="personal-office.html">
+											<div><img src="./images/dist/userempty.png" alt=""></div> <p>Іван Іванов</p>
+										</a>
+									</li>
+									<li><a href="personal-office.html">Налаштування</a></li>-->
+									
+									<li class="user-header-logined"><a href="personal-office.html">Особистий кабінет</a></li> 
+									<li class="user-header-logined"><a href="login.html" class="user-header-logout">Вихід</a></li>
+									<li class="user-header-unlogined"><a href="login.html" class="user-header-login">Вхід</a></li>
+									<!-- <li class="user-header-risk-man"><a href="risk-management.html" class="user-header-risk-man">Оцінювання ризиків ІБ</a></li> -->
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--                 HERE WAS SEARCH-MODAL                 -->
+		</div>
+
+		<div class="mobile-menu dropdown-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<ul class="menu-list mobile">
+							<li><a href="/RVDN_project/" class="menu-list-item">Головна</a></li>
+							<li><a href="all-info.html" class="menu-list-item">Загальна інформація</a></li>
+							<li><a href="my-info.html" class="menu-list-item">Індивідуальна сторінка</a></li>
+							<li><a href="regional-sites.html" class="menu-list-item"><p>Вінницька область <span>Регіональні сайти</span></p></a></li>
+							<!-- <li> 
+								<a href="personal-office.html">
+									<div><i class="fas fa-user"></i></div> <p>User</p>
+								</a>
+							</li> -->
+							<li class="user-header-logined"><a href="personal-office.html">Особистий кабінет</a></li> 
+							<li class="user-header-logined"><a href="login.html" class="user-header-logout">Вихід</a></li>
+							<li class="user-header-unlogined"><a href="login.html" class="user-header-login">Вхід</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+		<!--------------END-HEADER------------------>
+
+		<main class="main">
+			<!------------------SEARCH-MODAL-MODAL------------------>
+			<div class="search-modal-wrap">
+    <div class="container">
+        <form class="search-modal">
+            <!-- <div class="search-modal-record search-modal-block">
+                <div class="row mb-2">
+                    <div class="col-12">
+                        <p>Пошук за матеріалами</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-3">
+                        <div class="form-group">
+                            <label class="form-label">№ запису</label>
+                            <input type="text" name="search-record-id" id="" value="">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="form-group">
+                            <label class="form-label">Дата реєстрації:</label>
+                            <input type="date" name="search-record-reg-date" id="" value="">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="form-group">
+                            <label class="form-label">Ключові слова</label>
+                            <input type="text" name="search-record-keywords" id="" value="">
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="search-modal-person search-modal-block">
+                <div class="row mb-2">
+                    <div class="col-12">
+                        <p>Пошук особи</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- <div class="col-12 col-lg-3">
+                        <div class="form-group">
+                            <label class="form-label">Серія та номер документа:</label>
+                            <input type="text" name="search-person-document" id="" value="">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="form-group">
+                            <label class="form-label">Дата народження:</label>
+                            <input type="date" name="search-person-birthday" id="" value="">
+                        </div>
+                    </div> -->
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="form-label">ПІБ особи:</label>
+                            <input type="text" name="search-person-name" id="search-person-name" value="">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="search-res-wrap">
+                            <ul class="search-res">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="search-modal-action">
+                <button class="btn submit-search-btn">Переглянути інформацію особи</button>
+            </div>
+        </form>
+    </div>
+</div>
+			<!--------------END-SEARCH-MODAL-MODAL------------------>
+			
+			<!------------------RISK-MANAGEMENT-SECTION------------------>
+			<section class="risk-management-section section">
+    <div class="container">
+		<div class="row my-4">
+            <div class="col-8 mx-auto">
+
+                <form class="form risk-management-form">
+                    <div class="form-header">
+                        <div class="row">
+                            <div class="col-12">
+                               <p class="form-title">Оцінювання ступеня загрози ризиків</p> 
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="form-body">
+                        <div class="risk-man-table">
+                            <div class="row factor">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Назва фактору Fi</label>
+                                        <input type="text" name="" class="fac-name" value="">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Значення фактору Fi</label>
+                                        <input type="text" name="" class="fac-val" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <button class="btn form-button add-risk-management-btn">Додати фактор</button>
+                            </div>
+                        </div>
+
+                    </div>
+            
+                    <div class="form-footer">
+                        <div class="row pt-5">
+                            <div class="col-4 mx-auto">
+                                <div class="form-actions">
+                                    <button class="btn form-button risk-management-btn">Виконати обчислення</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+			<!--------------END-RISK-MANAGEMENT-SECTION------------------>
+		</main>
+	</div>
+	<!------------------FOOTER------------------>
+	<footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="footer-content">
+					<a href="/RVDN_project/" class="logo">
+						<img src="./images/dist/gerb_white.png" alt="">
+					</a>
+					<div>
+						<p>Підтримка</p>
+						<p class="support">Email: <a href="mailto:servicedomesticabuse@mail.gov.ua">servicedomesticabuse@mail.gov.ua</a></p>
+						<p>Terms of use</p>
+						<p>© All rights reserved</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+	<!--------------END-FOOTER------------------>
+	
+	<!------------------MODALS------------------>
+        <!------------------RISK-MANAGEMENT-MODAL------------------>
+        <div class="backdrop risk-management-modal">
+    <div class="modal-wrap">
+        <form class="modal">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-12">
+                    <p class="modal-title">Оцінка ступеня загрози ризику</p> 
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="form-label">Математичне обчислення оцінки ступеня загрози ризику B</label>
+                            <input type="text" class="finish-fact-val" id="" value="" readonly>
+                        </div>
+                    </div>
+                    <div class="col-12 ">
+                        <div class="form-group">
+                            <label class="form-label">За класифікацією значень b</label>
+                            <input type="text" class="finish-fact-text" id="" value="" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-12">
+                        <button class="btn modal-button risk-management-modal-btn">Копіювати</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+        <!--------------END-RISK-MANAGEMENT-MODAL------------------>
+    <!--------------MODALS------------------>
+
+	<!------------------SCRIPTS------------------>
+	<script src="js/main.min.js"></script>
+
+	<!--------------END-SCRIPTS------------------>
+</body>
+</html>

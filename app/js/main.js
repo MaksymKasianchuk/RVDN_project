@@ -16,7 +16,6 @@ import riskSection from './risk-section';
 import myInfo from './my-info-section';
 import allInfo from './all-info-section';
 import search from './search';
-import riskMan from './risk-management';
 
 document.addEventListener('DOMContentLoaded', () => {
 	// redirect to login page
@@ -99,9 +98,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	//---------------------PROFILE------------------------
 	profile();
-	
-	riskMan();
-	// console.log(0.5);
-	// console.log("Middle risk level");
 
 });

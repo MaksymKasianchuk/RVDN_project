@@ -49,15 +49,14 @@ function getRecordInfo(){
                         let regDatemonth = ("0" + (regDate.getMonth() + 1)).slice(-2);
                         let regDateStr = regDate.getFullYear()+"-"+(regDatemonth)+"-"+(regDateday);
 
-                        // let recDate = receiptDate ? new Date(receiptDate) : new Date();
-                        // let recDateday = ("0" + recDate.getDate()).slice(-2);
-                        // let recDatemonth = ("0" + (recDate.getMonth() + 1)).slice(-2);
-                        // let recDateStr = recDate.getFullYear()+"-"+(recDatemonth)+"-"+(recDateday);
-
-                        // let execDate = executionDate ? new Date(executionDate) : new Date();
-                        // let execDateday = ("0" + execDate.getDate()).slice(-2);
-                        // let execDatemonth = ("0" + (execDate.getMonth() + 1)).slice(-2);
-                        // let execDateStr = execDate.getFullYear()+"-"+(execDatemonth)+"-"+(execDateday);
+                        //Редагувати
+                        if(incidentType === "Test"){
+                            incidentType = "Фізичне насилля";
+                        }
+                        if(qualification === "Test_Qualification"){
+                            qualification = "Serious-injuries";
+                        }
+                
 
                         $('#record-registryNumber').val(registryNumber);
                         $('#record-register-date').val(regDateStr);

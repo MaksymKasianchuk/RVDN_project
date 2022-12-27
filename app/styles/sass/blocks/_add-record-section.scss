@@ -9,6 +9,9 @@
     }
     & .add-new-record-btn{
         margin-left: 15px;
+        &.hide-btn{
+            display: none;
+        }
     }
 }
 @include media-breakpoint-down(xs) {

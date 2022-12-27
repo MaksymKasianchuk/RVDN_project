@@ -92,11 +92,15 @@ function getPersonInfo(){
                             });
                         }
 
+
+                        // Редагувати
+                        if(socialSecurity === 'Test_SocialSecurity'){
+                            $('#person-money').val('Низький');
+                        }
                         $('#person-name').val(fullName);
                         $('#person-pasport-ser').val(documentSeries);
                         $('#person-pasport-number').val(documentNumber);
                         $('#person-pasport-date').val(docDateStr);
-                        $('#person-money').val(socialSecurity);
                         $('#person-birthday').val(birthDateStr);
                         $('#person-phone').val(phoneNumber);
                         $('#person-reg-address').val(registrationAddress);

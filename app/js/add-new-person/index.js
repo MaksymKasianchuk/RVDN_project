@@ -49,30 +49,6 @@ function addNewPerson(){
         })
     }
 
-    //-----------add-relative-btn-in-fom
-    // $('.add-relative-btn').on('click', function(e){
-    //     const strTpl = `
-    //         <div class="col-12 col-md-6 col-lg-4 newperson-relationship-wrapper">
-    //             <div class="form-group">
-    //                 <label class="form-label">ПІБ</label>
-    //                 <input type="text" name="newperson-relationship" id="" value="">
-    //             </div>
-    //             <div class="form-group newperson-relationship-level">
-    //                 <label class="form-label">Рівень зв'язку</label>
-    //                 <select name="newperson-relationship-level" id="">
-    //                     <option value="5">Чоловік</option>
-    //                     <option value="4">Дружина</option>
-    //                     <option value="3">Брат</option>
-    //                     <option value="2">Сестра</option>
-    //                     <option value="1">Друг</option>
-    //                     <option value="0" selected>Інше...</option>
-    //                 </select>
-    //             </div>
-    //         </div>
-    //     `;
-    //     $(this).parents('.add-relateve-col').before(strTpl);
-    // });
-
     $('.add-new-person-btn').on('click', function(e){
         e.preventDefault();
             if(!$('#newperson-pasport-date').val()){
@@ -138,7 +114,6 @@ function addNewPerson(){
             console.log(data);
             if(userToken){
                 let newpersonId;
-                // let relId = $('.newperson-relationship-wrapper').attr('data-pers-rel-id');
                 let createPersonRequest = $.ajax({
                     type: "POST",
                     url: `${API_URL}persons`,
@@ -166,49 +141,10 @@ function addNewPerson(){
                     },
                     error: function (data) {
                         notifications.errorNotif(data.responseJSON);
-                        //console.log(data);
                     }
                 });
 
-                // if(relId && newpersonId){
-                //     // createPersonRequest.done( function(){
-                //         let data = {              
-                //             "personRelationships": [
-                //                 {
-                //                 "relationshipPersonId": Number(relId),
-                //                 "relationshipTypeId": Number($('.newperson-relationship-level').val())
-                //                 }
-                //             ]
-                //         }
-                //         let createRelRequest = $.ajax({
-                //             type: "POST",
-                //             url: `${API_URL}persons/${newpersonId}/relationships`,
-                //             crossDomain: true,
-                //             headers: {
-                //                 'Access-Control-Allow-Origin': '*',
-                //                 'Content-Type': 'application/json',
-                //                 'Authorization': `Bearer ${userToken}`,
-                //             },
-                //             data: JSON.stringify(data),
-                //             success: function(data){
-                //                 console.log('relship');
-                //                 $('#newperson-name').val('');
-                //                 $('#newperson-pasport-ser').val('');   
-                //                 $('#newperson-pasport-number').val('');
-                //                 $('#newperson-pasport-date').val('');
-                //                 $('#newperson-birthday').val('');
-                //                 $('#newperson-phone').val('');
-                //                 $('#newperson-reg-address').val('');
-                //                 $('#newperson-home-address').val('');
-                //                 $('#newperson-work').val('');
-                //             },
-                //             error: function (data) {
-                //                console.log(data);
-                //             }
-                //         });
-                //     // }
-                //     // );
-                // }
+               
             }
 
     });

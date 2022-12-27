@@ -38,21 +38,22 @@ function allInfo(){
                     let receipDate = receiptDate ? new Date(receiptDate) : 0;
                     let receipDateStr = receipDate !== 0 ? `${receipDate.getDay()}/${receipDate.getMonth()}/${receipDate.getFullYear()}` : '-';
     
-                    const victimArr = incidentPersons.Постраждалий;
-                    const agressorArr = incidentPersons.Кривдник;
-                    // console.log(incidentPersons);
-                    // console.log(agressorArr);
+                
+                    const victimArr = incidentPersons?.Постраждалий;
+                    const agressorArr = incidentPersons?.Кривдник;
+                  
+
                     let victimBtns =``;
                     let agressorBtns =``;
-                    victimArr.map(item=>{
+                    Array.isArray(victimArr) ? victimArr.map((item)=>{
                         victimBtns += `<button type="button" class="view-person-btn" data-person-role="victim" data-person-id="${item.id}">${item.fullName}<i class="fa-solid fa-users"></i></button>`
                         return victimBtns;
-                    });
-                    agressorArr.map(item=>{
+                    }) : '';
+                    Array.isArray(agressorArr) ? agressorArr.map((item)=>{
                         agressorBtns += `<button type="button" class="view-person-btn" data-person-role="agressor" data-person-id="${item.id}">${item.fullName}<i class="fa-solid fa-users"></i></button>`
                         return agressorBtns;
-                    });
-    
+                    }) : '';
+                  
                     const tplStr = `
                     <tr data-record-id="${id}">
                         <td>${registryNumber}</td>

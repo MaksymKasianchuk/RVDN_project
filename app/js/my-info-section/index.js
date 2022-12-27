@@ -38,19 +38,20 @@ function myInfo(){
                     let execDateStr = execDate !== 0 ? `${execDate.getDay()}/${execDate.getMonth()}/${execDate.getFullYear()}` : '-';
                     let receipDate = receiptDate ? new Date(receiptDate) : 0;
                     let receipDateStr = receipDate !== 0 ? `${receipDate.getDay()}/${receipDate.getMonth()}/${receipDate.getFullYear()}` : '-';
-    
-                    const victimArr = incidentPersons.Постраждалий;
-                    const agressorArr = incidentPersons.Кривдник;
+                    const victimArr = incidentPersons?.Постраждалий;
+                    const agressorArr = incidentPersons?.Кривдник;
+                    // console.log( Array.isArray(incidentPersons) ? 1 : 2);
+
                     let victimBtns =``;
                     let agressorBtns =``;
-                    victimArr.map(item=>{
+                    Array.isArray(victimArr) ? victimArr.map((item)=>{
                         victimBtns += `<button type="button" class="view-person-btn" data-person-role="victim" data-person-id="${item.id}">${item.fullName}<i class="fa-solid fa-users"></i></button>`
                         return victimBtns;
-                    });
-                    agressorArr.map(item=>{
+                    }) : '';
+                    Array.isArray(agressorArr) ? agressorArr.map((item)=>{
                         agressorBtns += `<button type="button" class="view-person-btn" data-person-role="agressor" data-person-id="${item.id}">${item.fullName}<i class="fa-solid fa-users"></i></button>`
                         return agressorBtns;
-                    });
+                    }) : '';
     
                     const tplStr = `
                     <tr data-record-id="${id}">

@@ -19,7 +19,7 @@
                                 <label class="form-label">У яких стосунках перебуває кривдник з постраждалою особою</label>
                             </div>
                             <div class="col-12 col-md-6">
-                                <select name="newrisk-relationship-level" id="">
+                                <select name="newrisk-relationship-level" id="newrisk-relationship-level">
                                     <option value="Чоловік">Чоловік</option>
                                     <option value="Дружина">Дружина</option>
                                     <option value="Брат">Брат</option>
@@ -33,7 +33,7 @@
                                 <label class="form-label">Місце (адреса) проведення оцінювання ризиків</label>
                             </div>
                             <div class="col-12 col-md-6">
-                                <input type="text" name="newrisk-event-place" id="" value="">
+                                <input type="text" name="newrisk-event-place" id="newrisk-event-place" value="">
                             </div>
                         </div>
                         <div class="row">
@@ -57,7 +57,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">1. Чи кривдник колись погрожував застосувати та/або застосовував зброю або інші предмети, які можуть спричинити шкоду життю та здоров'ю постраждалої особи та/або її дітям?</label>
+                                <label class="form-label newrisk-quest1">1. Чи кривдник колись погрожував застосувати та/або застосовував зброю або інші предмети, які можуть спричинити шкоду життю та здоров'ю постраждалої особи та/або її дітям?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q1-yes" name="newrisk-q1" value="Так"> Так</label>
@@ -68,7 +68,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">2. Чи кривдник погрожував вбити постраждалу особу та/або її дітей?</label>
+                                <label class="form-label newrisk-quest2">2. Чи кривдник погрожував вбити постраждалу особу та/або її дітей?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q2-yes" name="newrisk-q2" value="Так"> Так</label>
@@ -79,7 +79,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">3. Чи допускає постраждала особа, що кривдник може спробувати вбити постраждалу особу та/або її дітей?</label>
+                                <label class="form-label newrisk-quest3">3. Чи допускає постраждала особа, що кривдник може спробувати вбити постраждалу особу та/або її дітей?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q3-yes" name="newrisk-q3" value="Так"> Так</label>
@@ -90,7 +90,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">4. Чи кривдник коли-небудь душив постраждалу особу або передавлював їй горло, або намагався це зробити?</label>
+                                <label class="form-label newrisk-quest4">4. Чи кривдник коли-небудь душив постраждалу особу або передавлював їй горло, або намагався це зробити?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q4-yes" name="newrisk-q4" value="Так"> Так</label>
@@ -101,7 +101,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">5. Чи кривдник застосовував раніше фізичне насильство, яке мало наслідки спричинення середнього та/або тяжкого ступеня тілесних ушкоджень?</label>
+                                <label class="form-label newrisk-quest5">5. Чи кривдник застосовував раніше фізичне насильство, яке мало наслідки спричинення середнього та/або тяжкого ступеня тілесних ушкоджень?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q5-yes" name="newrisk-q5" value="Так"> Так</label>
@@ -112,7 +112,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">6. Чи застосовувався протягом останнього року до кривдника терміновий заборонний припис?</label>
+                                <label class="form-label newrisk-quest6">6. Чи застосовувався протягом останнього року до кривдника терміновий заборонний припис?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q6-yes" name="newrisk-q6" value="Так"> Так</label>
@@ -123,7 +123,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">7. Чи кривдник має зброю та/або може її легко дістати і застосувати?</label>
+                                <label class="form-label newrisk-quest7">7. Чи кривдник має зброю та/або може її легко дістати і застосувати?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q7-yes" name="newrisk-q7" value="Так"> Так</label>
@@ -134,7 +134,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">8. Чи кривдник схильний до сильних та/або постійних ревнощів та чи контролює більшу частину повсякденного життя постраждалої особи?</label>
+                                <label class="form-label newrisk-quest8">8. Чи кривдник схильний до сильних та/або постійних ревнощів та чи контролює більшу частину повсякденного життя постраждалої особи?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q8-yes" name="newrisk-q8" value="Так"> Так</label>
@@ -145,7 +145,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">9. Чи висловлював кривдник наміри та/або намагався вчинити самогубство?</label>
+                                <label class="form-label newrisk-quest9">9. Чи висловлював кривдник наміри та/або намагався вчинити самогубство?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q9-yes" name="newrisk-q9" value="Так"> Так</label>
@@ -156,7 +156,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">10. Чи кривдник залякував, переслідував або погрожувавпостраждалій особі та/або її дітям?</label>
+                                <label class="form-label newrisk-quest10">10. Чи кривдник залякував, переслідував або погрожувавпостраждалій особі та/або її дітям?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q10-yes" name="newrisk-q10" value="Так"> Так</label>
@@ -167,7 +167,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">11. Чи здійснював кривдник напади на постраждалу особу та/або її дітей за межами домашнього середовища?</label>
+                                <label class="form-label newrisk-quest11">11. Чи здійснював кривдник напади на постраждалу особу та/або її дітей за межами домашнього середовища?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q11-yes" name="newrisk-q11" value="Так"> Так</label>
@@ -178,7 +178,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">12. Чи утримував кривдник постраждалу особу та/або її дітей проти її волі в певному місці або будь-яким чином обмежував свободу, у тому числі свободу у спілкуванні?</label>
+                                <label class="form-label newrisk-quest12">12. Чи утримував кривдник постраждалу особу та/або її дітей проти її волі в певному місці або будь-яким чином обмежував свободу, у тому числі свободу у спілкуванні?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q12-yes" name="newrisk-q12" value="Так"> Так</label>
@@ -189,7 +189,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">13. Чи вплинула поведінка кривдника на безпеку постраждалої особи та/або безпеку її дітей?</label>
+                                <label class="form-label newrisk-quest13">13. Чи вплинула поведінка кривдника на безпеку постраждалої особи та/або безпеку її дітей?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q13-yes" name="newrisk-q13" value="Так"> Так</label>
@@ -200,7 +200,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">14. Чи кривдник має алкогольну залежність або зловживає алкогольними напоями?</label>
+                                <label class="form-label newrisk-quest14">14. Чи кривдник має алкогольну залежність або зловживає алкогольними напоями?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q14-yes" name="newrisk-q14" value="Так"> Так</label>
@@ -211,7 +211,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">15. Чи кривдник має наркотичну залежність або зловживає наркотичними речовинами?</label>
+                                <label class="form-label newrisk-quest15">15. Чи кривдник має наркотичну залежність або зловживає наркотичними речовинами?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q15-yes" name="newrisk-q15" value="Так"> Так</label>
@@ -222,7 +222,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">16. Чи кривдник коли-небудь погрожував вбити, вбив або навмисно завдав шкоди домашній та/або іншій тварині?</label>
+                                <label class="form-label newrisk-quest16">16. Чи кривдник коли-небудь погрожував вбити, вбив або навмисно завдав шкоди домашній та/або іншій тварині?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q16-yes" name="newrisk-q16" value="Так"> Так</label>
@@ -233,7 +233,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">17. Чи кривдник вчиняв щодо постраждалої особи фізичне та/або сексуальне насильство, коли вона була вагітна або з новонародженою дитиною/немовлям?</label>
+                                <label class="form-label newrisk-quest17">17. Чи кривдник вчиняв щодо постраждалої особи фізичне та/або сексуальне насильство, коли вона була вагітна або з новонародженою дитиною/немовлям?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q17-yes" name="newrisk-q17" value="Так"> Так</label>
@@ -244,7 +244,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">18. Чи кривдник має фінансові проблеми?</label>
+                                <label class="form-label newrisk-quest18">18. Чи кривдник має фінансові проблеми?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q18-yes" name="newrisk-q18" value="Так"> Так</label>
@@ -255,7 +255,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">19. Чи є постраждала особа та/або її діти економічно залежною(ними) від кривдника?</label>
+                                <label class="form-label newrisk-quest19">19. Чи є постраждала особа та/або її діти економічно залежною(ними) від кривдника?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q19-yes" name="newrisk-q19" value="Так"> Так</label>
@@ -266,7 +266,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">20. Чи були випадки після одруження або проживання разом, коли кривдник покидав на тривалий час (не менше ніж на 10 діб) сім'ю без причини та без надання пояснень?</label>
+                                <label class="form-label newrisk-quest20">20. Чи були випадки після одруження або проживання разом, коли кривдник покидав на тривалий час (не менше ніж на 10 діб) сім'ю без причини та без надання пояснень?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q20-yes" name="newrisk-q20" value="Так"> Так</label>
@@ -277,7 +277,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">21. Чи є у постраждалої особи дитина/діти від іншого шлюбу, про яких кривдник знає та/або нещодавно дізнався?</label>
+                                <label class="form-label newrisk-quest21">21. Чи є у постраждалої особи дитина/діти від іншого шлюбу, про яких кривдник знає та/або нещодавно дізнався?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q21-yes" name="newrisk-q21" value="Так"> Так</label>
@@ -288,7 +288,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">22. Чи перебуває сім'я постраждалої особи під соціальним супроводом?</label>
+                                <label class="form-label newrisk-quest22">22. Чи перебуває сім'я постраждалої особи під соціальним супроводом?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q22-yes" name="newrisk-q22" value="Так"> Так</label>
@@ -299,7 +299,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">23. Чи видавав суд кривднику обмежувальний припис?</label>
+                                <label class="form-label newrisk-quest23">23. Чи видавав суд кривднику обмежувальний припис?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q23-yes" name="newrisk-q23" value="Так"> Так</label>
@@ -310,7 +310,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">24. У разі видачі кривднику обмежувального припису, чи порушував він заходи тимчасового обмеження прав кривдника або покладення на нього обов'язків, передбачених таким приписом?</label>
+                                <label class="form-label newrisk-quest24">24. У разі видачі кривднику обмежувального припису, чи порушував він заходи тимчасового обмеження прав кривдника або покладення на нього обов'язків, передбачених таким приписом?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q24-yes" name="newrisk-q24" value="Так"> Так</label>
@@ -321,7 +321,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">25. Чи відомо постраждалій особі про притягнення кривдника до кримінальної відповідальності за вбивство, спричинення тілесних ушкоджень, згвавтування та/або інші злочини проти статевої свободи та статевої недоторканості особи? (якщо так, необхідне виділити або підкреслити)</label>
+                                <label class="form-label newrisk-quest125">25. Чи відомо постраждалій особі про притягнення кривдника до кримінальної відповідальності за вбивство, спричинення тілесних ушкоджень, згвавтування та/або інші злочини проти статевої свободи та статевої недоторканості особи? (якщо так, необхідне виділити або підкреслити)</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q25-yes" name="newrisk-q25" value="Так"> Так</label>
@@ -332,7 +332,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">26. Чи кривдник виганяв постраждалу особу та/або її дітей з місця проживання та/або погрожував здійснити такі дії?</label>
+                                <label class="form-label newrisk-quest26">26. Чи кривдник виганяв постраждалу особу та/або її дітей з місця проживання та/або погрожував здійснити такі дії?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q26-yes" name="newrisk-q26" value="Так"> Так</label>
@@ -343,7 +343,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label">27. Чи є щось додаткове, що змушує постраждалу особу турбуватися про її безпеку?</label>
+                                <label class="form-label newrisk-quest27">27. Чи є щось додаткове, що змушує постраждалу особу турбуватися про її безпеку?</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q27-yes" name="newrisk-q27" value="Так"> Так</label>
@@ -357,7 +357,7 @@
                                 <label class="form-label">Якщо так, що саме турбує постраждалу особу?</label>
                             </div>
                             <div class="col-12 col-md-6">
-                                <textarea name="newrisk-q28" id="" rows="5"></textarea>
+                                <textarea name="newrisk-q28" id="newrisk-q28" rows="5"></textarea>
                             </div>
                         </div>
 
@@ -377,7 +377,7 @@
                                 <label class="form-label">Зауваження поліцейського уповноваженого підрозділу поліції щодо будь-яких інших чинників/обставин, які підвищують/знижують рівень загрози життю та здоров'ю постраждалої особи</label>
                             </div>
                             <div class="col-12">
-                                <textarea name="newrisk-police-comment" id="" rows="5"></textarea>
+                                <textarea name="newrisk-police-comment" id="newrisk-police-comment" rows="5"></textarea>
                             </div>
                         </div>
 
@@ -404,10 +404,10 @@
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-12 col-md-7">
-                                        <label class="form-label add-risk-termin-label">у разі винесення зазначити: № <input type="text" name="newrisk-termin-num" id="" value=""></label>
+                                        <label class="form-label add-risk-termin-label">у разі винесення зазначити: № <input type="text" name="newrisk-termin-num" id="newrisk-termin-num" value=""></label>
                                     </div>
                                     <div class="col-12 col-md-5">
-                                        <label class="form-label add-risk-termin-label">від <input type="text" name="newrisk-termin-date" id="" value=""></label>
+                                        <label class="form-label add-risk-termin-label">від <input type="date" name="newrisk-termin-date" id="newrisk-termin-date" value=""></label>
                                     </div>
                                 </div>
                             </div>

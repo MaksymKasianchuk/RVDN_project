@@ -1,6 +1,10 @@
+import API_URL from "../api";
+import notifications from "../notifications";
+
 function riskSection() {
     $('.open-risk-section-btn').on('click', function(e){
 		$('.add-risk-section').toggleClass('show-section');
+		$('.add-new-record-btn').toggleClass('hide-btn');
 	});
 
 	let counter1 = 0, counter2 = 0;
@@ -95,6 +99,13 @@ function riskSection() {
 			$("#newrisk-risk-level-low-label").css("color", "#747272");
 		}
 	});
+
+
+
+
+
+	
+	
 
 }
 export default riskSection;
