@@ -16,37 +16,80 @@ function addNewPerson(){
                 'Authorization': `Bearer ${userToken}`,
             },
             success: function(data){
-                personsArr.push(...data);
-                // console.log(personsArr);
+                data.map(item => {
+                    personsArr.push({
+                        'fullName': item.fullName,
+                        'id': item.id,
+                        'normalizedName': item.fullName.toLowerCase()
+                    });
+                });
             },
             error: function (data) {
-            //    console.log(data);
+                //console.log(data);
             }
         });
     
         getAllPersonsRequest.done(function(){
-            $('input[name=newperson-relationship]').each(function(){
-                $(this).on('input', function(){
-                    if($(this).val().length > 3){
-                        personsArr.map(item=>{
-                            let fullname = item.fullName;
-                            if (fullname.includes($(this).val())){
-                                $('.relationship-search').html(`
-                                    <p calss="maby-rel-pers">${fullname}</p>
-                                `);
-                            }
-                            if (fullname === $(this).val()){
-                                $(this).parents('.newperson-relationship-wrapper').attr('data-pers-rel-id', item.id);
-                            }
-                        });
-                    } else {
-                        $('.relationship-search').html('');
+            $('#newperson-relationship-name').on('input', function(){
+                if($(this).val().length > 3){
+                    personsArr.map(item=>{
+                        let fullname = item.fullName;
+                        let normalizedNameData =item.normalizedName;
+                        let normalizedName = ($(this).val()).toLowerCase();
+                        if (normalizedNameData.includes(normalizedName)){
+                            $('.relationship-search').html(`
+                                <p class="maby-rel-pers">${fullname}</p>
+                            `);
+                            nameListener(fullname, item.id);
+                        }
+                    });
+                } else {
+                    $('.relationship-search').html('');
+                }
+            });
+            function nameListener(fullname, id){
+                $('.maby-rel-pers').on('click', function(){
+                    $('#newperson-relationship-name').val($(this).text());
+                    $('.maby-rel-pers').text('');
+                    if (fullname === $('#newperson-relationship-name').val()){
+                        $(".newperson-relationship-wrapper").attr('data-pers-rel-id', id);
                     }
                 });
-              
-            });
-    
-        })
+            }
+        });
+    }
+
+    //add relationship
+    $('.add-relative-btn').on('click', function(e){
+        e.preventDefault();
+        let persId = $('.newperson-relationship-wrapper').attr('data-pers-rel-id');
+        let relId = $('#newperson-relationship-level').val();
+        let persName = $('#newperson-relationship-name').val();
+        let relName = $('#newperson-relationship-level>option:selected').text();
+        if(!persId){
+            notifications.emptyNotif("Додайте вірне ім'я соби у полі зв'язків");
+            return;
+        }
+        let relMarkup = `<div class="col-12 col-md-6 col-lg-4 newpers-rel-item" data-pers-rel-id="${persId}" data-pers-rel-type-id="${relId}">
+            <div class="form-group">
+                <label class="form-label">ПІБ пов'язаної особи</label>
+                <input type="text" name="newperson-rel-name" value="${persName}" readonly>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Рівень зв'язку</label>
+                <input type="text" name="newperson-rel-level" value="${relName}" readonly>
+            </div>
+            <button class="btn delete-rel" type="button">Видалити запис</button>
+        </div>`;
+        $('.rel-row').append(relMarkup);
+        $('#newperson-relationship-name').val('');
+        $('.newperson-relationship-wrapper').attr('data-pers-rel-id', '');
+        deleteRel();
+    });
+    function deleteRel(){
+        $('.delete-rel').on('click', function(e){
+            $(this).parent('.newpers-rel-item').remove();
+        });
     }
 
     $('.add-new-person-btn').on('click', function(e){
@@ -101,7 +144,7 @@ function addNewPerson(){
             };
             console.log(data);
             if(userToken){
-                let newpersonId;
+                let relPersArr = [];
                 let createPersonRequest = $.ajax({
                     type: "POST",
                     url: `${API_URL}persons`,
@@ -114,8 +157,6 @@ function addNewPerson(){
                     data: JSON.stringify(data),
                     success: function(data){
                         // console.log(data);
-                        newpersonId = data;
-
                         $('#newperson-name').val('');
                         $('#newperson-pasport-ser').val('');   
                         $('#newperson-pasport-number').val('');
@@ -132,6 +173,48 @@ function addNewPerson(){
                     }
                 });
 
+                
+                $('.newpers-rel-item').each(function(){
+                    relPersArr.push(
+                        {
+                            "relationshipPersonId": $(this).attr('data-pers-rel-id'),
+                            "relationshipTypeId": $(this).attr('data-pers-rel-type-id')
+                        }
+                    );
+                });
+                
+                if(relPersArr){
+                    let relData = {
+                        "personRelationships": relPersArr
+                    };
+                    createPersonRequest.done(function(data){
+                        let recId = data;
+                        $.ajax({
+                            type: "POST",
+                            url: `${API_URL}persons/${recId}/relationships`,
+                            crossDomain: true,
+                            headers: {
+                                'Access-Control-Allow-Origin': '*',
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${userToken}`,
+                            },
+                            data: JSON.stringify(relData),
+                            success: function(data){
+                                console.log(data);
+                                $('.newpers-rel-item').each(function(){
+                                    $(this).remove();
+                                });
+                                $('#newperson-relationship-name').val('');
+                            },
+                            error: function (data) {
+                                notifications.errorNotif(data.responseJSON);
+                            }
+                        });
+
+                    });
+                    
+                }
+                
                
             }
 

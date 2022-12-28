@@ -82,11 +82,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		//parse persons relation ship types risk forms
 		let personsRelShipTypes = getPersonsRelShipTypes();
 		personsRelShipTypes.done(function(data){
-			// const personsRelShipTypesWrapSelector1 = $('#risk-relationship-level');
+			const personsRelShipTypesWrapSelector1 = $('#newperson-relationship-level');
 			const personsRelShipTypesWrapSelector2 = $('#newrisk-relationship-level');
 			if(Array.isArray(data)){
 				data.map(item => {
-					// personsRelShipTypesWrapSelector1.append(`<option value="${item.id}">${item.name}</option>`);
+					personsRelShipTypesWrapSelector1.append(`<option value="${item.id}">${item.name}</option>`);
 					personsRelShipTypesWrapSelector2.append(`<option value="${item.id}">${item.name}</option>`);
 				});
 			}

@@ -1,5 +1,8 @@
 import { data } from "jquery";
 import API_URL from "../api";
+import notifications from "../notifications";
+import getPersonsSocialSecurityTypes from "../global-functions/getPersonsSocialSecurityTypes";
+import getPersonsDocTypes from "../global-functions/getPersonsDocTypes";
 
 function search(){
     let userToken = sessionStorage.getItem('token');
@@ -25,7 +28,7 @@ function search(){
                 });
             },
             error: function (data) {
-                // console.log(data);
+                console.log(data);
             }
         });
         getAllPersonsRequest.done(function(){
@@ -52,8 +55,7 @@ function search(){
                         }
                     });
                 }
-            });
-            // console.log(personsArr);    
+            });   
         });
         
     }
@@ -102,20 +104,9 @@ function search(){
 
                     if(hasChildren) { $('#person-children-yes').attr('checked', 'checked'); } 
                     else { $('#person-children-no').attr('checked', 'checked'); }
-                    switch(documentType){
-                        case "Паспорт" :
-                            $('#person-pasport-type-pasport').attr('checked', 'checked');
-                        break;
-                        case "ID-картка" :
-                            $('#person-pasport-type-card').attr('checked', 'checked');
-                        break;
-                        case "Посвідчення водія" :
-                            $('#person-pasport-type-drive').attr('checked', 'checked');
-                        break;
-                    }
 
                     let relationshipsMarkup = '';
-                    // console.log(relationships);
+                   
                     if(relationships){
                         relationships.map(element => {
                             relationshipsMarkup += `
@@ -133,11 +124,33 @@ function search(){
                         });
                     }
 
+                    let personsDocTypes = getPersonsDocTypes();
+                    personsDocTypes.done(function(data){
+                        $(`input[type="radio"][name="person-pasport-type"]`).prop("checked", false);
+                        if(Array.isArray(data)){
+                            data.map(item => {
+                                if(documentType === item.name){
+                                    $(`input[type="radio"][name="person-pasport-type"][value="${item.id}"]`).prop("checked", true);
+                                }
+                            });
+                        }
+                    });
+
+                    let personSocialSecTypes = getPersonsSocialSecurityTypes();
+                    personSocialSecTypes.done(function(data){
+                        if(Array.isArray(data)){
+                            data.map(item => {
+                                if(socialSecurity === item.name){
+                                    $('#person-money').val(item.id);
+                                }
+                            });
+                        }
+                    });
+
                     $('#person-name').val(fullName);
                     $('#person-pasport-ser').val(documentSeries);
                     $('#person-pasport-number').val(documentNumber);
                     $('#person-pasport-date').val(docDateStr);
-                    $('#person-money').val(socialSecurity);
                     $('#person-birthday').val(birthDateStr);
                     $('#person-phone').val(phoneNumber);
                     $('#person-reg-address').val(registrationAddress);
