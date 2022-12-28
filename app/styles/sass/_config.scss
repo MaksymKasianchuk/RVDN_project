@@ -84,3 +84,7 @@ label:not(.form-label){
 	}
 }
 
+input:read-only, textarea:read-only{
+	cursor: not-allowed;
+}
+

@@ -11,6 +11,17 @@
     & .form-label{
         color: $grayLighterColor;
     }
+    & .delete-rel{
+        background-color: rgb(136, 2, 2);
+    }
+    .maby-rel-pers{
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 250ms linear;
+        &:hover{
+            opacity: 0.6;
+        }
+    }
 }
 @include media-breakpoint-down(xs) {
     .add-person-section{
