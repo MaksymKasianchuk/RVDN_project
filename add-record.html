@@ -219,13 +219,13 @@
                                 <div class="form-group">
                                     <label class="form-label">Вид події</label>
                                     <select name="newrecord-event-type" id="newrecord-event-type">
-                                        <option value="1">Фізичне насилля</option>
+                                        <!-- <option value="1">Фізичне насилля</option> -->
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Кваліфікація</label>
                                     <select name="newrecord-qualification" id="newrecord-qualification">
-                                        <option value="1">Важкі тілесні</option>
+                                        <!-- <option value="1">Важкі тілесні</option> -->
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -315,11 +315,7 @@
                             </div>
                             <div class="col-12 col-md-6">
                                 <select name="newrisk-relationship-level" id="newrisk-relationship-level">
-                                    <option value="Чоловік">Чоловік</option>
-                                    <option value="Дружина">Дружина</option>
-                                    <option value="Брат">Брат</option>
-                                    <option value="Сестра">Сестра</option>
-                                    <option value="Інше..." selected>Інше...</option>
+                                  
                                 </select>
                             </div>
                         </div>
@@ -616,7 +612,7 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label class="form-label newrisk-quest125">25. Чи відомо постраждалій особі про притягнення кривдника до кримінальної відповідальності за вбивство, спричинення тілесних ушкоджень, згвавтування та/або інші злочини проти статевої свободи та статевої недоторканості особи? (якщо так, необхідне виділити або підкреслити)</label>
+                                <label class="form-label newrisk-quest25">25. Чи відомо постраждалій особі про притягнення кривдника до кримінальної відповідальності за вбивство, спричинення тілесних ушкоджень, згвавтування та/або інші злочини проти статевої свободи та статевої недоторканості особи? (якщо так, необхідне виділити або підкреслити)</label>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label><input type="radio"  id="newrisk-q25-yes" name="newrisk-q25" value="Так"> Так</label>
@@ -788,9 +784,11 @@
                     <div class="col-12 col-md-4">
                         <div class="form-group">
                             <label class="form-label">Документ що посвідчує особу</label>
-                            <label><input type="radio" name="person-pasport-type" value="1" id="person-pasport-type-pasport" checked> Паспорт</label>
-                            <label><input type="radio" name="person-pasport-type" value="2" id="person-pasport-type-card"> ID-картка</label>
-                            <label><input type="radio" name="person-pasport-type" value="3" id="person-pasport-type-drive"> Посвідчення водія</label>
+                            <div id="person-pasport-wrapper">
+                                <!-- <label><input type="radio" name="person-pasport-type" value="1" id="person-pasport-type-pasport" checked> Паспорт</label>
+                                <label><input type="radio" name="person-pasport-type" value="2" id="person-pasport-type-card"> ID-картка</label>
+                                <label><input type="radio" name="person-pasport-type" value="3" id="person-pasport-type-drive"> Посвідчення водія</label> -->
+                            </div>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Серія</label>
@@ -809,7 +807,7 @@
                             <select name="person-money" id="person-money">
                                 <!-- <option value="Високий">Високий</option>
                                 <option value="Середній">Середній</option> -->
-                                <option value="Низький">Низький</option>
+                                <!-- <option value="Низький">Низький</option> -->
                             </select>
                         </div>
                     </div>
