@@ -1,6 +1,8 @@
 import { data } from "jquery";
 import API_URL from "../api";
 import notifications from "../notifications";
+import getIcidentsTypes from './getIcidentsTypes';
+import getIncidentsQualifications from './getIncidentsQualifications';
 
 function getRecordInfo(){
     $('.edit-record-btn').each(function(){
@@ -13,6 +15,7 @@ function getRecordInfo(){
     });
     function viewRecordListener(btnSelector){
         $(btnSelector).on('click', function(){
+           
             const userToken = sessionStorage.getItem('token');
             let recordId = $(this).attr('data-record-id');
             if(userToken && recordId){
@@ -49,21 +52,32 @@ function getRecordInfo(){
                         let regDatemonth = ("0" + (regDate.getMonth() + 1)).slice(-2);
                         let regDateStr = regDate.getFullYear()+"-"+(regDatemonth)+"-"+(regDateday);
 
-                        //Редагувати
-                        if(incidentType === "Test"){
-                            incidentType = "Фізичне насилля";
-                        }
-                        if(qualification === "Test_Qualification"){
-                            qualification = "Serious-injuries";
-                        }
-                
+                        let incTypes = getIcidentsTypes();
+                        incTypes.done(function(data){
+                            if(Array.isArray(data)){
+                                data.map(item => {
+                                    if(incidentType === item.name){
+                                        $('#record-event-type').val(item.id);
+                                    }
+                                });
+                            }
+                        });
+                      
+                        let incQual = getIncidentsQualifications();
+                        incQual.done(function(data){
+                            if(Array.isArray(data)){
+                                data.map(item => {
+                                    if(qualification === item.name){
+                                        $('#record-qualification').val(item.id);
+                                    }
+                                });
+                            }
+                        });
 
                         $('#record-registryNumber').val(registryNumber);
                         $('#record-register-date').val(regDateStr);
                         $('#record-init-org').val(initiatorAuthority);
                         $('#record-execute-org').val(executorAuthority);
-                        $('#record-event-type').val(incidentType);
-                        $('#record-qualification').val(qualification);
                         $('#record-event-place').val(address);
                         $('#record-event-reason').val(reason);
                         $('#record-describe').val(description);

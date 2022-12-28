@@ -72,7 +72,7 @@ function addNewPerson(){
             let registrationAddress = $('#newperson-reg-address').val();
             let livingAddress =  $('#newperson-home-address').val();
             let workingPlace = $('#newperson-work').val();
-            let socialSecurityId = 1; 
+            let socialSecurityId = Number($('#newperson-money').val());
             if(!fullName || !documentTypeId || !documentSeries || !documentNumber || !documentIssueDate || !birthDate || !phoneNumber || !registrationAddress || !livingAddress || !workingPlace){
                 notifications.errorNotif('Не заповнені всі поля форми!');
                 return;
@@ -83,18 +83,6 @@ function addNewPerson(){
             }
             if($('#newperson-children-yes').is(':checked')) { hasChildren = true; } 
             else { hasChildren = false; }
-            switch($('#newperson-money').val()){
-                case 'Низький':
-                    socialSecurityId = 1;
-                    break;
-                case 'Середній':
-                    socialSecurityId = 2;
-                    break;
-                case 'Високий':
-                    socialSecurityId = 3;
-                    break;
-            }
-            console.log(socialSecurityId);
 
             const data = {
                 "fullName": fullName,

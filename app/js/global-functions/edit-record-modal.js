@@ -20,8 +20,8 @@ function editRecordModal(){
         let registrationDate = new Date($("#record-register-date").val());
         let initiatorAuthority = $("#record-init-org").val();
         let executorAuthority = $("#record-execute-org").val();
-        let incidentTypeId ;
-        let qualificationId ;
+        let incidentTypeId = Number($('#record-event-type').val());
+        let qualificationId = Number($('#record-qualification').val());;
         let address = $("#record-event-place").val();
         let reason = $("#record-event-reason").val();
         let description = $("#record-describe").val();
@@ -33,15 +33,6 @@ function editRecordModal(){
             "2": victim_arr
         }
 
-        if($('#record-event-type').val() === "Фізичне насилля"){
-            incidentTypeId = 1;
-        } else if($('#record-event-type').val() === "Психологічне насилля"){
-            incidentTypeId = 2;
-        }
-
-        if($("#record-qualification").val() === "Serious-injuries"){
-            qualificationId = 1;
-        }
 
         const data = {
             "registryNumber": registryNumber,
@@ -85,7 +76,7 @@ function editRecordModal(){
                 },
                 error: function (data) {
                     notifications.errorNotif();
-                //    console.log(data);
+                    console.log(data);
                 }
             });
         }

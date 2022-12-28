@@ -6,7 +6,6 @@ function addNewRecord(){
     let victim_arr = [];
     let agressor_arr = [];
     const personsArr  = [];
-    let qualifications = [];
 
     if (userToken){
         //add one more victim to form
@@ -32,8 +31,6 @@ function addNewRecord(){
             incidentPersonsListener();
         });
 
-      
-   
         let getAllPersonsRequest = $.ajax({
             type: "GET",
             url: `${API_URL}persons`,
@@ -91,20 +88,6 @@ function addNewRecord(){
                 });
             });
         };
-
-
-        // //get qualifications
-        // let qualificationsReq = $.ajax({
-        //     type: "GET",
-        //     url: `${API_URL}incidents/qualifications`,
-        //     crossDomain: true,
-        //     headers: {
-        //         'Access-Control-Allow-Origin': '*',
-        //         'Content-Type': 'application/json',
-        //         'Authorization': `Bearer ${userToken}`,
-        //     },
-        //     data: JSON.stringify(data),
-        //     success: function(data){
 
     }
 

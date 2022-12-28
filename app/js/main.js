@@ -16,8 +16,65 @@ import riskSection from './risk-section';
 import myInfo from './my-info-section';
 import allInfo from './all-info-section';
 import search from './search';
+import getIcidentsTypes from './global-functions/getIcidentsTypes';
+import getIncidentsQualifications from './global-functions/getIncidentsQualifications';
+import getPersonsSocialSecurityTypes from './global-functions/getPersonsSocialSecurityTypes';
+import getPersonsDocTypes from './global-functions/getPersonsDocTypes';
 
 document.addEventListener('DOMContentLoaded', () => {
+
+	//parse inctypes in record forms
+	let incTypes = getIcidentsTypes();
+	incTypes.done(function(data){
+		const incSelector1 = $('#record-event-type');
+		const incSelector2 = $('#newrecord-event-type');
+		if(Array.isArray(data)){
+			data.map(item => {
+				incSelector1.append(`<option value="${item.id}">${item.name}</option>`);
+				incSelector2.append(`<option value="${item.id}">${item.name}</option>`);
+			});
+		}
+	});
+
+	//parse qualifications in record forms
+	let incQual = getIncidentsQualifications();
+	incQual.done(function(data){
+		const incQualSelector1 = $('#record-qualification');
+		const incQualSelector2 = $('#newrecord-qualification');
+		if(Array.isArray(data)){
+			data.map(item => {
+				incQualSelector1.append(`<option value="${item.id}">${item.name}</option>`);
+				incQualSelector2.append(`<option value="${item.id}">${item.name}</option>`);
+			});
+		}
+	});
+
+	//parse social security in persons forms
+	let personSocialSecTypes = getPersonsSocialSecurityTypes();
+	personSocialSecTypes.done(function(data){
+		const personSocialSecSelector1 = $('#person-money');
+		const personSocialSecSelector2 = $('#newperson-money');
+		if(Array.isArray(data)){
+			data.map(item => {
+				personSocialSecSelector1.append(`<option value="${item.id}">${item.name}</option>`);
+				personSocialSecSelector2.append(`<option value="${item.id}">${item.name}</option>`);
+			});
+		}
+	});
+
+	//parse documents types in persons forms
+	let personsDocTypes = getPersonsDocTypes();
+	personsDocTypes.done(function(data){
+		const personsDocTypesWrapSelector1 = $('#person-pasport-wrapper');
+		const personsDocTypesWrapSelector2 = $('#newperson-pasport-wrapper');
+		if(Array.isArray(data)){
+			data.map(item => {
+				personsDocTypesWrapSelector1.append(`<label><input type="radio" value="${item.id}" name="person-pasport-type" checked> ${item.name}</label>`);
+				personsDocTypesWrapSelector2.append(`<label><input type="radio" value="${item.id}" name="newperson-pasport-type" checked> ${item.name}</label>`);
+			});
+		}
+	});
+	
 	// redirect to login page
 	const userToken = sessionStorage.getItem('token');
 
@@ -99,4 +156,5 @@ document.addEventListener('DOMContentLoaded', () => {
 	//---------------------PROFILE------------------------
 	profile();
 
+	
 });

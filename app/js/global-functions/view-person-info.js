@@ -1,6 +1,8 @@
 import { data } from "jquery";
 import API_URL from "../api";
 import notifications from "../notifications";
+import getPersonsSocialSecurityTypes from "./getPersonsSocialSecurityTypes";
+import getPersonsDocTypes from "./getPersonsDocTypes";
 
 function getPersonInfo(){
     $('.view-person-btn').each(function(){
@@ -61,18 +63,7 @@ function getPersonInfo(){
                         else if(personRole === 'agressor') { $('#person-role').val('Особа кривдник'); }
                         if(hasChildren) { $('#person-children-yes').attr('checked', 'checked'); } 
                         else { $('#person-children-no').attr('checked', 'checked'); }
-                        switch(documentType){
-                            case "Паспорт" :
-                                $('#person-pasport-type-pasport').attr('checked', 'checked');
-                            break;
-                            case "ID-картка" :
-                                $('#person-pasport-type-card').attr('checked', 'checked');
-                            break;
-                            case "Посвідчення водія" :
-                                $('#person-pasport-type-drive').attr('checked', 'checked');
-                            break;
-                        }
-
+                
                         let relationshipsMarkup = '';
                         // console.log(relationships);
                         if(relationships){
@@ -92,11 +83,30 @@ function getPersonInfo(){
                             });
                         }
 
+                        let personsDocTypes = getPersonsDocTypes();
+                        personsDocTypes.done(function(data){
+                            $(`input[type="radio"][name="person-pasport-type"]`).prop("checked", false);
+                            if(Array.isArray(data)){
+                                data.map(item => {
+                                    if(documentType === item.name){
+                                        $(`input[type="radio"][name="person-pasport-type"][value="${item.id}"]`).prop("checked", true);
+                                    }
+                                });
+                            }
+                        });
 
-                        // Редагувати
-                        if(socialSecurity === 'Test_SocialSecurity'){
-                            $('#person-money').val('Низький');
-                        }
+                        let personSocialSecTypes = getPersonsSocialSecurityTypes();
+                        personSocialSecTypes.done(function(data){
+                            if(Array.isArray(data)){
+                                data.map(item => {
+                                    if(socialSecurity === item.name){
+                                        $('#person-money').val(item.id);
+                                    }
+                                });
+                            }
+                        });
+                        
+
                         $('#person-name').val(fullName);
                         $('#person-pasport-ser').val(documentSeries);
                         $('#person-pasport-number').val(documentNumber);

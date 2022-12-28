@@ -13,31 +13,19 @@ function editPersonModal(){
         let documentSeries = $('#person-pasport-ser').val();
         let documentNumber =   Number($('#person-pasport-number').val());
         let documentIssueDate =  new Date($('#person-pasport-date').val());
-        let issuingAuthority = 0; //???
+        let issuingAuthority = 0; 
         let birthDate;
         let phoneNumber =  $('#person-phone').val();
         let hasChildren = false;
         let registrationAddress = $('#person-reg-address').val();
         let livingAddress =  $('#person-home-address').val();
         let workingPlace = $('#person-work').val();
-        let socialSecurityId = 1;
+        let socialSecurityId = Number($('#person-money').val());
         if($('#person-children-yes').is(':checked')) { hasChildren = true; } 
         else { hasChildren = false; }
         
         let bd =  new Date($('#person-birthday').val());
         birthDate =  bd.toISOString();
-
-        switch($('#person-money').val()){
-            case 'Низький':
-                socialSecurityId = 1;
-                break;
-            case 'Середній':
-                socialSecurityId = 2;
-                break;
-            case 'Високий':
-                socialSecurityId = 3;
-                break;
-        }
 
         const data = {
             "fullName": fullName,
@@ -73,7 +61,7 @@ function editPersonModal(){
                 },
                 error: function (data) {
                     notifications.errorNotif(data.responseJSON);
-                    // console.log(data);
+                    console.log(data);
                 }
             });
         }
