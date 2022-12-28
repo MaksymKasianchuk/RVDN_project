@@ -1,7 +1,7 @@
 <div class="backdrop risk-modal">
     <div class="modal-wrap">
         <form class="modal">
-            <div class="form-header">
+            <div class="modal-header">
                 <div class="row">
                     <div class="col-12">
                        <p class="form-title">Форма оцінки ризиків</p> 
@@ -9,30 +9,106 @@
                 </div>
             </div>
         
-            <div class="form-body">
+            <div class="modal-body">
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <label class="form-label">У яких стосунках перебуває кривдник з постраждалою особою</label>
                     </div>
                     <div class="col-12 col-md-6">
-                        <select name="newrisk-relationship-level" id="newrisk-relationship-level">
-                            <option value="Чоловік">Чоловік</option>
-                            <option value="Дружина">Дружина</option>
-                            <option value="Брат">Брат</option>
-                            <option value="Сестра">Сестра</option>
-                            <option value="Інше..." selected>Інше...</option>
-                        </select>
+                        <input name="risk-relationship-level" id="risk-relationship-level" value="" type="text" readonly>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mt-2">
                     <div class="col-12 col-md-6">
                         <label class="form-label">Місце (адреса) проведення оцінювання ризиків</label>
                     </div>
                     <div class="col-12 col-md-6">
-                        <input type="text" name="newrisk-event-place" id="newrisk-event-place" value="">
+                        <input name="risk-event-place" id="risk-event-place" value="" type="text" readonly>
                     </div>
                 </div>
-                
+                <div class="row mt-2">
+                    <div class="col-12 col-md-6">
+                        <label class="form-label">Чи вдалося поліцейському уповноваженого підрозділу поліції провести спілкування/бесіду?</label>
+                    </div>
+                    <div class="col-12 col-md-6">
+                       <input name="risk-dialog" id="risk-dialog" type="text" readonly> 
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12 col-md-6">
+                        <label class="form-label">Чи постраждалаособа відмовилася від спілкування/бесіди?</label>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <input name="risk-dialog-reject" id="risk-dialog-reject" type="text" readonly> 
+                    </div>
+                </div>
+
+                <div class="risk-questions">
+
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-12 col-md-6">
+                        <label class="form-label">Що саме турбує постраждалу особу?</label>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <textarea name="risk-q28" id="risk-q28" row mt-2s="5" readonly></textarea>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12 col-md-6">
+                        <label class="form-label">Чи здійснювала постраждала особа телефонний дзвінок або консультувалася з експертами національної гарячої лінії з питань запобігання домашньому насильству, торгівлі людьми і гендерної дискримінації або дитячої гарячої лінії?</label>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <input name="risk-q29" id="risk-q29" type="text" readonly> 
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <label class="form-label">Зауваження поліцейського уповноваженого підрозділу поліції щодо будь-яких інших чинників/обставин, які підвищують/знижують рівень загрози життю та здоров'ю постраждалої особи</label>
+                    </div>
+                    <div class="col-12">
+                        <textarea name="risk-police-comment" id="risk-police-comment" row mt-2s="5" readonly></textarea>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <label class="form-label">Поліцейським уповноваженого підрозділу поліції визначено рівень небезпеки:</label>
+                    </div>
+                    <div class="col-12">
+                        <div class="risk-levels">
+                            <input name="risk-risk-level" id="risk-risk-level" type="text" readonly> 
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <label class="form-label">Терміновий заборонний припис стосовно кривдника винесено:</label>
+                        <input name="risk-termin" id="risk-termin" type="text" readonly> 
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12">                           
+                        <label class="form-label">у разі винесення зазначити: № <input type="text" name="risk-termin-num" id="risk-termin-num" value="" readonly></label>
+                    </div>
+                </div>
+             
+                <div class="row mt-2">
+                    <div class="col-12">                           
+                        <label class="form-label">від <input type="text" name="risk-termin-date" id="risk-termin-date" value="" readonly></label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-12">
+                        <button type="button" class="btn modal-button risk-modal-btn">Закрити</button>
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
 </div>

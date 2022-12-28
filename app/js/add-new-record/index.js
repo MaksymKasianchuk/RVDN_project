@@ -1,5 +1,6 @@
 import API_URL from "../api";
 import notifications from "../notifications";
+import getPersonsRelShipTypes from "../global-functions/getPersonsRelShipTypes";
 
 function addNewRecord(){
     let userToken = sessionStorage.getItem('token');
@@ -46,7 +47,7 @@ function addNewRecord(){
             
             },
             error: function (data) {
-                // console.log(data);
+                console.log(data);
             }
         });
         incidentPersonsListener();
@@ -241,14 +242,13 @@ function addNewRecord(){
                 },
                 error: function (data) {
                     notifications.emptyNotif(data.responseJSON)
-                    //console.log(data);
+                    console.log(data);
                 }
             });
 
             // ----------------------------------CREATE RECORD--------------------------
-			// let relationshipTypeName = $('#newrisk-relationship-level').val();
-            let relationshipTypeName = 'Test_Relationship';
-			let address = $('#newrisk-event-place').val();
+            let relationshipTypeName = $('#newrisk-relationship-level>option:selected').text();
+            let address = $('#newrisk-event-place').val();
 			let didDialogHappen = $('input[name="newrisk-dialog"]').val() === 'Так' ? true : false;
 			let wasDialogRejected = $('input[name="newrisk-dialog-reject"]').val() === 'Так' ? true : false;
 			let victimDisturber = $('#newrisk-q28').val();
@@ -263,6 +263,7 @@ function addNewRecord(){
                 notifications.errorNotif('Не призначено рівень небезпеки!');
                 return;
             }
+           
 
 			let arrAllQ = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27];
 			arrAllQ.map(inpnum => {
@@ -306,7 +307,6 @@ function addNewRecord(){
 						data: JSON.stringify(riskdata),
 						success: function(data){
 							// console.log(data);
-						
 						},
 						error: function (data) {
 							notifications.errorNotif();
