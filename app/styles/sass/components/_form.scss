@@ -36,7 +36,7 @@
         & .form-label{
             width: 100%;
         }
-        & input[type="text"], input[type="tel"], input[type="email"], & input[type="date"], & select, & textarea{
+        & input[type="text"], & input[type="password"], input[type="tel"], input[type="email"], & input[type="date"], & select, & textarea{
             display: inline-block;
             width: 100%;
             font-size: 14px;
@@ -45,6 +45,11 @@
         & textarea{
             resize: none;
             margin-bottom: 0;
+        }
+        & #register-password-confirm,
+        & #register-password,
+        & #login-user-password{
+            padding-right: 30px;
         }
     }
     & .btn{

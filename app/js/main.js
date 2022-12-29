@@ -22,6 +22,7 @@ import getPersonsSocialSecurityTypes from './global-functions/getPersonsSocialSe
 import getPersonsDocTypes from './global-functions/getPersonsDocTypes';
 import getPersonsRelShipTypes from './global-functions/getPersonsRelShipTypes';
 import viewRiskModal from './global-functions/view-risk-modal';
+import switchVisiblePassword from "./global-functions/passwordVisibility";
 
 document.addEventListener('DOMContentLoaded', () => {
 	// redirect to login page
@@ -171,4 +172,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	profile();
 
 	viewRiskModal();
+
+	switchVisiblePassword('#login-password-btn', 'is-visible', '#login-user-password');
+	switchVisiblePassword('#register-password-btn', 'is-visible', '#register-password');
+	switchVisiblePassword('#register-password-confirm-btn', 'is-visible', '#register-password-confirm');
+
 });

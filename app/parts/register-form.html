@@ -79,13 +79,19 @@
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label class="form-label">Пароль:</label>
-                                <input type="text" name="register-password" id="register-password" value="">
+                                <div class="password-wrapper">
+                                    <input type="password" name="register-password" id="register-password" value="">
+                                    <div class="visible-password" id="register-password-btn" role="button"></div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label class="form-label">Підтвердження паролю:</label>
-                                <input type="text" name="register-password-confirm" id="register-password-confirm" value="">
+                                <div class="password-wrapper">
+                                    <input type="password" name="register-password-confirm" id="register-password-confirm" value="">
+                                    <div class="visible-password" id="register-password-confirm-btn" role="button"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
