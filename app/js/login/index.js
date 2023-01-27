@@ -33,16 +33,9 @@ function login(){
                 },
                 error: function (data) {
                     notifications.errorNotif(data.responseJSON);
-                    // console.log(data.responseJSON);
                 }
                 
             });
-            // loginRequest.done(
-            //     function(){
-            //         token = sessionStorage.getItem("token");
-            //         console.log(token);
-            //     }
-            // );
 
         }
     });

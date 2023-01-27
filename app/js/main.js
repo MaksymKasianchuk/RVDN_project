@@ -8,7 +8,7 @@ import header from './header';
 import login from './login';
 import register from './register';
 import passwordRenew from './password-renew';
-import profile from './perofile';
+import profile from './profile';
 import addNewRecord from './add-new-record';
 import addNewPerson from './add-new-person';
 import modals from './modals';
